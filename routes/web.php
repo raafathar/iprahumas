@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/berita', function () {
     return view('frontend.landingpage.berita');
 });
+
+Route::get('/sejarah', function () {
+    return view('frontend.landingpage.profil.sejarah');
+});
