@@ -46,15 +46,15 @@
     <!-- ------------------------------------- -->
     <!-- banner End -->
 
-    {{-- <section class="bg-primary py-9">
+    <section class="bg-primary py-9">
             <div class="container-fluid">
                 <div class="d-flex gap-3 justify-content-center align-items-center flex-md-nowrap flex-wrap">
-                    <span class="badge text-bg-primary p-2">Information Today</span>
+                    <span class="badge text-black bg-white p-2">Informasi Terbaru</span>
                     <p class="text-white fs-4 mb-0 text-md-start text-center">Lorem ipsum dolor sit amet consectetur,
                         adipisicing elit.</p>
                 </div>
             </div>
-        </section> --}}
+        </section>
 
     <!-- Service Start -->
     <!-- ------------------------------------- -->
@@ -278,8 +278,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <p class="fs-4 fw-normal text-center mb-7 mb-md-5">
-                        Hi👋, Cari Tau Berita Terbaru Melalui Program <span class="fw-bolder">Rilis Media</span>, Ikuti
-                        Informasi Terbaru Hanya Melalui Laman Website Resmi Kami!
+                        Hi👋, Baca berita terbaru melalui <span class="fw-bolder">Rilis Media</span>, ikuti
+                        informasi terbaru hanya melalui laman website resmi kami!
                     </p>
                 </div>
             </div>
