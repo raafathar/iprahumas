@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Orange_Theme" data-layout="vertical">
 
 <head>
     <!-- Required meta tags -->
@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
 
     <title>Ikatan Pranata Humas Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{{ asset('assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}" />
 </head>
@@ -25,7 +28,7 @@
 
     <!-- Scroll Top -->
     <a href="javascript:void(0)"
-        class="top-btn btn btn-danger d-flex align-items-center justify-content-center round-54 p-0 rounded-circle">
+        class="top-btn btn btn-primary d-flex align-items-center justify-content-center round-54 p-0 rounded-circle">
         <i class="ti ti-arrow-up fs-7"></i>
     </a>
 
