@@ -124,14 +124,17 @@
                             <div class="card-body text-center py-14">
                                 <img src="../assets/images/frontend-pages/icon-member.svg" alt="icon">
                                 <h5 class="my-3 fw-bolder fs-5">Bergabung Menjadi Anggota</h5>
-                                <p class="mb-0 fs-4">Daftar menjadi anggota dan jadilah bagian dari Pranata Humas Profesional</p>
+                                <p class="mb-0 fs-4">Daftar menjadi anggota dan jadilah bagian dari Pranata Humas
+                                    Profesional</p>
                             </div>
                         </div>
                         <div class="card shadow-none border-2 rounded-24">
                             <div class="card-body text-center py-14">
-                                <img src="../assets/images/frontend-pages/icon-media.svg" alt="icon" height="220" width="220">
+                                <img src="../assets/images/frontend-pages/icon-media.svg" alt="icon" height="220"
+                                    width="220">
                                 <h5 class="my-3 fw-bolder fs-5">Rilis Media</h5>
-                                <p class="mb-0 fs-4">Informasi atau pernyataan resmi terkait isu yang berkembang di masyarakat</p>
+                                <p class="mb-0 fs-4">Informasi atau pernyataan resmi terkait isu yang berkembang di
+                                    masyarakat</p>
                             </div>
                         </div>
                     </div>
@@ -186,7 +189,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <p class="fs-4 fw-normal text-center mb-7 mb-md-5">
-                            Hi👋, Cari Tau Berita Terbaru Melalui Program <span class="fw-bolder">Rilis Media</span>, Ikuti Informasi Terbaru Hanya Melalui Laman Website Resmi Kami!
+                            Hi👋, Cari Tau Berita Terbaru Melalui Program <span class="fw-bolder">Rilis Media</span>, Ikuti
+                            Informasi Terbaru Hanya Melalui Laman Website Resmi Kami!
                         </p>
                     </div>
                 </div>
@@ -194,7 +198,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
                             <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn" alt="blog image" class="w-100 img-fluid">
+                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                                    alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
                                 </div>
@@ -240,7 +245,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
                             <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn" alt="blog image" class="w-100 img-fluid">
+                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                                    alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
                                 </div>
@@ -286,7 +292,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
                             <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn" alt="blog image" class="w-100 img-fluid">
+                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                                    alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
                                 </div>
@@ -333,7 +340,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
                             <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn" alt="blog image" class="w-100 img-fluid">
+                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                                    alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
                                 </div>
@@ -379,7 +387,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
                             <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn" alt="blog image" class="w-100 img-fluid">
+                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                                    alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
                                 </div>
@@ -425,7 +434,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
                             <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn" alt="blog image" class="w-100 img-fluid">
+                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                                    alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
                                 </div>
@@ -486,59 +496,69 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
                             <h2 class="fs-10 fw-bolder text-center mb-10 pb-lg-4 px-2 px-md-0">
-                            Statistik organisasi kami pada beberapa dekade terakhir
+                                Statistik organisasi kami pada beberapa dekade terakhir
                             </h2>
                         </div>
                     </div>
                     <div class="w-100 text-nowrap">
                         <div class="slide-animation1 d-flex gap-7 text-nowrap">
                             <!-- Feature Item 1 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-users text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">1.200 Anggota Terdaftar</p>
                             </div>
                             <!-- Feature Item 2 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-video text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">200 Siaran Pers</p>
                             </div>
                             <!-- Feature Item 3 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-notebook text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">16 Publikasi</p>
                             </div>
                             <!-- Feature Item 1 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-users text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">1.200 Anggota Terdaftar</p>
                             </div>
                             <!-- Feature Item 2 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-video text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">200 Siaran Pers</p>
                             </div>
                             <!-- Feature Item 3 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-notebook text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">16 Publikasi</p>
                             </div>
                             <!-- Feature Item 1 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-users text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">1.200 Anggota Terdaftar</p>
                             </div>
                             <!-- Feature Item 2 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-video text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">200 Siaran Pers</p>
                             </div>
                             <!-- Feature Item 3 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-notebook text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">16 Publikasi</p>
                             </div>
                             <!-- Feature Item 1 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-users text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">1.200 Anggota Terdaftar</p>
                             </div>
@@ -547,52 +567,62 @@
                     <div class="w-100 text-nowrap">
                         <div class="slide-animation2 d-flex gap-7 text-nowrap my-4">
                             <!-- Feature Item 1 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-users text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">1.200 Anggota Terdaftar</p>
                             </div>
                             <!-- Feature Item 2 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-video text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">200 Siaran Pers</p>
                             </div>
                             <!-- Feature Item 3 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-notebook text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">16 Publikasi</p>
                             </div>
                             <!-- Feature Item 1 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-users text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">1.200 Anggota Terdaftar</p>
                             </div>
                             <!-- Feature Item 2 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-video text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">200 Siaran Pers</p>
                             </div>
                             <!-- Feature Item 3 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-notebook text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">16 Publikasi</p>
                             </div>
                             <!-- Feature Item 1 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-users text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">1.200 Anggota Terdaftar</p>
                             </div>
                             <!-- Feature Item 2 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-video text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">200 Siaran Pers</p>
                             </div>
                             <!-- Feature Item 3 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-notebook text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">16 Publikasi</p>
                             </div>
                             <!-- Feature Item 1 -->
-                            <div class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
+                            <div
+                                class="feature-item bg-white rounded-3 gap-8 d-flex align-items-center justify-content-center">
                                 <i class="ti ti-users text-danger fs-8" aria-hidden="true"></i>
                                 <p class="fs-3 fw-semibold mb-0 gap-3">1.200 Anggota Terdaftar</p>
                             </div>
@@ -616,36 +646,39 @@
                                 <br /> Anggota Kami?
                             </h2>
                             <p class="fs-4">
-                                Umpan balik dari anggota kami adalah bukti nyata komitmen, kualitas dan pengembangan pada organisasi.
+                                Umpan balik dari anggota kami adalah bukti nyata komitmen, kualitas dan pengembangan pada
+                                organisasi.
                                 Simak tanggapan mereka selama berorganisasi.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="border p-7 p-md-5 rounded-3">
-                        <h3 class="fs-7 fw-semibold text-dark">Tanggapan mereka</h3>
+                            <h3 class="fs-7 fw-semibold text-dark">Tanggapan mereka</h3>
                             <div class="owl-carousel testimonial-carousel owl-theme">
                                 <div class="item">
                                     <div>
                                         <div class="d-flex align-items-center gap-3 my-4">
-                                            <div><img src="../assets/images/profile/user-3.jpg" alt="user" class="rounded-circle" width="44px" height="44px"></div>
+                                            <div><img src="../assets/images/profile/user-3.jpg" alt="user"
+                                                    class="rounded-circle" width="44px" height="44px"></div>
                                             <p class="fs-4 fw-semibold mb-0 text-dark">Sophia Johnson</p>
                                         </div>
                                         <p class="fs-5 pb-4 mb-4">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua.
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div>
                                         <div class="d-flex align-items-center gap-3 my-4">
-                                            <div><img src="../assets/images/profile/user-3.jpg" alt="user" class="rounded-circle" width="44px" height="44px"></div>
+                                            <div><img src="../assets/images/profile/user-3.jpg" alt="user"
+                                                    class="rounded-circle" width="44px" height="44px"></div>
                                             <p class="fs-4 fw-semibold mb-0 text-dark">Sophia Johnson</p>
                                         </div>
                                         <p class="fs-5 pb-4 mb-4">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua.
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua.
                                         </p>
                                     </div>
                                 </div>
@@ -659,7 +692,7 @@
         <!-- Testimonial End -->
 
 
-        
-        
+
+
     </div>
 @endsection

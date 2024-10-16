@@ -16,12 +16,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 gap-xl-7 gap-8 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary"
-                                href="">Beranda</a>
+                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="">Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary"
-                                href="/berita">Berita</a>
+                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="/berita">Berita</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-4 fw-bold text-dark link-primary" href="../main/index.html">Pelatihan</a>
@@ -37,7 +35,7 @@
                     </ul>
                     <div class="d-flex gap-3">
                         <div>
-                            <a href="../main/authentication-login.html" class="btn btn-danger py-8 px-9">Log In</a>
+                            <a href="../main/authentication-login.html" class="btn btn-primary py-8 px-9">Log In</a>
                         </div>
                         <div>
                             <a href="../main/authentication-login.html"
