@@ -35,3 +35,7 @@ Route::prefix('profil')->group(function () {
         return view('frontend.landingpage.profil.manfaat_anggota');
     });
 });
+
+Route::get('/contact', function () {
+    return view('frontend.landingpage.contact');
+});
