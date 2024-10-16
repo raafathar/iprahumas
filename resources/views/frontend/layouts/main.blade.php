@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Orange_Theme" data-layout="vertical">
 
 <head>
     <!-- Required meta tags -->
@@ -25,7 +25,7 @@
 
     <!-- Scroll Top -->
     <a href="javascript:void(0)"
-        class="top-btn btn btn-danger d-flex align-items-center justify-content-center round-54 p-0 rounded-circle">
+        class="top-btn btn btn-primary d-flex align-items-center justify-content-center round-54 p-0 rounded-circle">
         <i class="ti ti-arrow-up fs-7"></i>
     </a>
 
