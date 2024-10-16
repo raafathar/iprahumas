@@ -37,7 +37,7 @@
                     </ul>
                     <div class="d-flex gap-3">
                         <div>
-                            <a href="../main/authentication-login.html" class="btn btn-danger py-8 px-9">Log In</a>
+                            <a href="../main/authentication-login.html" class="btn btn-primary py-8 px-9">Masuk</a>
                         </div>
                         <div>
                             <a href="../main/authentication-login.html"

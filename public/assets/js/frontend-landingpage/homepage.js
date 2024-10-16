@@ -59,13 +59,13 @@ $(function () {
                 items: 1
             },
             600: {
-                items: 2
+                items: 1
             },
             992: {
-                items: 3
+                items: 1
             },
             1024: {
-                items: 4
+                items: 1
             }
         }
     })
