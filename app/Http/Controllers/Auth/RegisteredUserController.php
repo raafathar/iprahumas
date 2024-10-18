@@ -2,30 +2,34 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Helper\helper;
-use App\Models\Form;
-use App\Models\User;
 use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rules;
-use Illuminate\Support\Facades\DB;
+use App\Helper\fileHandler;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Storage;
+use App\Services\Master\MasterService;
+use App\DTO\Registration\RegistrationDTO;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Services\Registration\RegistrationService;
 
 class RegisteredUserController extends Controller
 {
-    use helper;
+    use fileHandler;
+
+    public function __construct(
+        private RegistrationService $registrationService,
+        private MasterService $masterService,
+    ) {}
+
     /**
      * Display the registration view.
      */
     public function create(): View
     {
-        return view('auth.register');
+        return view('auth.register', [
+            "instansi" => $this->masterService->getAllDataInstansi(),
+            "golongan" => $this->masterService->getAllDataGolongan(),
+            "jabatan" => $this->masterService->getAllDataJabatan(),
+        ]);
     }
 
     /**
@@ -36,34 +40,26 @@ class RegisteredUserController extends Controller
     public function store(RegisterRequest $request): RedirectResponse
     {
         $validate = $request->validated();
+        $validate['f_bukti_pembayaran'] = $this->fileImageHandler($request, "f_bukti_pembayaran", "bukti_pembelajaran");
+
+        $registrationDTO = new RegistrationDTO(
+            $validate["jabatan"],
+            $validate["golongan"],
+            $validate["instansi"],
+            $validate["NIP"],
+            $validate["f_unit_kerja"],
+            $validate["f_no_wa"],
+            $validate["f_jenis_kartu"],
+            $validate["f_alamat"],
+            $validate["f_bukti_pembayaran"],
+            $validate["username"],
+            $validate["email"],
+            $validate["password"],
+            False,
+        );
+
         // try {
-        $transaction = DB::transaction(function () use ($validate, $request) {
-
-            $user = User::create([
-                'username' => $validate["username"],
-                'email' => $validate["email"],
-                'password' => $validate["password"],
-            ]);
-
-            $validate['f_bukti_pembayaran'] = $this->fileImageHandler($request, "f_bukti_pembayaran", "bukti_pembelajaran");
-
-            Form::create([
-                'user_id' => $user->id,
-                'NIP' => $validate["NIP"],
-                'jabatan_id' => $validate["jabatan"],
-                'golongan_id' => $validate["golongan"],
-                'instansi_id' => $validate["instansi"],
-                'NIP' => $validate["NIP"],
-                'f_unit_kerja' => $validate["f_unit_kerja"],
-                'f_no_wa' => $validate["f_no_wa"],
-                'f_jenis_kartu' => $validate["f_jenis_kartu"],
-                'f_alamat' => $validate["f_alamat"],
-                'f_bukti_pembayaran' => $validate["f_bukti_pembayaran"],
-            ]);
-        });
-        if (!$transaction) {
-            return back()->with("error", "Registrasi Gagal");
-        }
+        $this->registrationService->RegisterMembership($registrationDTO);
         // } catch (\Exception $th) {
         //     return back()->with("error", "Terjadi Error");
         // }

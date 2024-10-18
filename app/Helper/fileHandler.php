@@ -4,7 +4,7 @@ namespace App\Helper;
 
 use Illuminate\Support\Facades\Storage;
 
-trait helper
+trait fileHandler
 {
     /**
      * File Image Handler

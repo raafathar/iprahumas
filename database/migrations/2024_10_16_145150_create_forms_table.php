@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('forms', function (Blueprint $table) {
-            $table->foreignId("user_id")->constrained("users");
-            $table->foreignId("jabatan_id")->constrained("jabatans");
-            $table->foreignId("golongan_id")->constrained("golongans");
-            $table->foreignId("instansi_id")->constrained("golongans");
+            $table->foreignUuid("user_id")->constrained("users");
+            $table->foreignUuid("jabatan_id")->constrained("jabatans");
+            $table->foreignUuid("golongan_id")->constrained("golongans");
+            $table->foreignUuid("instansi_id")->constrained("instansis");
             $table->string("NIP")->unique();
             $table->string("f_unit_kerja");
             $table->string("f_no_wa");

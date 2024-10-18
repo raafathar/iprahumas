@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\Instansi\InstansiController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+require __DIR__ . "\auth.php";
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,4 +37,8 @@ Route::prefix('profil')->group(function () {
 
 Route::get('/contact', function () {
     return view('frontend.landingpage.contact');
+});
+
+Route::group(["prefix" => "admin"], function () {
+    Route::resource("instansi", InstansiController::class);
 });

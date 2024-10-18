@@ -65,8 +65,15 @@
             <label for="golongan">
                 {{ __('Pangkat/Golongan') }}
             </label>
-            <input id="golongan" type="text" name="golongan" value="{{ old('golongan') }}" autofocus
+            <select id="golongan" type="text" name="golongan" value="{{ old('golongan') }}" autofocus
                 autocomplete="golongan">
+                <option readonly>-- Pilih Golongan --</option>
+                @forelse($golongan as $row)
+                    <option value="{{ $row->id }}">{{ $row->g_nama }}</option>
+                @empty
+                    <option readonly> Data masih kosong</option>
+                @endforelse
+            </select>
             @if ($errors->get('golongan'))
                 <ul>
                     @foreach ((array) $errors->get('golongan') as $message)
@@ -81,8 +88,15 @@
             <label for="jabatan">
                 {{ __('Jabatan') }}
             </label>
-            <input id="jabatan" type="text" name="jabatan" value="{{ old('jabatan') }}" autofocus
+            <select id="jabatan" type="text" name="jabatan" value="{{ old('jabatan') }}" autofocus
                 autocomplete="jabatan">
+                <option readonly>-- Pilih Jabatan --</option>
+                @forelse($jabatan as $row)
+                    <option value="{{ $row->id }}">{{ $row->j_nama }}</option>
+                @empty
+                    <option readonly> Data masih kosong</option>
+                @endforelse
+            </select>
             @if ($errors->get('jabatan'))
                 <ul>
                     @foreach ((array) $errors->get('jabatan') as $message)
@@ -97,8 +111,15 @@
             <label for="instansi">
                 {{ __('Instansi') }}
             </label>
-            <input id="instansi" type="text" name="instansi" value="{{ old('instansi') }}" autofocus
+            <select id="instansi" type="text" name="instansi" value="{{ old('instansi') }}" autofocus
                 autocomplete="instansi">
+                <option readonly>-- Pilih Instansi --</option>
+                @forelse($instansi as $row)
+                    <option value="{{ $row->id }}">{{ $row->i_nama }}</option>
+                @empty
+                    <option readonly> Data masih kosong</option>
+                @endforelse
+            </select>
             @if ($errors->get('instansi'))
                 <ul>
                     @foreach ((array) $errors->get('instansi') as $message)
