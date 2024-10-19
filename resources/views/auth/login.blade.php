@@ -1,40 +1,70 @@
-<x-guest-layout>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    {{-- <x-auth-session-status class="mb-4" :status="session('status')" /> --}}
+    <div>
+        {{ session('status') }}
+    </div>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+            <label for="username">
+                {{ __('Username / Email') }}
+            </label>
+            <input id="username" type="text" name="username" value="{{ old('username') }}" autofocus
+                autocomplete="username">
+            @if ($errors->get('username'))
+                <ul>
+                    @foreach ((array) $errors->get('username') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+            @endif
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <label for="password">
+                {{ __('Kata Kunci') }}
+            </label>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+            <input id="password" type="text" name="password" value="{{ old('password') }}" autofocus
+                autocomplete="password">
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            @if ($errors->get('password'))
+                <ul>
+                    @foreach ((array) $errors->get('password') as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+            @endif
         </div>
 
         <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+        <div>
+            <label for="remember_me">
+                <input id="remember_me" type="checkbox" name="remember">
+                <span>{{ __('Remember me') }}</span>
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div>
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
@@ -44,4 +74,6 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</body>
+
+</html>
