@@ -18,6 +18,8 @@ use App\Services\Instansi\InstansiServiceImplement;
 use App\Repositories\Jabatan\JabatanRepositoryImplement;
 use App\Repositories\Golongan\GolonganRepositoryImplement;
 use App\Repositories\Instansi\InstansiRepositoryImplement;
+use App\Services\Auth\AuthenticationService;
+use App\Services\Auth\AuthenticationServiceImplement;
 use App\Services\Registration\RegistrationServiceImplement;
 
 class AppServiceProvider extends ServiceProvider
@@ -49,5 +51,6 @@ class AppServiceProvider extends ServiceProvider
          */
         $this->app->bind(MasterService::class, MasterServiceImplement::class);
         $this->app->bind(RegistrationService::class, RegistrationServiceImplement::class);
+        $this->app->bind(AuthenticationService::class, AuthenticationServiceImplement::class);
     }
 }

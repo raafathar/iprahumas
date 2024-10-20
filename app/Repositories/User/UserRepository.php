@@ -40,4 +40,18 @@ interface UserRepository
      * @return \App\Models\User
      */
     public function delete($id, $column = "id");
+
+    /**
+     * Check User Acceptation
+     * 
+     * @param $credential
+     */
+    public function isUserAccepted($credential, $column = "username"): bool;
+
+    /**
+     * Check Value of Column User
+     * 
+     * @param $credential
+     */
+    public function isValueExist($credential, string $column = "username"): bool;
 }

@@ -49,7 +49,7 @@ class UserRepositoryImplement implements UserRepository
      */
     public function update($data, $id, $column = "id"): User
     {
-        return $this->table->where($column, $id)->update($data);
+        return $this->table::where($column, $id)->update($data);
     }
 
     /**
@@ -61,5 +61,26 @@ class UserRepositoryImplement implements UserRepository
     public function delete($id, $column = "id"): User
     {
         return $this->table->where($column, $id)->delete();
+    }
+
+
+    /**
+     * Check User Acceptation
+     * 
+     * @param $credential
+     */
+    public function isUserAccepted($credential, $column = "username"): bool
+    {
+        return $this->table::where($column, $credential)->withCount(["form" => fn($q) => $q->where("isAccept", 1)])->first()->form_count > 0;
+    }
+
+    /**
+     * Check Value of Column User
+     * 
+     * @param $credential
+     */
+    public function isValueExist($credential, string $column = "username"): bool
+    {
+        return $this->table->where($column, $credential)->count() > 0;
     }
 }
