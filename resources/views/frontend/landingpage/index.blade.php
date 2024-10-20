@@ -8,17 +8,17 @@
     <!-- banner Start -->
     <!-- ------------------------------------- -->
     <section class="pt-7 py-lg-0">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"
                     aria-label="Slide 2"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn" class="d-block w-100 object-fit-cover" alt="..." style="height: 70vh;">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-none d-md-block custom-caption">
                         <h5 class="text-white">First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
@@ -31,12 +31,12 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHero"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
@@ -317,10 +317,6 @@
                                             <i class="ti ti-eye fs-5 text-dark"></i>
                                             <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
                                         </div>
-                                        <div class="d-flex gap-2">
-                                            <i class="ti ti-message fs-5 text-dark"></i>
-                                            <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
-                                        </div>
                                     </div>
                                     <div class="d-flex align-items-center gap-2">
                                         <i class="ti ti-circle fs-2"></i>
@@ -364,10 +360,6 @@
                                             <i class="ti ti-eye fs-5 text-dark"></i>
                                             <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
                                         </div>
-                                        <div class="d-flex gap-2">
-                                            <i class="ti ti-message fs-5 text-dark"></i>
-                                            <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
-                                        </div>
                                     </div>
                                     <div class="d-flex align-items-center gap-2">
                                         <i class="ti ti-circle fs-2"></i>
@@ -410,10 +402,6 @@
                                         <div class="d-flex gap-2">
                                             <i class="ti ti-eye fs-5 text-dark"></i>
                                             <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <i class="ti ti-message fs-5 text-dark"></i>
-                                            <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center gap-2">
@@ -459,10 +447,6 @@
                                             <i class="ti ti-eye fs-5 text-dark"></i>
                                             <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
                                         </div>
-                                        <div class="d-flex gap-2">
-                                            <i class="ti ti-message fs-5 text-dark"></i>
-                                            <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
-                                        </div>
                                     </div>
                                     <div class="d-flex align-items-center gap-2">
                                         <i class="ti ti-circle fs-2"></i>
@@ -506,10 +490,6 @@
                                             <i class="ti ti-eye fs-5 text-dark"></i>
                                             <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
                                         </div>
-                                        <div class="d-flex gap-2">
-                                            <i class="ti ti-message fs-5 text-dark"></i>
-                                            <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
-                                        </div>
                                     </div>
                                     <div class="d-flex align-items-center gap-2">
                                         <i class="ti ti-circle fs-2"></i>
@@ -552,10 +532,6 @@
                                         <div class="d-flex gap-2">
                                             <i class="ti ti-eye fs-5 text-dark"></i>
                                             <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
-                                        </div>
-                                        <div class="d-flex gap-2">
-                                            <i class="ti ti-message fs-5 text-dark"></i>
-                                            <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center gap-2">
