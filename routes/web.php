@@ -21,6 +21,11 @@ Route::get('/berita', function () {
     return view('frontend.landingpage.berita');
 });
 
+Route::get('/berita/1', function () {
+    return view('frontend.landingpage.beritadetail');
+});
+
+
 Route::prefix('profil')->group(function () {
     Route::get('/sejarah-singkat', function () {
         return view('frontend.landingpage.profil.sejarah');
