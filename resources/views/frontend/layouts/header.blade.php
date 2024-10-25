@@ -18,15 +18,57 @@
                     <li class="nav-item">
                         <a class="nav-link fs-4 fw-bold text-dark link-primary" href="">Beranda</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-4 fw-bold text-dark link-primary" href="/berita">Berita</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-4 fw-bold text-dark link-primary" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profil
+                            <i class="ti ti-chevron-down fs-3"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ url('profil/sejarah-singkat') }}">Sejarah Singkat</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ url('profil/visimisi') }}">Visi Misi</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Kode Etik Keanggotaan (Soon)</a></li>
+                            <li><a class="dropdown-item" href="{{ url('profil/struktur-organisasi') }}">Struktur
+                                    Organisasi</a></li>
+                            <li><a class="dropdown-item" href="#">Anggaran Dasar (AD/ART) (Soon)</a></li>
+                            <li><a class="dropdown-item" href="{{ url('profil/manfaat-anggota') }}">Manfaat Anggota</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-4 fw-bold text-dark link-primary" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Publikasi
+                            <i class="ti ti-chevron-down fs-3"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ url('profil/sejarah-singkat') }}">Sejarah Singkat</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{ url('profil/visimisi') }}">Visi Misi</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Kode Etik Keanggotaan (Soon)</a></li>
+                            <li><a class="dropdown-item" href="{{ url('profil/struktur-organisasi') }}">Struktur
+                                    Organisasi</a></li>
+                            <li><a class="dropdown-item" href="#">Anggaran Dasar (AD/ART) (Soon)</a></li>
+                            <li><a class="dropdown-item" href="{{ url('profil/manfaat-anggota') }}">Manfaat Anggota</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fs-4 fw-bold text-dark link-primary" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Keangotaan
+                            <i class="ti ti-chevron-down fs-3"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ url('keangotaan/syarat-keangotaan') }}">Syarat keanggotaan</a></li>
+                            <li><a class="dropdown-item" href="{{ url('profil/visimisi') }}">Daftar menjadi anggota</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-4 fw-bold text-dark link-primary" href="../main/index.html">Pelatihan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-4 fw-bold text-dark link-primary"
-                            href="../main/frontend-pricingpage.html">Publikasi</a>
+                        <a class="nav-link fs-4 fw-bold text-dark link-primary" href="/pelatihan">Pelatihan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-4 fw-bold text-dark link-primary"

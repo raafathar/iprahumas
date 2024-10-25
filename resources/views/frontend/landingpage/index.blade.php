@@ -611,7 +611,7 @@
 
     <!-- Develop Start -->
     <!-- ------------------------------------- -->
-    <section class="mb-5 mb-md-14 mb-lg-12">
+    <section>
         <div class="custom-container">
             <div class="bg-primary-subtle rounded-3 position-relative overflow-hidden">
                 <div class="row">

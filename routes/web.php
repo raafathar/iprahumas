@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/berita', function () {
     return view('frontend.landingpage.berita');
 });
+
+Route::get('/pelatihan', function () {
+    return view('frontend.landingpage.pelatihan');
+});
+
+Route::get('/pelatihan/1', function () {
+    return view('frontend.landingpage.pelatihandetail');
+});
