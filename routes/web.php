@@ -28,3 +28,11 @@ Route::get('/pelatihan', function () {
 Route::get('/pelatihan/1', function () {
     return view('frontend.landingpage.pelatihandetail');
 });
+
+Route::get('keangotaan/syaratkeanggotaan', function () {
+    return view('frontend.landingpage.keangotaan.syaratanggota');
+});
+
+Route::get('keangotaan/panduanpendaftaran', function () {
+    return view('frontend.landingpage.keangotaan.panduanpendaftaran');
+});

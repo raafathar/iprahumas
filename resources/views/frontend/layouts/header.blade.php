@@ -63,8 +63,8 @@
                             <i class="ti ti-chevron-down fs-3"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ url('keangotaan/syarat-keangotaan') }}">Syarat keanggotaan</a></li>
-                            <li><a class="dropdown-item" href="{{ url('profil/visimisi') }}">Daftar menjadi anggota</a></li>
+                            <li><a class="dropdown-item" href="{{ url('keangotaan/syaratkeanggotaan') }}">Syarat keanggotaan</a></li>
+                            <li><a class="dropdown-item" href="{{ url('keangotaan/panduanpendaftaran') }}">Panduan pendaftaran</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

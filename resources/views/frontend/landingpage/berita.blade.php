@@ -9,11 +9,11 @@
       <!-- ------------------------------------- -->
       <!-- banner Start -->
       <!-- ------------------------------------- -->
-      <section class="bg-danger-subtle py-14">
+      <section class="bg-primary py-14">
             <div class="container-fluid">
                <div class="d-flex justify-content-between align-items-center">
                   <div class="text-left">
-                     <h2 class="fw-bolder fs-9">Rilis Media</h2>
+                     <h2 class="fw-bolder fs-9 text-white">Rilis Media</h2>
                   </div>
                   <div>
                      <select class="form-select w-auto bg-white">
