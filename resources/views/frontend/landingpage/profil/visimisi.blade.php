@@ -24,63 +24,51 @@
         <!-- ------------------------------------- -->
         <!-- Visi & Misi Start -->
         <!-- ------------------------------------- -->
-        <section class="pt-2 pt-md-14 pt-lg-8 pb-4 pb-md-5 pb-lg-14">
-            <div class="container-fluid">
-                <div class="card shadow-none border">
-                    <div class="card-body p-4">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12">
-                                <div class="card bg-primary">
-                                    <div class="card-body text-center p-4 pt-7">
-                                        <p class="mb-3  text-white">
-                                            VISI Ikatan Pranata Humas
-                                        </p>
-                                        <h4 class="text-center text-wrap mb-3 text-white">
-                                            Menjadi organisasi profesi Pranata Humas unggulan dalam mendukung pengelolaan
-                                            komunikasi publik yang efektif.
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            {{-- <div class="col-lg-12 d-flex items-center justify-content-center pb-4 pb-md-5 pb-lg-14">
-                                <div class="item rounded-4 overflow-hidden">
-                                    <img src="{{ asset('assets/images/frontend-pages/bg-sejarah.jpg') }}" alt=""
-                                        class="img-fluid">
-                                </div>
-                            </div> --}}
-                            <div class="col-lg-12">
-                                <div class="shop-content">
-                                    <h4 class="mb-3 text-center">MISI Ikatan Pranata Humas</h4>
-                                    <ol class="mb-5">
-                                        <li class="mb-3">Meningkatkan citra dan reputasi positif Pemerintah</li>
-                                        <li class="mb-3">Menyosialisasikan kebijakan dan program Pemerintah</li>
-                                        <li class="mb-3">Membangun Sumber Daya Manusia Pranata Humas kompeten</li>
-                                        <li>Memperkuat organisasi profesi Pranata Humas</li>
-                                    </ol>
+        <section class="visi-misi-section py-5">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-3">Visi Ikatan Pranata Humas</h2>
+                        <p class="text-muted fs-5 mb-5">
+                            Menjadi organisasi profesi Pranata Humas unggulan dalam mendukung pengelolaan komunikasi publik
+                            yang efektif.
+                        </p>
 
-                                    <h4 class="mb-3 text-center">CORE VALUES</h4>
-                                    <p class="mb-5 text-center"><b>Berakhlak:</b> Berorientasi pelayanan, akuntabel,
-                                        kompeten,
-                                        harmonis,
-                                        loyal, adaptif, dan kolaboratif</p>
+                        <h3 class="fw-semibold mb-4">Misi Ikatan Pranata Humas</h3>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Meningkatkan citra dan reputasi positif Pemerintah</li>
+                            <li class="list-group-item">Menyosialisasikan kebijakan dan program Pemerintah</li>
+                            <li class="list-group-item">Membangun Sumber Daya Manusia Pranata Humas kompeten</li>
+                            <li class="list-group-item">Memperkuat organisasi profesi Pranata Humas</li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="../assets/images/logos/logo.png" alt="Visi Image" class="img-fluid rounded-4 shadow-sm">
+                    </div>
+                </div>
 
-                                    <h4 class="mb-3 text-center">TAGLINE</h4>
-                                    <p class="mb-5 text-center"><b>Terpesona:</b> Terpercaya, Profesional, dan Bertalenta
-                                    </p>
-
-                                    <h4 class="mb-3 text-center">ARTI LOGO</h4>
-                                    <p class="mb-3">Logo sendiri menyimbolkan komunikasi antar manusia sebagai basis kerja
-                                        JFPH (berupa siluet manusia bercakap) dan keseimbangan sebagai hasil kerja aktifitas
-                                        komunikasi yang dilakukan (dilambangkan dengan dua titik simetris).</p>
-                                    <p class="mb-3"><b>Bentuk Font:</b> Bersih, Rapi dan Jernih (lambang komunikasi yang
-                                        berhasil)</p>
-                                    <p class="mb-3"><b>Warna:</b> Kontras dan Berbobot (bergaya/berkelas)</p>
-
-                                </div>
-                            </div>
-                        </div>
+                <div class="row mb-5">
+                    <div class="col-lg-4">
+                        <h4 class="fw-semibold mb-3">Core Values</h4>
+                        <p class="text-muted">
+                            <b>Berakhlak:</b> Berorientasi pelayanan, akuntabel, kompeten, harmonis, loyal, adaptif, dan
+                            kolaboratif.
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="fw-semibold mb-3">Tagline</h4>
+                        <p class="text-muted">
+                            <b>Terpesona:</b> Terpercaya, Profesional, dan Bertalenta.
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="fw-semibold mb-3">Arti Logo</h4>
+                        <p class="text-muted">
+                            Logo menyimbolkan komunikasi antar manusia sebagai basis kerja JFPH dan keseimbangan sebagai
+                            hasil aktivitas komunikasi.
+                        </p>
+                        <p class="text-muted"><b>Font:</b> Bersih, rapi, dan jernih.</p>
+                        <p class="text-muted"><b>Warna:</b> Kontras dan berbobot.</p>
                     </div>
                 </div>
             </div>
