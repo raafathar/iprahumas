@@ -31,20 +31,24 @@
                <div class="col-12">
                   <div class="d-flex flex-column gap-sm-4 gap-3">
                      <div>
+                        <h3 class="fs-7 fw-bolder mb-sm-4 mb-3">
+                           Syarat Keanggotaan
+                        </h3>
                         <p class="fs-4">
-                           Media queries are CSS techniques that apply styles based on the screen size or
-                           device characteristics. By using media queries, developers can create breakpoints in
-                           their design, ensuring that the layout adapts to different screen widths. For
-                           instance, you might want to change the font size or adjust the padding on a smaller
-                           screen. A simple example of a media query is:
+                           Dengan ini, untuk rekan-rekan lulusan Informatika, Ilmu Komputer, Sistem Informasi, Teknologi Informasi, Sistem Komputer, Teknik Komputer, Manajemen Informasi, Komputer Akuntansi, Pratisi dibidang Informatika, Akademisi bidang Informatika/Ilmu Komputer dan sebagainya yang masih mempunyai niat untuk bersama membangun Indonesia (NKRI) diharapkan dapat bergabung pada Rakornas, Kongres dan Semnas atau Kegiatan IAII ini.
                         </p>
                      </div>
                      <div>
                         <h3 class="fs-7 fw-bolder mb-sm-4 mb-3">
-                           Persyaratan Pendaftaran
+                           Persyaratan
                         </h3>
                         <p class="fs-4">
                            <ul class="list mb-0">
+                              <li>
+                                 <p class="fs-4 mb-1">
+                                    Memiliki komitmen untuk terus aktif pada kegiatan organisasi Ikatan Pranata Humas Indonesia
+                                 </p>
+                              </li>
                               <li>
                                  <p class="fs-4 mb-1">
                                     Melakukan pendaftaran secara online melalui tautan <a href="">iprahumas.id</a>
