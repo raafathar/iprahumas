@@ -5,25 +5,25 @@
 
 
 @section('contents')
-    <div class="main-wrapper overflow-hidden">
-        <!-- ------------------------------------- -->
-        <!-- banner Start -->
-        <!-- ------------------------------------- -->
-        <section class="bg-danger-subtle py-14">
+   <div class="main-wrapper overflow-hidden">
+      <!-- ------------------------------------- -->
+      <!-- banner Start -->
+      <!-- ------------------------------------- -->
+      <section class="bg-primary py-14">
             <div class="container-fluid">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="text-left">
-                        <h2 class="fw-bolder fs-9">Rilis Media</h2>
-                    </div>
-                    <div>
-                        <select class="form-select w-auto bg-white">
-                            <option value="1">March 2024</option>
-                            <option value="2">April 2024</option>
-                            <option value="3">May 2024</option>
-                            <option value="4">June 2024</option>
-                        </select>
-                    </div>
-                </div>
+               <div class="d-flex justify-content-between align-items-center">
+                  <div class="text-left">
+                     <h2 class="fw-bolder fs-9 text-white">Rilis Media</h2>
+                  </div>
+                  <div>
+                     <select class="form-select w-auto bg-white">
+                        <option value="1">March 2024</option>
+                        <option value="2">April 2024</option>
+                        <option value="3">May 2024</option>
+                        <option value="4">June 2024</option>
+                     </select>
+                  </div>
+               </div>
             </div>
         </section>
         <!-- ------------------------------------- -->

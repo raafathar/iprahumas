@@ -8,18 +8,18 @@
         <!-- banner Start -->
         <!-- ------------------------------------- -->
         <section class="pt-7 py-lg-0">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
                             class="d-block w-100 object-fit-cover" alt="..." style="height: 70vh;">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-none d-md-block custom-caption">
                             <h5 class="text-white">First slide label</h5>
                             <p>Some representative placeholder content for the first slide.</p>
                         </div>
@@ -33,13 +33,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -51,7 +49,7 @@
         <section class="bg-primary py-9">
             <div class="container-fluid">
                 <div class="d-flex gap-3 justify-content-center align-items-center flex-md-nowrap flex-wrap">
-                    <span class="badge text-bg-primary p-2">Information Today</span>
+                    <span class="badge text-black bg-white p-2">Informasi Terbaru</span>
                     <p class="text-white fs-4 mb-0 text-md-start text-center">Lorem ipsum dolor sit amet consectetur,
                         adipisicing elit.</p>
                 </div>
@@ -280,15 +278,15 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <p class="fs-4 fw-normal text-center mb-7 mb-md-5">
-                            Hi👋, Cari Tau Berita Terbaru Melalui Program <span class="fw-bolder">Rilis Media</span>, Ikuti
-                            Informasi Terbaru Hanya Melalui Laman Website Resmi Kami!
+                            Hi👋, Baca berita terbaru melalui <span class="fw-bolder">Rilis Media</span>, ikuti
+                            informasi terbaru hanya melalui laman website resmi kami!
                         </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../berita/1" class="position-relative">
+                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
                                 <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
@@ -306,7 +304,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../berita/1" class="fs-15 fw-bolder">
+                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -318,10 +316,6 @@
                                             <div class="d-flex gap-2">
                                                 <i class="ti ti-eye fs-5 text-dark"></i>
                                                 <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
-                                            </div>
-                                            <div class="d-flex gap-2">
-                                                <i class="ti ti-message fs-5 text-dark"></i>
-                                                <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center gap-2">
@@ -335,7 +329,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../berita/1" class="position-relative">
+                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
                                 <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
@@ -353,7 +347,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../berita/1" class="fs-15 fw-bolder">
+                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -365,10 +359,6 @@
                                             <div class="d-flex gap-2">
                                                 <i class="ti ti-eye fs-5 text-dark"></i>
                                                 <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
-                                            </div>
-                                            <div class="d-flex gap-2">
-                                                <i class="ti ti-message fs-5 text-dark"></i>
-                                                <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center gap-2">
@@ -382,7 +372,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../berita/1" class="position-relative">
+                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
                                 <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
@@ -400,7 +390,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../berita/1" class="fs-15 fw-bolder">
+                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -412,10 +402,6 @@
                                             <div class="d-flex gap-2">
                                                 <i class="ti ti-eye fs-5 text-dark"></i>
                                                 <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
-                                            </div>
-                                            <div class="d-flex gap-2">
-                                                <i class="ti ti-message fs-5 text-dark"></i>
-                                                <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center gap-2">
@@ -430,7 +416,7 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../berita/1" class="position-relative">
+                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
                                 <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
@@ -448,7 +434,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../berita/1" class="fs-15 fw-bolder">
+                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -460,10 +446,6 @@
                                             <div class="d-flex gap-2">
                                                 <i class="ti ti-eye fs-5 text-dark"></i>
                                                 <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
-                                            </div>
-                                            <div class="d-flex gap-2">
-                                                <i class="ti ti-message fs-5 text-dark"></i>
-                                                <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center gap-2">
@@ -477,7 +459,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../berita/1" class="position-relative">
+                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
                                 <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
@@ -495,7 +477,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../berita/1" class="fs-15 fw-bolder">
+                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -507,10 +489,6 @@
                                             <div class="d-flex gap-2">
                                                 <i class="ti ti-eye fs-5 text-dark"></i>
                                                 <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
-                                            </div>
-                                            <div class="d-flex gap-2">
-                                                <i class="ti ti-message fs-5 text-dark"></i>
-                                                <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center gap-2">
@@ -524,7 +502,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../berita/1" class="position-relative">
+                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
                                 <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
@@ -542,7 +520,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../berita/1" class="fs-15 fw-bolder">
+                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -554,10 +532,6 @@
                                             <div class="d-flex gap-2">
                                                 <i class="ti ti-eye fs-5 text-dark"></i>
                                                 <p class="mb-0 fs-2 fw-semibold text-dark">6941</p>
-                                            </div>
-                                            <div class="d-flex gap-2">
-                                                <i class="ti ti-message fs-5 text-dark"></i>
-                                                <p class="mb-0 fs-2 fw-semibold text-dark">3</p>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center gap-2">
@@ -637,7 +611,7 @@
 
         <!-- Develop Start -->
         <!-- ------------------------------------- -->
-        <section class="mb-5 mb-md-14 mb-lg-12">
+        <section>
             <div class="custom-container">
                 <div class="bg-primary-subtle rounded-3 position-relative overflow-hidden">
                     <div class="row">
