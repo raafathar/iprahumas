@@ -49,6 +49,9 @@ Route::prefix('profil')->group(function () {
     Route::get('/visimisi', function () {
         return view('frontend.landingpage.profil.visimisi');
     });
+    Route::get('/kode-etik', function () {
+        return view('frontend.landingpage.profil.kode_etik');
+    });
     Route::get('/struktur-organisasi', function () {
         return view('frontend.landingpage.profil.struktur_organisasi');
     });

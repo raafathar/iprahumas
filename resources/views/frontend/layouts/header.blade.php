@@ -5,7 +5,7 @@
     <header class="header-fp p-0 w-100">
         <nav class="navbar navbar-expand-lg bg-white-subtle py-2 py-lg-9">
             <div class="custom-container d-flex align-items-center justify-content-between">
-                <a href="../main/frontend-landingpage.html" class="text-nowrap logo-img">
+                <a href="/" class="text-nowrap logo-img">
                     <img src="../assets/images/logos/logo.png" class="dark-logo" alt="Logo-Dark" height="58" />
                     <img src="../assets/images/logos/logo.png" class="light-logo" alt="Logo-light" height="58" />
                 </a>
@@ -29,7 +29,8 @@
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('profil/visimisi') }}">Visi Misi</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Kode Etik Keanggotaan (Soon)</a></li>
+                                <li><a class="dropdown-item" href="{{ url('profil/kode-etik') }}">Kode Etik Keanggotaan</a>
+                                </li>
                                 <li><a class="dropdown-item" href="{{ url('profil/struktur-organisasi') }}">Struktur
                                         Organisasi</a></li>
                                 <li><a class="dropdown-item" href="#">Anggaran Dasar (AD/ART) (Soon)</a></li>
