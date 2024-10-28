@@ -14518,6 +14518,31 @@
   --bs-btn-hover-bg: #3ea2d9;
   --bs-btn-hover-border-color: #3a98cc;
 }
+[data-bs-theme="dark"][data-color-theme="Red_Theme"]:root,
+[data-bs-theme="light"][data-color-theme="Red_Theme"]:root {
+  --bs-primary: #97071f;
+  --bs-primary-rgb: 151, 7, 31;
+  --bs-light-primary: rgba(151, 7, 31, 0.1);
+  --bs-primary-bg-subtle: rgba(151, 7, 31, 0.1);
+  --bs-secondary: #49beff;
+  --bs-secondary-rgb: 73, 190, 255;
+  --bs-light-secondary: rgba(73, 190, 255, 0.1);
+  --bs-secondary-bg-subtle: rgba(73, 190, 255, 0.1);
+}
+[data-bs-theme="dark"][data-color-theme="Red_Theme"]:root .btn-primary,
+[data-bs-theme="light"][data-color-theme="Red_Theme"]:root .btn-primary {
+  --bs-btn-bg: #97071f;
+  --bs-btn-border-color: #97071f;
+  --bs-btn-hover-bg: #dc0025;
+  --bs-btn-hover-border-color: #dc0025;
+}
+[data-bs-theme="dark"][data-color-theme="Red_Theme"]:root .btn-secondary,
+[data-bs-theme="light"][data-color-theme="Red_Theme"]:root .btn-secondary {
+  --bs-btn-bg: #97071f;
+  --bs-btn-border-color: #97071f;
+  --bs-btn-hover-bg: #3ea2d9;
+  --bs-btn-hover-border-color: #3a98cc;
+}
 [data-bs-theme="dark"][data-color-theme="Aqua_Theme"]:root,
 [data-bs-theme="light"][data-color-theme="Aqua_Theme"]:root {
   --bs-primary: #0074ba;
@@ -44205,4 +44230,39 @@ body .connect-sorting-content {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Atur tingkat transparansi di sini */
     z-index: -1; /* Agar berada di bawah konten utama */
+}
+
+.visi-misi-section {
+  background-color: #f9fafb;
+}
+
+.list-group-item {
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  color: #212529;
+}
+
+p {
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .col-lg-6 img {
+    margin-top: 1rem;
+  }
+}
+
+.list-group-item {
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  background-color: #ffffff;
+  margin-bottom: 0.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }

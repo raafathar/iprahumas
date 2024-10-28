@@ -2,90 +2,56 @@
     <!-- ------------------------------------- -->
     <!-- Footer Start -->
     <!-- ------------------------------------- -->
-    <footer>
+    <footer class="mt-5 mt-md-14 mt-lg-12">
         <div class="container-fluid">
             <div class="border-bottom">
                 <div class="row mb-sm-12 mb-4">
                     <div class="col-md-3 col-6">
-                        <h3 class="fs-4 fw-semibold mb-7">Applications</h3>
+                        <h3 class="fs-4 fw-semibold mb-7">Layanan</h3>
                         <ul class="d-flex flex-column gap-9">
                             <li>
-                                <a href="../main/app-kanban.html" class="fs-4 text-body link-primary">Kanban</a>
+                                <a href="../main/form-horizontal.html" class="fs-4 text-body link-primary">Klinik angkat kredit</a>
                             </li>
                             <li>
-                                <a href="../main/app-invoice.html" class="fs-4 text-body link-primary">Invoice
-                                    List</a>
+                                <a href="../main/form-wizard.html" class="fs-4 text-body link-primary">Literasi kehumasan</a>
                             </li>
                             <li>
-                                <a href="../main/eco-shop.html" class="fs-4 text-body link-primary">eCommerce</a>
-                            </li>
-                            <li>
-                                <a href="../main/app-chat.html" class="fs-4 text-body link-primary">Chat</a>
-                            </li>
-                            <li>
-                                <a href="../main/app-calendar.html" class="fs-4 text-body link-primary">Calendar</a>
-                            </li>
-                            <li>
-                                <a href="../main/blog-posts.html" class="fs-4 text-body link-primary">Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <h3 class="fs-4 fw-semibold mb-7">Forms</h3>
-                        <ul class="d-flex flex-column gap-9">
-                            <li>
-                                <a href="../main/form-basic.html" class="fs-4 text-body link-primary">Form
-                                    Basic</a>
-                            </li>
-                            <li>
-                                <a href="../main/form-horizontal.html" class="fs-4 text-body link-primary">Form
-                                    Horizontal</a>
-                            </li>
-                            <li>
-                                <a href="../main/form-wizard.html" class="fs-4 text-body link-primary">Form
-                                    Wizard</a>
-                            </li>
-                            <li>
-                                <a href="../main/form-bootstrap-validation.html" class="fs-4 text-body link-primary">Form
-                                    Validation
+                                <a href="../main/form-bootstrap-validation.html" class="fs-4 text-body link-primary">Rilis media
                                 </a>
                             </li>
                             <li>
-                                <a href="../main/form-editor-quill.html" class="fs-4 text-body link-primary">Quill
-                                    Editor</a>
+                                <a href="../main/form-editor-quill.html" class="fs-4 text-body link-primary">Tangkal informasi hoax</a>
+                            </li>
+                            <li>
+                                <a href="../main/form-editor-quill.html" class="fs-4 text-body link-primary">Kelas belajar</a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-6">
-                        <h3 class="fs-4 fw-semibold mb-7">Tables</h3>
+                        <h3 class="fs-4 fw-semibold mb-7">Keanggotaan</h3>
                         <ul class="d-flex flex-column gap-9">
                             <li>
-                                <a href="../main/table-basic.html" class="fs-4 text-body link-primary">Basic
-                                    Table</a>
+                                <a href="../main/form-basic.html" class="fs-4 text-body link-primary">Syarat keangotaan</a>
                             </li>
                             <li>
-                                <a href="../main/table-dark-basic.html" class="fs-4 text-body link-primary">Table
-                                    Dark Basic</a>
-                            </li>
-                            <li>
-                                <a href="../main/table-sizing.html" class="fs-4 text-body link-primary">Table
-                                    Sizing</a>
-                            </li>
-                            <li>
-                                <a href="../main/table-layout-coloured.html" class="fs-4 text-body link-primary">Coloured
-                                    Table</a>
-                            </li>
-                            <li>
-                                <a href="../main/table-datatable-basic.html" class="fs-4 text-body link-primary">Basic
-                                    Initialisation</a>
-                            </li>
-                            <li>
-                                <a href="../main/table-datatable-api.html" class="fs-4 text-body link-primary">API</a>
+                                <a href="../main/form-horizontal.html" class="fs-4 text-body link-primary">Ketentuan pendaftaran</a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-6">
-                        <h3 class="fs-4 fw-semibold mb-7">Follow us</h3>
+                        <h3 class="fs-4 fw-semibold mb-7">Kemitraan</h3>
+                        <ul class="d-flex flex-column gap-9">
+                            <li>
+                                <a href="https://www.kominfo.go.id/" class="fs-4 text-body link-primary">
+                                    Kementrian Komunikasi dan Digital</a>
+                            </li>
+                            <li>
+                                <a href="https://jurnal.unpad.ac.id/profesi-humas" class="fs-4 text-body link-primary">Jurnal Profesi Unpad</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <h3 class="fs-4 fw-semibold mb-7">Ikuti kami</h3>
                         <div class="d-flex gap-9">
                             <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-title="Facebook">
                                 <img src="{{ asset('assets/images/frontend-pages/icon-facebook.svg') }}" alt="facebook">
