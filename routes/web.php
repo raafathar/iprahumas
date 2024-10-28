@@ -1,24 +1,23 @@
 <?php
 
+use App\Http\Controllers\Admin\Instansi\InstansiController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', function () {
-    return view('frontend.landingpage.index');
+    return view('welcome');
 });
 
-Route::get('/berita', function () {
-    return view('frontend.landingpage.berita');
+require __DIR__ . "\Auth\auth.php";
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::get('/berita/1', function () {
@@ -65,4 +64,12 @@ Route::prefix('profil')->group(function () {
 
 Route::get('/contact', function () {
     return view('frontend.landingpage.contact');
+});
+
+Route::get('/test', function () {
+    return view('auth.uiregister');
+});
+
+Route::group(["prefix" => "admin"], function () {
+    Route::resource("instansi", InstansiController::class);
 });
