@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Orange_Theme" data-layout="vertical">
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
 
 <head>
     <!-- Required meta tags -->
@@ -19,6 +19,21 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{{ asset('assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}" />
+    <style>
+        #carouselHero .carousel-item:before {
+            content: '';
+            display: block;
+            position: absolute;
+            background-image:
+                linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .8));
+            width: 100vw;
+            top: 0;
+            height: 100vh;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -31,6 +46,7 @@
         class="top-btn btn btn-primary d-flex align-items-center justify-content-center round-54 p-0 rounded-circle">
         <i class="ti ti-arrow-up fs-7"></i>
     </a>
+
 
     <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
     <!-- Import Js Files -->
