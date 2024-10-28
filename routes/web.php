@@ -21,6 +21,22 @@ Route::get('/berita', function () {
     return view('frontend.landingpage.berita');
 });
 
+Route::get('/pelatihan', function () {
+    return view('frontend.landingpage.pelatihan');
+});
+
+Route::get('/pelatihan/1', function () {
+    return view('frontend.landingpage.pelatihandetail');
+});
+
+Route::get('keangotaan/syaratkeanggotaan', function () {
+    return view('frontend.landingpage.keangotaan.syaratanggota');
+});
+
+Route::get('keangotaan/panduanpendaftaran', function () {
+    return view('frontend.landingpage.keangotaan.panduanpendaftaran');
+});
+
 Route::prefix('profil')->group(function () {
     Route::get('/sejarah-singkat', function () {
         return view('frontend.landingpage.profil.sejarah');

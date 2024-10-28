@@ -16,29 +16,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 gap-xl-7 gap-8 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="{{ url('/') }}">Beranda</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="#" id="navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Profil
-                                <i class="ti ti-chevron-down fs-3"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ url('profil/sejarah-singkat') }}">Sejarah Singkat</a>
-                                </li>
-                                <li><a class="dropdown-item" href="{{ url('profil/visimisi') }}">Visi Misi</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Kode Etik Keanggotaan (Soon)</a></li>
-                                <li><a class="dropdown-item" href="{{ url('profil/struktur-organisasi') }}">Struktur
-                                        Organisasi</a></li>
-                                <li><a class="dropdown-item" href="#">Anggaran Dasar (AD/ART) (Soon)</a></li>
-                                <li><a class="dropdown-item" href="{{ url('profil/manfaat-anggota') }}">Manfaat Anggota</a>
-                                </li>
-                            </ul>
+                            <a class="nav-link fs-4 fw-bold text-dark link-primary"
+                                href="">Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="/berita">Berita</a>
+                            <a class="nav-link fs-4 fw-bold text-dark link-primary"
+                                href="/berita">Berita</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-4 fw-bold text-dark link-primary" href="../main/index.html">Pelatihan</a>
@@ -48,13 +31,13 @@
                                 href="../main/frontend-pricingpage.html">Publikasi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary {{ request()->is('contact') ? 'active' : '' }}"
-                                href="{{ url('contact') }}">Kontak</a>
+                            <a class="nav-link fs-4 fw-bold text-dark link-primary"
+                                href="../main/frontend-contactpage.html">Kontak</a>
                         </li>
                     </ul>
                     <div class="d-flex gap-3">
                         <div>
-                            <a href="../main/authentication-login.html" class="btn btn-primary py-8 px-9">Log In</a>
+                            <a href="../main/authentication-login.html" class="btn btn-primary py-8 px-9">Masuk</a>
                         </div>
                         <div>
                             <a href="../main/authentication-login.html"
