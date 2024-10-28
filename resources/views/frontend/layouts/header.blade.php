@@ -16,7 +16,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 gap-xl-7 gap-8 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="">Beranda</a>
+                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="{{ url('/') }}">Beranda</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link fs-4 fw-bold text-dark link-primary" href="#" id="navbarDropdown"
@@ -33,7 +33,8 @@
                                 </li>
                                 <li><a class="dropdown-item" href="{{ url('profil/struktur-organisasi') }}">Struktur
                                         Organisasi</a></li>
-                                <li><a class="dropdown-item" href="#">Anggaran Dasar (AD/ART) (Soon)</a></li>
+                                <li><a class="dropdown-item" href="{{ url('profil/anggaran-dasar') }}">Anggaran Dasar
+                                        (AD/ART)</a></li>
                                 <li><a class="dropdown-item" href="{{ url('profil/manfaat-anggota') }}">Manfaat Anggota</a>
                                 </li>
                             </ul>
@@ -62,8 +63,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary"
-                                href="../main/frontend-contactpage.html">Kontak</a>
+                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="{{ url('/contact') }}">Kontak</a>
                         </li>
                     </ul>
                     <div class="d-flex gap-3 justify-content-center align-items-center">
