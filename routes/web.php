@@ -1,7 +1,48 @@
 <?php
 
+use App\Http\Controllers\Admin\Instansi\InstansiController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+require __DIR__ . "\Auth\auth.php";
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::prefix('profil')->group(function () {
+    Route::get('/sejarah-singkat', function () {
+        return view('frontend.landingpage.profil.sejarah');
+    });
+    Route::get('/visimisi', function () {
+        return view('frontend.landingpage.profil.visimisi');
+    });
+    Route::get('/struktur-organisasi', function () {
+        return view('frontend.landingpage.profil.struktur_organisasi');
+    });
+    Route::get('/manfaat-anggota', function () {
+        return view('frontend.landingpage.profil.manfaat_anggota');
+    });
+});
+
+Route::get('/contact', function () {
+    return view('frontend.landingpage.contact');
+});
+
+Route::get('/test', function () {
+    return view('auth.uiregister');
+});
+
+Route::group(["prefix" => "admin"], function () {
+    Route::resource("instansi", InstansiController::class);
 });
