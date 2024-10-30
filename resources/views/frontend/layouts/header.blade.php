@@ -43,7 +43,7 @@
                             <a class="nav-link fs-4 fw-bold text-dark link-primary" href="/berita">Berita</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="../main/index.html">Pelatihan</a>
+                            <a class="nav-link fs-4 fw-bold text-dark link-primary" href="{{ url('/pelatihan') }}">Pelatihan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-4 fw-bold text-dark link-primary"
@@ -74,10 +74,10 @@
                             </a>
                         </div>
                         <div>
-                            <a href="../main/authentication-login.html" class="btn btn-primary py-8 px-9">Masuk</a>
+                            <a href="{{ url('/login') }}" class="btn btn-primary py-8 px-9">Masuk</a>
                         </div>
                         <div>
-                            <a href="../main/authentication-login.html"
+                            <a href="{{ url('/register') }}"
                                 class="btn btn-light border border-dark py-8 px-9">Daftar</a>
                         </div>
                     </div>
