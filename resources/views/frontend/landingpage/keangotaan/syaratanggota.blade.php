@@ -68,36 +68,6 @@
             </div>
          </div>
       </section>
-      <!-- Develop Start -->
-      <!-- ------------------------------------- -->
-      <section>
-         <div class="custom-container">
-            <div class="bg-primary-subtle rounded-3 position-relative overflow-hidden">
-               <div class="row">
-                  <div class="col-lg-6">
-                     <div class="py-lg-12 ps-lg-12 py-5 px-lg-0 px-9">
-                        <h2 class="fs-10 fw-bolder text-lg-start text-center">
-                              Jadilah Bagian dari Ikatan Pranata Humas Indonesia
-                        </h2>
-                        <div
-                              class="d-flex justify-content-lg-start justify-content-center gap-3 my-4 flex-sm-nowrap flex-wrap">
-                              <a href="../main/authentication-login.html" class="btn btn-primary py-6 px-9">Masuk
-                                 untuk Anggota</a>
-                              <a href="../main/authentication-register.html"
-                                 class="btn border border-dark py-6 px-9">Daftar Menjadi Anggota</a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-6 d-lg-block d-none">
-                     <img src="../assets/images/frontend-pages/icon-join-us.svg" alt="banner"
-                        class="position-absolute develop-feature-rich">
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- ------------------------------------- -->
-      <!-- Develop End -->
       <!-- ------------------------------------- -->
       <!-- List End -->
       <!-- ------------------------------------- -->
