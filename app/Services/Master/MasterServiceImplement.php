@@ -129,6 +129,17 @@ class MasterServiceImplement implements MasterService
     }
 
     /**
+     * Get Data By Id
+     * 
+     * @param string $id
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function getDataJabatanById($id)
+    {
+        return $this->jabatanRepository->getData($id);
+    }
+
+    /**
      * Create Jabatan
      * 
      * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
@@ -191,6 +202,17 @@ class MasterServiceImplement implements MasterService
     }
 
     /**
+     * Get Data By Id
+     * 
+     * @param string $id
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function getDataGolonganById($id)
+    {
+        return $this->golonganRepository->getData($id);
+    }
+
+    /**
      * Create Golongan
      * 
      * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
@@ -213,7 +235,7 @@ class MasterServiceImplement implements MasterService
      * @param string $column
      * @return \Illuminate\Support\Facades\DB
      */
-    public function updateGolongan(JabatanDTO $data, $id, $column = "id")
+    public function updateGolongan(GolonganDTO $data, $id, $column = "id")
     {
         return $this->golonganRepository->update([
             "g_nama" => $data->g_nama

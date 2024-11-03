@@ -85,6 +85,18 @@
                     'url' => route('admin.dashboard.instansi.index'),
                     'icon' => 'bi bi-building-fill',
                 ],
+                [
+                    'name' => 'Jabtan',
+                    'type' => 'single',
+                    'url' => route('admin.dashboard.jabatan.index'),
+                    'icon' => 'bi bi-substack',
+                ],
+                [
+                    'name' => 'Golongan',
+                    'type' => 'single',
+                    'url' => route('admin.dashboard.golongan.index'),
+                    'icon' => 'bi bi-person',
+                ],
             ],
         ],
     ];
