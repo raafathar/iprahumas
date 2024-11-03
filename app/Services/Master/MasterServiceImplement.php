@@ -56,6 +56,17 @@ class MasterServiceImplement implements MasterService
     }
 
     /**
+     * Get Data By Id
+     * 
+     * @param string $id
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function getDataInstansiById($id)
+    {
+        return $this->instansiRepository->getData($id);
+    }
+
+    /**
      * Create Instansi
      * 
      * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29

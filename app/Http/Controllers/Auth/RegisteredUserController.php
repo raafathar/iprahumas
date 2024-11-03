@@ -58,11 +58,11 @@ class RegisteredUserController extends Controller
             False,
         );
 
-        // try {
-        $this->registrationService->RegisterMembership($registrationDTO);
-        // } catch (\Exception $th) {
-        //     return back()->with("error", "Terjadi Error");
-        // }
+        try {
+            $this->registrationService->RegisterMembership($registrationDTO);
+        } catch (\Exception $th) {
+            return back()->with("error", "Terjadi Error");
+        }
 
 
         return back()->with("success", "Registrasi Berhasil");

@@ -27,7 +27,8 @@
                             @if (isset($rowChild['contain-multiple']))
                                 @foreach ($rowChild['contain-multiple'] as $rowChildMultiple)
                                     <li class="sidebar-item">
-                                        <a class="sidebar-link" href="" id="get-url" aria-expanded="false">
+                                        <a class="sidebar-link" href="{{ asset($rowChildMultiple['url']) }}"
+                                            id="get-url" aria-expanded="false">
                                             <span>
                                                 <i class="ti ti-circle"></i>
                                             </span>

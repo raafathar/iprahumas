@@ -70,7 +70,3 @@ Route::get('/contact', function () {
 Route::get('/test', function () {
     return view('auth.uiregister');
 });
-
-Route::group(["prefix" => "admin"], function () {
-    Route::resource("instansi", InstansiController::class);
-});

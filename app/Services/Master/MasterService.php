@@ -24,6 +24,14 @@ interface MasterService
     public function getAllDataInstansi();
 
     /**
+     * Get Data By Id
+     * 
+     * @param string $id
+     * @return object|\Illuminate\Support\Facades\DB
+     */
+    public function getDataInstansiById($id);
+
+    /**
      * Create Instansi
      * 
      * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29

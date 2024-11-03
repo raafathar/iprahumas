@@ -4,6 +4,7 @@ namespace App\DTO\Registration;
 
 readonly class RegistrationDTO
 {
+
     public function __construct(
         public string $jabatan_id,
         public string $golongan_id,
