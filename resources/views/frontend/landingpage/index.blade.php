@@ -18,7 +18,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
-                            class="d-block w-100 object-fit-cover" alt="..." style="height: 70vh;">
+                            class="d-block w-100 object-fit-cover" alt="..." style="height: 80vh;">
                         <div class="carousel-caption d-none d-md-block custom-caption">
                             <h5 class="text-white">First slide label</h5>
                             <p>Some representative placeholder content for the first slide.</p>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzExLzZmYzI4Nzc0LTE2MDAtNDM5NS04Y2JjLTY5MWY5YTcwMTdlOC5qcGVn"
-                            class="d-block w-100 object-fit-cover" alt="..." style="height: 70vh;">
+                            class="d-block w-100 object-fit-cover" alt="..." style="height: 80vh;">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="text-white">Second slide label</h5>
                             <p>Some representative placeholder content for the second slide.</p>
