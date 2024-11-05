@@ -16,10 +16,14 @@ return new class extends Migration
             $table->foreignUuid("jabatan_id")->constrained("jabatans");
             $table->foreignUuid("golongan_id")->constrained("golongans");
             $table->foreignUuid("instansi_id")->constrained("instansis");
+            $table->foreignUuid("keahlian_id")->constrained("keahlians");
             $table->string("NIP")->unique();
+            $table->string("f_tempat_lahir");
+            $table->date("f_tanggal_lahir");
+            $table->enum("f_pendidikan_terakhir", ['SMA', 'D3', 'D4/S1', 'S2', 'S3']);
+            $table->string("f_universitas");
             $table->string("f_unit_kerja");
             $table->string("f_no_wa");
-            $table->enum("f_jenis_kartu", ["EMONEY", "FLAZZ"]);
             $table->string("f_alamat");
             $table->string("f_bukti_pembayaran");
             $table->boolean("isAccept")->default(False);

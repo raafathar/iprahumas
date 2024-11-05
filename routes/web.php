@@ -54,6 +54,9 @@ Route::prefix('profil')->group(function () {
     Route::get('/struktur-organisasi', function () {
         return view('frontend.landingpage.profil.struktur_organisasi');
     });
+    Route::get('/anggaran-dasar', function () {
+        return view('frontend.landingpage.profil.anggaran_dasar');
+    });
     Route::get('/manfaat-anggota', function () {
         return view('frontend.landingpage.profil.manfaat_anggota');
     });
@@ -61,6 +64,10 @@ Route::prefix('profil')->group(function () {
 
 Route::get('/contact', function () {
     return view('frontend.landingpage.contact');
+});
+
+Route::get('/test', function () {
+    return view('auth.uiregister');
 });
 
 Route::group(["prefix" => "admin"], function () {

@@ -34276,6 +34276,10 @@ body table.dataTable > tbody > tr.selected > * {
   width: 100%;
   max-width: 400px;
 }
+.auth-max-width-register {
+  width: 100%;
+  max-width: 600px;
+}
 .cursor-pointer {
   cursor: pointer;
 }
