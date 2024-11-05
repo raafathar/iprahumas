@@ -22,7 +22,7 @@
                </h2>
          </div>
          <div class="mt-7 mt-md-5">
-               <img src="https://proglat-assets.kemnaker.go.id/programs/57d2c0ad-c254-4a2d-b317-3806c3962d6b/cover-images/XUFcT9NQXe2BKx0pNYwgmBIOBpnORP5ZkpaBLKv2.jpeg?OSSAccessKeyId=LTAI4G5zaYtL24qRhVo83PVj&Expires=1729862000&Signature=3tdBdEGp7I84a4nccIDjUHqwjiw%3D"
+               <img src="https://proglat-assets.kemnaker.go.id/programs/57d2c0ad-c254-4a2d-b317-3806c3962d6b/cover-images/XUFcT9NQXe2BKx0pNYwgmBIOBpnORP5ZkpaBLKv2.jpeg"
                   alt="blog detail banner" class="img-fluid w-100 rounded-3 mb-n11">
          </div>
       </div>

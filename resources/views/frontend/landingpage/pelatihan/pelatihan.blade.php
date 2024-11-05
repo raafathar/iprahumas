@@ -36,7 +36,7 @@
                   <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
                            <a href="{{ url('/pelatihan/1') }}" class="position-relative">
-                              <img src="https://proglat-assets.kemnaker.go.id/programs/57d2c0ad-c254-4a2d-b317-3806c3962d6b/cover-images/XUFcT9NQXe2BKx0pNYwgmBIOBpnORP5ZkpaBLKv2.jpeg?OSSAccessKeyId=LTAI4G5zaYtL24qRhVo83PVj&Expires=1729862000&Signature=3tdBdEGp7I84a4nccIDjUHqwjiw%3D" alt="blog image" class="w-100 img-fluid">
+                              <img src="https://proglat-assets.kemnaker.go.id/programs/57d2c0ad-c254-4a2d-b317-3806c3962d6b/cover-images/XUFcT9NQXe2BKx0pNYwgmBIOBpnORP5ZkpaBLKv2.jpeg?" alt="blog image" class="w-100 img-fluid">
                            </a>
                            <div class="mt-10 px-7 pb-7 h-100">
                               <div class="d-flex gap-3 flex-column h-100 justify-content-between">
