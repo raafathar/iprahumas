@@ -17911,6 +17911,12 @@ textarea.form-control.is-valid {
   font-size: 0.875em;
   color: var(--bs-form-invalid-color);
 }
+.invalid-feedback-show {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: var(--bs-form-invalid-color);
+}
 .invalid-tooltip {
   position: absolute;
   top: 100%;

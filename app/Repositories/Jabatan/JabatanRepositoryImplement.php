@@ -34,7 +34,7 @@ class JabatanRepositoryImplement implements JabatanRepository
      */
     public function getData($id)
     {
-        return $this->table->whereId($id)->get();
+        return $this->table->whereId($id)->first();
     }
 
     /**
