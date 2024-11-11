@@ -25,9 +25,9 @@ class UserRepositoryImplement implements UserRepository
      * @param string|int id
      * @return \App\Models\User
      */
-    public function getData($id): User
+    public function getData($id): ?User
     {
-        return $this->table->whereId($id)->get();
+        return $this->table->whereId($id)->first();
     }
 
     /**
@@ -47,7 +47,7 @@ class UserRepositoryImplement implements UserRepository
      * @param array $data
      * @return \App\Models\User
      */
-    public function update($data, $id, $column = "id"): User
+    public function update($data, $id, $column = "id")
     {
         return $this->table::where($column, $id)->update($data);
     }
@@ -58,9 +58,14 @@ class UserRepositoryImplement implements UserRepository
      * @param array $data
      * @return \App\Models\User
      */
-    public function delete($id, $column = "id"): User
+    public function delete($id, $column = "id"): ?User
     {
-        return $this->table->where($column, $id)->delete();
+        $user = $this->table->where($column, $id)->first();
+        if ($user) {
+            $this->table->where($column, $id)->delete();
+        }
+
+        return $user;
     }
 
 

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum("f_jenis_kartu", ["EMONEY", "FLAZZ"]);
             $table->string("f_alamat");
             $table->string("f_bukti_pembayaran");
-            $table->boolean("isAccept")->default(False);
+            $table->enum("isAccept", [0, 1, 2]);
             $table->timestamps();
         });
     }

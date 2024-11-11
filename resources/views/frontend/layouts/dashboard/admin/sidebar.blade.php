@@ -77,6 +77,36 @@
             ],
         ],
         [
+            'title' => 'Manajemen Data Anggota',
+            'child' => [
+                [
+                    'name' => 'Pendaftaran',
+                    'type' => 'multiple',
+                    'icon' => 'bi bi-file-earmark',
+                    'contain-multiple' => [
+                        [
+                            'name' => 'Pendaftar Diproses',
+                            'url' => route('admin.dashboard.pendaftaran.index', ['status' => 'diproses']),
+                        ],
+                        [
+                            'name' => 'Pendaftar Diterima',
+                            'url' => route('admin.dashboard.pendaftaran.index', ['status' => 'diterima']),
+                        ],
+                        [
+                            'name' => 'Pendaftar Ditolak',
+                            'url' => route('admin.dashboard.pendaftaran.index', ['status' => 'ditolak']),
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Data Anggota',
+                    'type' => 'single',
+                    'url' => route('admin.dashboard.data-anggota.index'),
+                    'icon' => 'bi bi-people',
+                ],
+            ],
+        ],
+        [
             'title' => 'Master',
             'child' => [
                 [

@@ -40,4 +40,13 @@ interface FormRepository
      * @return Illuminate\Support\Facades\DB
      */
     public function delete($id, $column = "id");
+
+    // cek form dengan user_id
+    public function getFormByUser($user_id);
+
+    public function updatePendaftaran($data, $id, $column = "id");
+
+    public function deletePendaftaran($id);
+
+    public function updateAnggota($data, $id, $column = "user_id");
 }

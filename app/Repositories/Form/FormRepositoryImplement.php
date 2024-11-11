@@ -63,6 +63,19 @@ class FormRepositoryImplement implements FormRepository
         );
     }
 
+    public function updatePendaftaran($data, $id, $column = "user_id")
+    {
+        // update only column isAccept
+        return $this->table->where($column, $id)->update([
+            'isAccept' => $data->isAccept
+        ]);
+    }
+
+    public function updateAnggota($data, $id, $column = "user_id")
+    {
+        return $this->table->where($column, $id)->update($data);
+    }
+
     /**
      * Delete Data
      * 
@@ -72,5 +85,15 @@ class FormRepositoryImplement implements FormRepository
     public function delete($id, $column = "id")
     {
         return $this->table->where($column, $id)->delete();
+    }
+
+    public function getFormByUser($user_id)
+    {
+        return $this->table->where("user_id", $user_id)->get();
+    }
+
+    public function deletePendaftaran($id)
+    {
+        return $this->table->where("user_id", $id)->delete();
     }
 }

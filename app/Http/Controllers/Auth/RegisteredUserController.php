@@ -55,7 +55,7 @@ class RegisteredUserController extends Controller
             $validate["username"],
             $validate["email"],
             $validate["password"],
-            False,
+            '0',
         );
 
         try {

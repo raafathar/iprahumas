@@ -25,10 +25,13 @@
         <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
             <div class="position-relative z-index-5">
                 <div class="row">
-                    <div class="col-xl-6" style="background-image: url('../assets/images/frontend-pages/bg-sejarah2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: left;">
+                    <div class="col-xl-6"
+                        style="background-image: url('../assets/images/frontend-pages/bg-sejarah2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: left;">
                         <a href="../main/index.html" class="text-nowrap logo-img d-block px-4 py-9 w-100">
-                            <img src="../assets/images/logos/logo.png" class="dark-logo" alt="Logo-Dark" height="58" />
-                            <img src="../assets/images/logos/logo.png" class="light-logo" alt="Logo-light" height="58" />
+                            <img src="../assets/images/logos/logo.png" class="dark-logo" alt="Logo-Dark"
+                                height="58" />
+                            <img src="../assets/images/logos/logo.png" class="light-logo" alt="Logo-light"
+                                height="58" />
                         </a>
                     </div>
                     <div class="col-xl-6">
@@ -44,15 +47,16 @@
                                                 {{-- start username --}}
                                                 <div class="mb-3">
                                                     <label for="username" class="form-label">Username</label>
-                                                    <input id="username" type="text" name="username" value="{{ old('username') }}" autofocus
-                                                    autocomplete="username" class="form-control">
+                                                    <input id="username" type="text" name="username"
+                                                        value="{{ old('username') }}" autofocus autocomplete="username"
+                                                        class="form-control">
                                                 </div>
                                                 @if ($errors->get('username'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('username') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('username') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end username --}}
                                             </div>
@@ -60,15 +64,16 @@
                                                 {{-- start email --}}
                                                 <div class="mb-3">
                                                     <label for="email" class="form-label">Email</label>
-                                                    <input id="email" type="text" name="email" value="{{ old('email') }}" autofocus
-                                                    autocomplete="email" class="form-control">
+                                                    <input id="email" type="text" name="email"
+                                                        value="{{ old('email') }}" autofocus autocomplete="email"
+                                                        class="form-control">
                                                 </div>
                                                 @if ($errors->get('email'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('email') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('email') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end email --}}
                                             </div>
@@ -76,30 +81,33 @@
 
                                         <div class="row">
                                             <div class="col-md-6">
-                                                {{-- start nip --}}
+                                                {{-- start NIP --}}
                                                 <div class="mb-3">
-                                                    <label for="nip" class="form-label">NIP</label>
-                                                    <input id="nip" type="text" name="nip" value="{{ old('nip') }}" autofocus
-                                                    autocomplete="nip" class="form-control">
+                                                    <label for="NIP" class="form-label">NIP</label>
+                                                    <input id="NIP" type="text" name="NIP"
+                                                        value="{{ old('NIP') }}" autofocus autocomplete="NIP"
+                                                        class="form-control">
                                                 </div>
-                                                @if ($errors->get('nip'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('nip') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                @if ($errors->get('NIP'))
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('NIP') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
-                                                {{-- end nip --}}
+                                                {{-- end NIP --}}
                                             </div>
                                             <div class="col-md-6">
                                                 {{-- start pangkat --}}
                                                 <div class="mb-3">
                                                     <label class="form-label">Pangkat/Golongan</label>
-                                                    <select class="form-select" id="golongan" type="text" name="golongan" value="{{ old('golongan') }}" autofocus
-                                                    autocomplete="golongan">
+                                                    <select class="form-select" id="golongan" type="text"
+                                                        name="golongan" value="{{ old('golongan') }}" autofocus
+                                                        autocomplete="golongan">
                                                         <option readonly>-- Pilih Golongan --</option>
                                                         @forelse($golongan as $row)
-                                                            <option value="{{ $row->id }}">{{ $row->g_nama }}</option>
+                                                            <option value="{{ $row->id }}">{{ $row->g_nama }}
+                                                            </option>
                                                         @empty
                                                             <option readonly> Data masih kosong</option>
                                                         @endforelse
@@ -114,11 +122,13 @@
                                                 {{-- start jabatan --}}
                                                 <div class="mb-3">
                                                     <label class="form-label">Jabatan</label>
-                                                    <select class="form-select" id="jabatan" type="text" name="jabatan" value="{{ old('jabatan') }}" autofocus
-                                                    autocomplete="jabatan">
-                                                    <option readonly>-- Pilih Jabatan --</option>
+                                                    <select class="form-select" id="jabatan" type="text"
+                                                        name="jabatan" value="{{ old('jabatan') }}" autofocus
+                                                        autocomplete="jabatan">
+                                                        <option readonly>-- Pilih Jabatan --</option>
                                                         @forelse($jabatan as $row)
-                                                            <option value="{{ $row->id }}">{{ $row->j_nama }}</option>
+                                                            <option value="{{ $row->id }}">{{ $row->j_nama }}
+                                                            </option>
                                                         @empty
                                                             <option readonly> Data masih kosong</option>
                                                         @endforelse
@@ -130,11 +140,13 @@
                                                 {{-- start pangkat --}}
                                                 <div class="mb-3">
                                                     <label class="form-label">Instansi</label>
-                                                    <select class="form-select" id="instansi" type="text" name="instansi" value="{{ old('instansi') }}" autofocus
-                                                    autocomplete="instansi">
+                                                    <select class="form-select" id="instansi" type="text"
+                                                        name="instansi" value="{{ old('instansi') }}" autofocus
+                                                        autocomplete="instansi">
                                                         <option readonly>-- Pilih Instansi --</option>
                                                         @forelse($instansi as $row)
-                                                            <option value="{{ $row->id }}">{{ $row->i_nama }}</option>
+                                                            <option value="{{ $row->id }}">{{ $row->i_nama }}
+                                                            </option>
                                                         @empty
                                                             <option readonly> Data masih kosong</option>
                                                         @endforelse
@@ -143,21 +155,22 @@
                                                 {{-- end pangkat --}}
                                             </div>
                                         </div>
-    
+
                                         <div class="row">
                                             <div class="col-md-6">
                                                 {{-- start f_unit_kerja --}}
                                                 <div class="mb-3">
                                                     <label for="f_unit_kerja" class="form-label">Unit Kerja</label>
-                                                    <input id="f_unit_kerja" type="text" name="f_unit_kerja" value="{{ old('f_unit_kerja') }}" autofocus
-                                                    autocomplete="f_unit_kerja" class="form-control">
+                                                    <input id="f_unit_kerja" type="text" name="f_unit_kerja"
+                                                        value="{{ old('f_unit_kerja') }}" autofocus
+                                                        autocomplete="f_unit_kerja" class="form-control">
                                                 </div>
                                                 @if ($errors->get('f_unit_kerja'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_unit_kerja') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('f_unit_kerja') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end f_unit_kerja --}}
                                             </div>
@@ -165,15 +178,16 @@
                                                 {{-- start f_no_wa --}}
                                                 <div class="mb-3">
                                                     <label for="f_no_wa" class="form-label">No Hp/WA</label>
-                                                    <input id="f_no_wa" type="text" name="f_no_wa" value="{{ old('f_no_wa') }}" autofocus
-                                                    autocomplete="f_no_wa" class="form-control">
+                                                    <input id="f_no_wa" type="text" name="f_no_wa"
+                                                        value="{{ old('f_no_wa') }}" autofocus autocomplete="f_no_wa"
+                                                        class="form-control">
                                                 </div>
                                                 @if ($errors->get('f_no_wa'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_no_wa') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('f_no_wa') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end f_no_wa --}}
                                             </div>
@@ -183,33 +197,37 @@
                                                 {{-- start f_jenis_kartu --}}
                                                 <div class="mb-3">
                                                     <label for="f_jenis_kartu" class="form-label">Jenis Kartu</label>
-                                                    <select id="f_jenis_kartu" name="f_jenis_kartu" value="{{ old('f_jenis_kartu') }}" autofocus autocomplete="f_jenis_kartu" class="form-control">
+                                                    <select id="f_jenis_kartu" name="f_jenis_kartu"
+                                                        value="{{ old('f_jenis_kartu') }}" autofocus
+                                                        autocomplete="f_jenis_kartu" class="form-control">
                                                         <option value="EMONEY">EMONEY</option>
                                                         <option value="FLAZZ">FLAZZ</option>
                                                     </select>
                                                 </div>
                                                 @if ($errors->get('f_jenis_kartu'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_jenis_kartu') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('f_jenis_kartu') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end f_jenis_kartu --}}
                                             </div>
                                             <div class="col-md-6">
                                                 {{-- start f_alamat --}}
                                                 <div class="mb-3">
-                                                    <label for="f_alamat" class="form-label">Alamat Pengirim Kartu</label>
-                                                    <input id="f_alamat" type="text" name="f_alamat" value="{{ old('f_alamat') }}" autofocus
-                                                    autocomplete="f_alamat" class="form-control">
+                                                    <label for="f_alamat" class="form-label">Alamat Pengirim
+                                                        Kartu</label>
+                                                    <input id="f_alamat" type="text" name="f_alamat"
+                                                        value="{{ old('f_alamat') }}" autofocus
+                                                        autocomplete="f_alamat" class="form-control">
                                                 </div>
                                                 @if ($errors->get('f_alamat'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_alamat') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('f_alamat') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end f_alamat --}}
                                             </div>
@@ -218,16 +236,19 @@
                                             <div class="col-md-12">
                                                 {{-- start f_bukti_pembayaran --}}
                                                 <div class="mb-3">
-                                                    <label for="f_bukti_pembayaran" class="form-label">Bukti Pembayaran</label>
-                                                    <input id="f_bukti_pembayaran" type="file" name="f_bukti_pembayaran" value="{{ old('f_bukti_pembayaran') }}" autofocus
-                                                    autocomplete="f_bukti_pembayaran" class="form-control">
+                                                    <label for="f_bukti_pembayaran" class="form-label">Bukti
+                                                        Pembayaran</label>
+                                                    <input id="f_bukti_pembayaran" type="file"
+                                                        name="f_bukti_pembayaran"
+                                                        value="{{ old('f_bukti_pembayaran') }}" autofocus
+                                                        autocomplete="f_bukti_pembayaran" class="form-control">
                                                 </div>
                                                 @if ($errors->get('f_bukti_pembayaran'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_bukti_pembayaran') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('f_bukti_pembayaran') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end f_bukti_pembayaran --}}
                                             </div>
@@ -237,42 +258,45 @@
                                                 {{-- start password --}}
                                                 <div class="mb-3">
                                                     <label for="password" class="form-label">Password</label>
-                                                    <input id="password" type="password" name="password" value="{{ old('password') }}" autofocus
-                                                    autocomplete="password" class="form-control">
+                                                    <input id="password" type="password" name="password"
+                                                        value="{{ old('password') }}" autofocus
+                                                        autocomplete="password" class="form-control">
                                                 </div>
                                                 @if ($errors->get('password'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('password') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('password') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end password --}}
                                             </div>
                                             <div class="col-md-6">
                                                 {{-- start password_confirmation --}}
                                                 <div class="mb-3">
-                                                    <label for="password_confirmation" class="form-label">Password Confirmation</label>
-                                                    <input id="password_confirmation" type="pass" name="password_confirmation" value="{{ old('password_confirmation') }}" autofocus
-                                                    autocomplete="password_confirmation" class="form-control">
+                                                    <label for="password_confirmation" class="form-label">Password
+                                                        Confirmation</label>
+                                                    <input id="password_confirmation" type="pass"
+                                                        name="password_confirmation"
+                                                        value="{{ old('password_confirmation') }}" autofocus
+                                                        autocomplete="password_confirmation" class="form-control">
                                                 </div>
                                                 @if ($errors->get('password_confirmation'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('password_confirmation') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('password_confirmation') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
                                                 {{-- end password_confirmation --}}
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                     <button class="btn btn-primary w-100 py-8 mb-4 rounded-2">Masuk</button>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <p class="fs-4 mb-0 fw-medium">Sudah menjadi anggota?</p>
-                                        <a class="text-primary fw-medium ms-2"
-                                            href="{{ route('login') }}">Masuk</a>
+                                        <a class="text-primary fw-medium ms-2" href="{{ route('login') }}">Masuk</a>
                                     </div>
                                 </form>
                             </div>
@@ -285,7 +309,6 @@
             function handleColorTheme(e) {
                 document.documentElement.setAttribute("data-color-theme", e);
             }
-
         </script>
         <button
             class="btn btn-primary p-3 rounded-circle d-flex align-items-center justify-content-center customizer-btn"
@@ -321,12 +344,14 @@
 
                 <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Direction</h6>
                 <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                    <input type="radio" class="btn-check" name="direction-l" id="ltr-layout" autocomplete="off" />
+                    <input type="radio" class="btn-check" name="direction-l" id="ltr-layout"
+                        autocomplete="off" />
                     <label class="btn p-9 btn-outline-primary" for="ltr-layout">
                         <i class="icon ti ti-text-direction-ltr fs-7 me-2"></i>LTR
                     </label>
 
-                    <input type="radio" class="btn-check" name="direction-l" id="rtl-layout" autocomplete="off" />
+                    <input type="radio" class="btn-check" name="direction-l" id="rtl-layout"
+                        autocomplete="off" />
                     <label class="btn p-9 btn-outline-primary" for="rtl-layout">
                         <i class="icon ti ti-text-direction-rtl fs-7 me-2"></i>RTL
                     </label>
@@ -449,7 +474,8 @@
                 <h6 class="mt-5 fw-semibold fs-4 mb-2">Card With</h6>
 
                 <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                    <input type="radio" class="btn-check" name="card-layout" id="card-with-border" autocomplete="off" />
+                    <input type="radio" class="btn-check" name="card-layout" id="card-with-border"
+                        autocomplete="off" />
                     <label class="btn p-9 btn-outline-primary" for="card-with-border">
                         <i class="icon ti ti-border-outer fs-7 me-2"></i>Border
                     </label>

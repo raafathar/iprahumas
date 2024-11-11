@@ -36,12 +36,33 @@
                         <div class="row align-items-center">
                             <label for="inputText3" class="col-form-label">{{ $item['field'] }}</label>
                             <select class="form-control select2-hidden-accessible" id="select2-with-placeholder"
-                                data-select2-id="select2-data-select2-with-placeholder" tabindex="-1" aria-hidden="true">
-                                @foreach ($item as $value)
-                                    <option value="{{ $value['value'] }}" data-select2-id="select2-data-42-aspz">
+                                data-select2-id="select2-data-select2-with-placeholder" tabindex="-1" aria-hidden="true"
+                                name="{{ $item['name'] }}">
+                                @foreach ($item['options'] as $value)
+                                    <option
+                                        {{ isset($item['value']) ? ($value['value'] == $item['value'] ? 'selected' : '') : '' }}
+                                        value="{{ $value['value'] }}" data-select2-id="select2-data-42-aspz">
                                         {{ $value['nama'] }}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                @break
+
+                @case('email')
+                    <div class="form-group mb-0">
+                        <div class="row align-items-center">
+                            <label for="inputText3" class="col-form-label">{{ $item['field'] }}</label>
+                            <div class="col-9 pb-2 pt-2">
+                                <input type="email" name="{{ $item['name'] }}"
+                                    value="{{ isset($item['value']) ? $item['value'] : '' }}" class="form-control"
+                                    placeholder="{{ $item['field'] }}">
+                                @foreach ((array) $errors->get($item['name']) as $message)
+                                    <x-message-error-dashboard>
+                                        {{ $message }}
+                                    </x-message-error-dashboard>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 @break
