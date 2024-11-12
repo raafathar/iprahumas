@@ -17,16 +17,16 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
-                            class="d-block w-100 object-fit-cover" alt="..." style="height: 70vh;">
+                        <img src="https://web.komdigi.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzIxLzc5MDljY2NhLWYzNGMtNDE5YS05YWM4LTM0OWY2YjliODUxMC5wbmc"
+                            class="d-block w-100 object-fit-cover" alt="..." style="height: 80vh;">
                         <div class="carousel-caption d-none d-md-block custom-caption">
                             <h5 class="text-white">First slide label</h5>
                             <p>Some representative placeholder content for the first slide.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzExLzZmYzI4Nzc0LTE2MDAtNDM5NS04Y2JjLTY5MWY5YTcwMTdlOC5qcGVn"
-                            class="d-block w-100 object-fit-cover" alt="..." style="height: 70vh;">
+                        <img src="https://web.komdigi.go.id/resource/dXBsb2Fkcy8yMDI0LzExLzAzLzY4YTQ0ZDVkLWIxMjMtNDBhMy04ZjU2LTQxMTY1ODBhMzJkZi5qcGVn"
+                            class="d-block w-100 object-fit-cover" alt="..." style="height: 80vh;">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="text-white">Second slide label</h5>
                             <p>Some representative placeholder content for the second slide.</p>
@@ -286,8 +286,8 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                            <a href="/berita/1" class="position-relative">
+                                <img src="https://web.komdigi.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzIxLzc5MDljY2NhLWYzNGMtNDE5YS05YWM4LTM0OWY2YjliODUxMC5wbmc="
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
@@ -304,7 +304,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
+                                    <a href="/berita/1" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -329,8 +329,8 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                            <a href="/berita/1" class="position-relative">
+                                <img src="https://web.komdigi.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzIxLzc5MDljY2NhLWYzNGMtNDE5YS05YWM4LTM0OWY2YjliODUxMC5wbmc="
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
@@ -347,7 +347,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
+                                    <a href="/berita/1" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -372,8 +372,8 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                            <a href="/berita/1" class="position-relative">
+                                <img src="https://web.komdigi.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzIxLzc5MDljY2NhLWYzNGMtNDE5YS05YWM4LTM0OWY2YjliODUxMC5wbmc="
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
@@ -390,7 +390,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
+                                    <a href="/berita/1" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -416,8 +416,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                            <a href="/berita/1" class="position-relative">
+                                <img src="https://web.komdigi.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzIxLzc5MDljY2NhLWYzNGMtNDE5YS05YWM4LTM0OWY2YjliODUxMC5wbmc="
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
@@ -434,7 +434,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
+                                    <a href="/berita/1" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -459,8 +459,8 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                            <a href="/berita/1" class="position-relative">
+                                <img src="https://web.komdigi.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzIxLzc5MDljY2NhLWYzNGMtNDE5YS05YWM4LTM0OWY2YjliODUxMC5wbmc="
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
@@ -477,7 +477,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
+                                    <a href="/berita/1" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -502,8 +502,8 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card rounded-3 overflow-hidden">
-                            <a href="../main/frontend-blogdetailpage.html" class="position-relative">
-                                <img src="https://web.kominfo.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzA3LzQ5Y2U4MWRkLTBjODEtNDM1ZC1iNjUxLTBlYWI1YzVhOTJlNC5qcGVn"
+                            <a href="/berita/1" class="position-relative">
+                                <img src="https://web.komdigi.go.id/resource/dXBsb2Fkcy8yMDI0LzEwLzIxLzc5MDljY2NhLWYzNGMtNDE5YS05YWM4LTM0OWY2YjliODUxMC5wbmc="
                                     alt="blog image" class="w-100 img-fluid">
                                 <div class="position-absolute bottom-0 end-0 me-9 mb-3">
                                     <p class="text-dark fs-2 px-2 rounded-pill bg-white mb-0 ">2 min Read</p>
@@ -520,7 +520,7 @@
                                             Web Development
                                         </p>
                                     </div>
-                                    <a href="../main/frontend-blogdetailpage.html" class="fs-15 fw-bolder">
+                                    <a href="/berita/1" class="fs-15 fw-bolder">
                                         The future of web: what's next in 2024?
                                     </a>
                                     <p class="mb-0 fs-4 truncated-text">
@@ -622,9 +622,9 @@
                                 </h2>
                                 <div
                                     class="d-flex justify-content-lg-start justify-content-center gap-3 my-4 flex-sm-nowrap flex-wrap">
-                                    <a href="../main/authentication-login.html" class="btn btn-primary py-6 px-9">Masuk
+                                    <a href="/login" class="btn btn-primary py-6 px-9">Masuk
                                         untuk Anggota</a>
-                                    <a href="../main/authentication-register.html"
+                                    <a href="/register"
                                         class="btn border border-dark py-6 px-9">Daftar Menjadi Anggota</a>
                                 </div>
                             </div>

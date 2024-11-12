@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.landingpage.index');
 });
 
 require __DIR__ . "\Auth\auth.php";
@@ -24,13 +24,17 @@ Route::get('/berita/1', function () {
     return view('frontend.landingpage.beritadetail');
 });
 
+Route::get('/berita', function () {
+    return view('frontend.landingpage.berita');
+});
+
 
 Route::get('/pelatihan', function () {
-    return view('frontend.landingpage.pelatihan');
+    return view('frontend.landingpage.pelatihan.pelatihan');
 });
 
 Route::get('/pelatihan/1', function () {
-    return view('frontend.landingpage.pelatihandetail');
+    return view('frontend.landingpage.pelatihan.pelatihandetail');
 });
 
 Route::get('keangotaan/syaratkeanggotaan', function () {
