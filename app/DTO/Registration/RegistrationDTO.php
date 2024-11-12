@@ -11,7 +11,6 @@ readonly class RegistrationDTO
         public string $NIP,
         public string $f_unit_kerja,
         public string $f_no_wa,
-        public string $f_jenis_kartu,
         public string $f_alamat,
         public string $f_bukti_pembayaran,
         public string $username,

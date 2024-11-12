@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use App\Services\Master\MasterService;
 use App\DTO\Registration\RegistrationDTO;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Models\Keahlian;
+use App\Models\Kecamatan;
 use App\Services\Registration\RegistrationService;
 
 class RegisteredUserController extends Controller
@@ -25,10 +27,12 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register', [
+        return view("auth.register", [
             "instansi" => $this->masterService->getAllDataInstansi(),
             "golongan" => $this->masterService->getAllDataGolongan(),
             "jabatan" => $this->masterService->getAllDataJabatan(),
+            "keahlian" => Keahlian::all(),
+            // "kecamatan" => Kecamatan::all(),
         ]);
     }
 
@@ -49,7 +53,6 @@ class RegisteredUserController extends Controller
             $validate["NIP"],
             $validate["f_unit_kerja"],
             $validate["f_no_wa"],
-            $validate["f_jenis_kartu"],
             $validate["f_alamat"],
             $validate["f_bukti_pembayaran"],
             $validate["username"],
@@ -58,11 +61,11 @@ class RegisteredUserController extends Controller
             False,
         );
 
-        // try {
-        $this->registrationService->RegisterMembership($registrationDTO);
-        // } catch (\Exception $th) {
-        //     return back()->with("error", "Terjadi Error");
-        // }
+        try {
+            $this->registrationService->RegisterMembership($registrationDTO);
+        } catch (\Exception $th) {
+            return back()->with("error", "Terjadi Error");
+        }
 
 
         return back()->with("success", "Registrasi Berhasil");

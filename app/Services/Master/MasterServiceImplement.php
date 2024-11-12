@@ -2,40 +2,30 @@
 
 namespace App\Services\Master;
 
+use App\DTO\Jabatan\JabatanDTO;
 use App\DTO\Golongan\GolonganDTO;
 use App\DTO\Instansi\InstansiDTO;
-use App\DTO\Jabatan\JabatanDTO;
+use App\DTO\Kabupaten\KabupatenDTO;
+use App\DTO\Kecamatan\KecamatanDTO;
+use App\DTO\Kelurahan\KelurahanDTO;
+use App\Repositories\Jabatan\JabatanRepository;
 use App\Repositories\Golongan\GolonganRepository;
 use App\Repositories\Instansi\InstansiRepository;
-use App\Repositories\Jabatan\JabatanRepository;
+use App\Repositories\Kabupaten\KabupatenRepository;
+use App\Repositories\Kecamatan\KecamatanRepository;
+use App\Repositories\Kelurahan\KelurahanRepository;
 
 class MasterServiceImplement implements MasterService
 {
 
-    /**
-     * @var \App\Repositories\Instansi\InstansiRepository
-     */
-    private $instansiRepository;
-
-    /**
-     * @var \App\Repositories\Jabatan\JabatanRepository
-     */
-    private $jabatanRepository;
-
-    /**
-     * @var \App\Repositories\Golongan\GolonganRepository
-     */
-    private $golonganRepository;
-
     public function __construct(
-        InstansiRepository $instansiRepository,
-        JabatanRepository $jabatanRepository,
-        GolonganRepository $golonganRepository,
-    ) {
-        $this->instansiRepository = $instansiRepository;
-        $this->jabatanRepository = $jabatanRepository;
-        $this->golonganRepository = $golonganRepository;
-    }
+        private InstansiRepository $instansiRepository,
+        private JabatanRepository $jabatanRepository,
+        private GolonganRepository $golonganRepository,
+        private KelurahanRepository $kelurahanRepository,
+        private KecamatanRepository $kecamatanRepository,
+        private KabupatenRepository $kabupatenRepository,
+    ) {}
 
     /**
      * |-------------------------------------------------------------------------------|
@@ -202,7 +192,7 @@ class MasterServiceImplement implements MasterService
      * @param string $column
      * @return \Illuminate\Support\Facades\DB
      */
-    public function updateGolongan(JabatanDTO $data, $id, $column = "id")
+    public function updateGolongan(GolonganDTO $data, $id, $column = "id")
     {
         return $this->golonganRepository->update([
             "g_nama" => $data->g_nama
@@ -220,5 +210,224 @@ class MasterServiceImplement implements MasterService
     public function deleteGolongan($id, $column = "id")
     {
         return $this->golonganRepository->delete($id, $column);
+    }
+
+    /**
+     * |-------------------------------------------------------------------------------|
+     * |                                                                               |
+     * |                                    Kelurahan                                  |
+     * |                                                                               |
+     * |-------------------------------------------------------------------------------|
+     */
+
+    /**
+     * Get All Kelurahan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function getAllDataKelurahan()
+    {
+        return $this->kelurahanRepository->getAll();
+    }
+
+    /**
+     * Search Kelurahan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function searchKelurahan($data)
+    {
+        return $this->kelurahanRepository->search($data);
+    }
+
+    /**
+     * Create Kelurahan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param \App\DTO\Kelurahan\KelurahanDTO $data
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function createKelurahan(KelurahanDTO $data)
+    {
+        return $this->kelurahanRepository->create([
+            "kel_nama" => $data->kel_nama
+        ]);
+    }
+
+    /**
+     * Update Kelurahan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param \App\DTO\Kelurahan\KelurahanDTO $data
+     * @param string|int $id
+     * @param string $column
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function updateKelurahan(KelurahanDTO $data, $id, $column = "id")
+    {
+        return $this->kelurahanRepository->update([
+            "kel_nama" => $data->kel_nama
+        ], $id, $column);
+    }
+
+    /**
+     * Update Kelurahan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param string|int $id
+     * @param string $column
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function deleteKelurahan($id, $column = "id")
+    {
+        return $this->kelurahanRepository->delete($id, $column);
+    }
+
+    /**
+     * |-------------------------------------------------------------------------------|
+     * |                                                                               |
+     * |                                    Kecamatan                                  |
+     * |                                                                               |
+     * |-------------------------------------------------------------------------------|
+     */
+
+    /**
+     * Get All Kecamatan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function getAllDataKecamatan()
+    {
+        return $this->kecamatanRepository->getAll();
+    }
+
+    /**
+     * Search Kecamatan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function searchKecamatan($data)
+    {
+        return $this->kecamatanRepository->search($data);
+    }
+
+    /**
+     * Create Kecamatan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param \App\DTO\Kecamatan\KecamatanDTO $data
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function createKecamatan(KecamatanDTO $data)
+    {
+        return $this->kecamatanRepository->create([
+            "kec_nama" => $data->kec_nama
+        ]);
+    }
+
+    /**
+     * Update Kecamatan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param \App\DTO\Kecamatan\KecamatanDTO $data
+     * @param string|int $id
+     * @param string $column
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function updateKecamatan(KecamatanDTO $data, $id, $column = "id")
+    {
+        return $this->kecamatanRepository->update([
+            "kec_nama" => $data->kec_nama
+        ], $id, $column);
+    }
+
+    /**
+     * Update Kecamatan
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param string|int $id
+     * @param string $column
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function deleteKecamatan($id, $column = "id")
+    {
+        return $this->kecamatanRepository->delete($id, $column);
+    }
+
+    /**
+     * |-------------------------------------------------------------------------------|
+     * |                                                                               |
+     * |                                    Kabupaten                                  |
+     * |                                                                               |
+     * |-------------------------------------------------------------------------------|
+     */
+
+    /**
+     * Get All Kabupaten
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function getAllDataKabupaten()
+    {
+        return $this->kabupatenRepository->getAll();
+    }
+
+    /**
+     * Search Kabupaten
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function searchKabupaten($data)
+    {
+        return $this->kabupatenRepository->search($data);
+    }
+
+    /**
+     * Create Kabupaten
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param \App\DTO\Kabupaten\KabupatenDTO $data
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function createKabupaten(KabupatenDTO $data)
+    {
+        return $this->kabupatenRepository->create([
+            "keb_nama" => $data->kab_nama
+        ]);
+    }
+
+    /**
+     * Update Kabupaten
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param \App\DTO\Kabupaten\KabupatenDTO $data
+     * @param string|int $id
+     * @param string $column
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function updateKabupaten(KabupatenDTO $data, $id, $column = "id")
+    {
+        return $this->kabupatenRepository->update([
+            "kab_nama" => $data->kab_nama
+        ], $id, $column);
+    }
+
+    /**
+     * Update Kabupaten
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param string|int $id
+     * @param string $column
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function deleteKabupaten($id, $column = "id")
+    {
+        return $this->kabupatenRepository->delete($id, $column);
     }
 }

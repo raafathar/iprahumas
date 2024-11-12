@@ -19,7 +19,6 @@ class KeahlianSeeder extends Seeder
         for ($i = 0; $i < count($contain); $i++) {
             DB::table("keahlians")->insert([
                 "k_nama" => $contain[$i],
-                "id" => Str::uuid()->toString(),
                 "created_at" => now(),
             ]);
         }
