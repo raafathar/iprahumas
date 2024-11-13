@@ -106,18 +106,16 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const registrations = @json($registrations);  // Data yang diterima dari server
+            
+            const registrations = @json($registrations);
             const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            let chart;  // Variabel untuk menyimpan objek chart
+            let chart; 
     
-            // Mengambil elemen dropdown tahun
             const yearFilter = document.getElementById('yearFilter');
-    
-            // Fungsi untuk memfilter data berdasarkan tahun
+
             const filterData = () => {
                 const selectedYear = yearFilter.value;
     
-                // Filter data berdasarkan tahun yang dipilih
                 const filteredRegistrations = registrations.filter(item => 
                     selectedYear ? item.year == selectedYear : true
                 );
@@ -126,18 +124,14 @@
                 const monthlyData = filteredRegistrations.map(item => item.total);  // Jumlah registrasi
                 const labels = filteredRegistrations.map(item => monthNames[item.month - 1]);  // Nama bulan
     
-                // Mengupdate chart dengan data yang telah difilter
                 updateChart(monthlyData, labels);
             };
     
-            // Fungsi untuk memperbarui chart
             const updateChart = (monthlyData, labels) => {
-                // Hapus chart lama jika sudah ada
                 if (chart) {
                     chart.destroy();
                 }
     
-                // Konfigurasi chart baru
                 const options = {
                     series: [{
                         name: "Pendaftar",
@@ -172,15 +166,12 @@
                     tooltip: { theme: "dark" },
                 };
     
-                // Membuat chart baru menggunakan ApexCharts
                 chart = new ApexCharts(document.querySelector("#chart-line-pendaftar"), options);
                 chart.render();  // Render chart
             };
     
-            // Daftarkan event listener untuk dropdown tahun
             yearFilter.addEventListener('change', filterData);
     
-            // Inisialisasi chart dengan data seluruhnya saat pertama kali dimuat
             filterData();
         });
     </script>
