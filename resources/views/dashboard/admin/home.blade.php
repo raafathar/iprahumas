@@ -90,7 +90,8 @@
                             <p class="card-subtitle">Jumlah Pendaftar setiap Bulan</p>
                         </div>
                         <div>
-                            <select class="form-select">
+                            <select id="yearFilter" class="form-select">
+                                <option value="2025">2025</option>
                                 <option value="2024">2024</option>
                             </select>
                         </div>
@@ -105,95 +106,83 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            
-            var monthlyData = @json($registrations->map(function ($item) {
-                return intval($item->total);
-            }));
-            
-            var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-            var labels = @json($registrations->map(function ($item) {
-                return $item->month;
-            })).map(function(month) {
-                return monthNames[month - 1];
-            });
-
-            var options_line = {
-                series: [{
-                    name: "Pendaftar",
-                    data: monthlyData,
-                }, ],
-                chart: {
-                    height: 350,
-                    type: "line",
-                    fontFamily: "inherit",
-                    zoom: {
-                        enabled: false,
-                    },
-                    toolbar: {
-                        show: false,
-                    },
-                },
-                dataLabels: {
-                    enabled: false,
-                },
-                colors: ["var(--bs-primary)"],
-                stroke: {
-                    curve: "straight",
-                },
-                grid: {
-                    row: {
-                        colors: ["transparent"], // takes an array which will be repeated on columns
-                        opacity: 0.5,
-                    },
-                    borderColor: "transparent",
-                },
-                xaxis: {
-                    categories: labels,
-                    labels: {
-                        style: {
-                            colors: [
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                            ],
-                        },
-                    },
-                },
-                yaxis: {
-                    labels: {
-                        style: {
-                            colors: [
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                                "#a1aab2",
-                            ],
-                        },
-                    },
-                },
-                tooltip: {
-                    theme: "dark",
-                },
+            const registrations = @json($registrations);  // Data yang diterima dari server
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            let chart;  // Variabel untuk menyimpan objek chart
+    
+            // Mengambil elemen dropdown tahun
+            const yearFilter = document.getElementById('yearFilter');
+    
+            // Fungsi untuk memfilter data berdasarkan tahun
+            const filterData = () => {
+                const selectedYear = yearFilter.value;
+    
+                // Filter data berdasarkan tahun yang dipilih
+                const filteredRegistrations = registrations.filter(item => 
+                    selectedYear ? item.year == selectedYear : true
+                );
+    
+                // Menyiapkan data untuk chart
+                const monthlyData = filteredRegistrations.map(item => item.total);  // Jumlah registrasi
+                const labels = filteredRegistrations.map(item => monthNames[item.month - 1]);  // Nama bulan
+    
+                // Mengupdate chart dengan data yang telah difilter
+                updateChart(monthlyData, labels);
             };
-
-            var chart_line_basic = new ApexCharts(
-                document.querySelector("#chart-line-pendaftar"),
-                options_line
-            );
-            chart_line_basic.render();
+    
+            // Fungsi untuk memperbarui chart
+            const updateChart = (monthlyData, labels) => {
+                // Hapus chart lama jika sudah ada
+                if (chart) {
+                    chart.destroy();
+                }
+    
+                // Konfigurasi chart baru
+                const options = {
+                    series: [{
+                        name: "Pendaftar",
+                        data: monthlyData,
+                    }],
+                    chart: {
+                        height: 350,
+                        type: "line",
+                        fontFamily: "inherit",
+                        zoom: { enabled: false },
+                        toolbar: { show: false },
+                    },
+                    dataLabels: { enabled: false },
+                    colors: ["var(--bs-primary)"],
+                    stroke: { curve: "straight" },
+                    grid: {
+                        row: { colors: ["transparent"], opacity: 0.5 },
+                        borderColor: "transparent",
+                    },
+                    xaxis: {
+                        categories: labels,
+                        labels: { style: { colors: Array(12).fill("#a1aab2") } },
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter(value) {
+                                return value.toFixed(0);
+                            },
+                            style: { colors: Array(6).fill("#a1aab2") },
+                        },
+                    },
+                    tooltip: { theme: "dark" },
+                };
+    
+                // Membuat chart baru menggunakan ApexCharts
+                chart = new ApexCharts(document.querySelector("#chart-line-pendaftar"), options);
+                chart.render();  // Render chart
+            };
+    
+            // Daftarkan event listener untuk dropdown tahun
+            yearFilter.addEventListener('change', filterData);
+    
+            // Inisialisasi chart dengan data seluruhnya saat pertama kali dimuat
+            filterData();
         });
-
     </script>
+    
 @endsection
