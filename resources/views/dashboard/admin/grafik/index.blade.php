@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center mb-3">
                         <div>
-                            <h4 class="card-title">1823</h4>
+                            <h4 class="card-title">{{ $countAccept }}</h4>
                             <p class="card-subtitle mb-1">Total Anggota</p>
                         </div>
                         <div class="ms-auto">
@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center mb-3">
                         <div>
-                            <h4 class="card-title">58</h4>
+                            <h4 class="card-title">{{ $countPending }}</h4>
                             <p class="card-subtitle mb-1">Perlu Disetujui</p>
                         </div>
                         <div class="ms-auto">
@@ -59,7 +59,7 @@
                         <div class="col-12">
                             <div class="d-flex align-items-center mb-3">
                                 <div>
-                                    <h4 class="card-title">12</h4>
+                                    <h4 class="card-title">{{ $countRejected }}</h4>
                                     <p class="card-subtitle mb-1">Pendaftaran ditolak</p>
                                 </div>
                                 <div class="ms-auto">
@@ -116,7 +116,7 @@
                         Grafik Pangkat
                     </h4>
                     <p class="card-subtle">Berdasarkan pangkat anggota</p>
-                    <div id="grafik-pangkat"></div>
+                    <div id="grafik-golongan"></div>
                 </div>
             </div>
         </div>
@@ -127,15 +127,44 @@
                         Grafik Pendidikan
                     </h4>
                     <p class="card-subtle">Berdasarkan pendidikan anggota</p>
-                    <div id="grafik-golongan"></div>
+                    <div id="grafik-pendidikan"></div>
                 </div>
             </div>
         </div>
     </div>
+
+    {{-- start statistik --}}
+    <div class="row mb-3">
+        <div class="col-12">
+            <!-- Start Basic Line Chart -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-sm-flex d-block align-items-center justify-content-between mb-7">
+                        <div class="mb-3 mb-sm-0">
+                            <h4 class="card-title fw-semibold">Statistik Pendaftar</h4>
+                            <p class="card-subtitle">Jumlah pendaftar setiap Bulan</p>
+                        </div>
+                        <div>
+                            <select id="yearFilter" class="form-select">
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="chart-line-pendaftar" class="mx-n3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end statistik --}}
+
 </div>
 
 <script>
+
     document.addEventListener("DOMContentLoaded", function () {
+
 
         var keahlian = {
             series: [{
@@ -226,11 +255,16 @@
 
         new ApexCharts(document.querySelector("#statistik-keahlian"), keahlian).render();
 
-        // jabatan
-        // =====================================
-        var jabatan = {
-            series: [60, 25, 15],
-            labels: ["", "", ""],
+        // start jabatan
+
+        const jabatan = @json($grafikJabatan);
+
+        const jabatanJumlah = jabatan.map(item => item.jumlah);
+        const jabatanNama = jabatan.map(item => item.j_nama);
+
+        var jabatanChart = {
+            series: jabatanJumlah,
+            labels: jabatanNama,
             chart: {
                 type: "pie",
                 fontFamily: "inherit",
@@ -242,7 +276,6 @@
                 fillSeriesColor: false,
             },
 
-            colors: ["var(--bs-primary)", "var(--bs-secondary)", "var(--bs-yellow)"],
             dataLabels: {
                 enabled: false,
             },
@@ -278,13 +311,21 @@
             },
         };
 
-        new ApexCharts(document.querySelector("#grafik-jabatan"), jabatan).render();
+        new ApexCharts(document.querySelector("#grafik-jabatan"), jabatanChart).render();
 
-        // jabatan
-        // =====================================
-        var pangkat = {
-            series: [60, 25, 15],
-            labels: ["", "", ""],
+        // end jabatan
+
+
+        // start golongan
+
+        const golongan = @json($grafikGolongan);
+
+        const golonganJumlah = golongan.map(item => item.jumlah);
+        const golonganNama = golongan.map(item => item.g_nama);
+
+        var golonganChart = {
+            series: golonganJumlah,
+            labels: golonganNama,
             chart: {
                 type: "pie",
                 fontFamily: "inherit",
@@ -296,7 +337,6 @@
                 fillSeriesColor: false,
             },
 
-            colors: ["var(--bs-primary)", "var(--bs-secondary)", "var(--bs-yellow)"],
             dataLabels: {
                 enabled: false,
             },
@@ -332,59 +372,97 @@
             },
         };
 
-        new ApexCharts(document.querySelector("#grafik-pangkat"), pangkat).render();
+        new ApexCharts(document.querySelector("#grafik-golongan"), golonganChart).render();
 
-        var golongan = {
-            series: [60, 25, 15],
-            labels: ["", "", ""],
-            chart: {
-                type: "pie",
-                fontFamily: "inherit",
-                foreColor: "#c6d1e9",
-            },
+        // end golongan
 
-            tooltip: {
-                theme: "dark",
-                fillSeriesColor: false,
-            },
 
-            colors: ["var(--bs-primary)", "var(--bs-secondary)", "var(--bs-yellow)"],
-            dataLabels: {
-                enabled: false,
-            },
 
-            legend: {
-                show: false,
-            },
+        const registrations = @json($registrations);
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let chart;
 
-            stroke: {
-                show: false,
-            },
+        const yearFilter = document.getElementById('yearFilter');
 
-            plotOptions: {
-                pie: {
-                    pie: {
-                        size: "70%",
-                        background: "none",
-                        labels: {
-                            show: true,
-                            name: {
-                                show: true,
-                                fontSize: "18px",
-                                color: undefined,
-                                offsetY: -10,
-                            },
-                            value: {
-                                show: false,
-                                color: "#98aab4",
-                            },
+        const filterData = () => {
+            const selectedYear = yearFilter.value;
+
+            const filteredRegistrations = registrations.filter(item =>
+                selectedYear ? item.year == selectedYear : true
+            );
+
+            // Menyiapkan data untuk chart
+            const monthlyData = filteredRegistrations.map(item => item.total); // Jumlah registrasi
+            const labels = filteredRegistrations.map(item => monthNames[item.month - 1]); // Nama bulan
+
+            updateChart(monthlyData, labels);
+        };
+
+        const updateChart = (monthlyData, labels) => {
+            if (chart) {
+                chart.destroy();
+            }
+
+            const options = {
+                series: [{
+                    name: "Pendaftar",
+                    data: monthlyData,
+                }],
+                chart: {
+                    height: 350,
+                    type: "line",
+                    fontFamily: "inherit",
+                    zoom: {
+                        enabled: false
+                    },
+                    toolbar: {
+                        show: false
+                    },
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                colors: ["var(--bs-primary)"],
+                stroke: {
+                    curve: "straight"
+                },
+                grid: {
+                    row: {
+                        colors: ["transparent"],
+                        opacity: 0.5
+                    },
+                    borderColor: "transparent",
+                },
+                xaxis: {
+                    categories: labels,
+                    labels: {
+                        style: {
+                            colors: Array(12).fill("#a1aab2")
+                        }
+                    },
+                },
+                yaxis: {
+                    labels: {
+                        formatter(value) {
+                            return value.toFixed(0);
+                        },
+                        style: {
+                            colors: Array(6).fill("#a1aab2")
                         },
                     },
                 },
-            },
+                tooltip: {
+                    theme: "dark"
+                },
+            };
+
+            chart = new ApexCharts(document.querySelector("#chart-line-pendaftar"), options);
+            chart.render(); // Render chart
         };
 
-        new ApexCharts(document.querySelector("#grafik-golongan"), golongan).render();
+        yearFilter.addEventListener('change', filterData);
+
+        filterData();
 
 
     });
