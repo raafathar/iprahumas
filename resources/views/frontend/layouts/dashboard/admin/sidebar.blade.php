@@ -72,13 +72,25 @@
                     'name' => 'Home',
                     'type' => 'single',
                     'url' => route('admin.dashboard.index'),
-                    'icon' => 'bi bi-house',
+                    'icon' => 'bi bi-house-fill',
                 ],
             ],
         ],
         [
             'title' => 'Manajemen Data Anggota',
             'child' => [
+                [
+                    'name' => 'Data Anggota',
+                    'type' => 'single',
+                    'url' => route('admin.dashboard.data-anggota.index'),
+                    'icon' => 'bi bi-people-fill',
+                ],
+                [
+                    'name' => 'Grafik Anggota',
+                    'type' => 'single',
+                    'url' => route('admin.dashboard.grafik-anggota.index'),
+                    'icon' => 'bi bi-bar-chart-fill',
+                ],
                 [
                     'name' => 'Pendaftaran',
                     'type' => 'multiple',
@@ -97,12 +109,6 @@
                             'url' => route('admin.dashboard.pendaftaran.index', ['status' => 'ditolak']),
                         ],
                     ],
-                ],
-                [
-                    'name' => 'Data Anggota',
-                    'type' => 'single',
-                    'url' => route('admin.dashboard.data-anggota.index'),
-                    'icon' => 'bi bi-people',
                 ],
             ],
         ],
