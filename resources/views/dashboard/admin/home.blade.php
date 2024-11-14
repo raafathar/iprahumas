@@ -103,6 +103,7 @@
         </div>
     </div>
     {{-- end statistik --}}
+</div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
