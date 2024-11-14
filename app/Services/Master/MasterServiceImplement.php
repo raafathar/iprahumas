@@ -5,12 +5,14 @@ namespace App\Services\Master;
 use App\DTO\Jabatan\JabatanDTO;
 use App\DTO\Golongan\GolonganDTO;
 use App\DTO\Instansi\InstansiDTO;
+use App\DTO\Provinsi\ProvinsiDTO;
 use App\DTO\Kabupaten\KabupatenDTO;
 use App\DTO\Kecamatan\KecamatanDTO;
 use App\DTO\Kelurahan\KelurahanDTO;
 use App\Repositories\Jabatan\JabatanRepository;
 use App\Repositories\Golongan\GolonganRepository;
 use App\Repositories\Instansi\InstansiRepository;
+use App\Repositories\Provinsi\ProvinsiRepository;
 use App\Repositories\Kabupaten\KabupatenRepository;
 use App\Repositories\Kecamatan\KecamatanRepository;
 use App\Repositories\Kelurahan\KelurahanRepository;
@@ -25,6 +27,7 @@ class MasterServiceImplement implements MasterService
         private KelurahanRepository $kelurahanRepository,
         private KecamatanRepository $kecamatanRepository,
         private KabupatenRepository $kabupatenRepository,
+        private ProvinsiRepository $provinsiRepository,
     ) {}
 
     /**
@@ -429,5 +432,78 @@ class MasterServiceImplement implements MasterService
     public function deleteKabupaten($id, $column = "id")
     {
         return $this->kabupatenRepository->delete($id, $column);
+    }
+
+    /**
+     * |-------------------------------------------------------------------------------|
+     * |                                                                               |
+     * |                                    Provinsi                                  |
+     * |                                                                               |
+     * |-------------------------------------------------------------------------------|
+     */
+
+    /**
+     * Get All Provinsi
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function getAllDataProvinsi()
+    {
+        return $this->provinsiRepository->getAll();
+    }
+
+    /**
+     * Search Provinsi
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function searchProvinsi($data)
+    {
+        return $this->provinsiRepository->search($data);
+    }
+
+    /**
+     * Create Provinsi
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param \App\DTO\Provinsi\ProvinsiDTO $data
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function createProvinsi(ProvinsiDTO $data)
+    {
+        return $this->provinsiRepository->create([
+            "prov_nama" => $data->prov_nama
+        ]);
+    }
+
+    /**
+     * Update Provinsi
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param \App\DTO\Provinsi\ProvinsiDTO $data
+     * @param string|int $id
+     * @param string $column
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function updateProvinsi(ProvinsiDTO $data, $id, $column = "id")
+    {
+        return $this->provinsiRepository->update([
+            "prov_nama" => $data->prov_nama
+        ], $id, $column);
+    }
+
+    /**
+     * Update Provinsi
+     * 
+     * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
+     * @param string|int $id
+     * @param string $column
+     * @return \Illuminate\Support\Facades\DB
+     */
+    public function deleteProvinsi($id, $column = "id")
+    {
+        return $this->provinsiRepository->delete($id, $column);
     }
 }

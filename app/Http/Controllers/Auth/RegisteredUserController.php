@@ -32,7 +32,7 @@ class RegisteredUserController extends Controller
             "golongan" => $this->masterService->getAllDataGolongan(),
             "jabatan" => $this->masterService->getAllDataJabatan(),
             "keahlian" => Keahlian::all(),
-            // "kecamatan" => Kecamatan::all(),
+            "kecamatan" => Kecamatan::all(),
         ]);
     }
 

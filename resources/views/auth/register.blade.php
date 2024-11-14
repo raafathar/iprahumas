@@ -10,269 +10,478 @@
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Core Css -->
-    <link rel="stylesheet" href="../assets/css/styles.css" />
-
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
+    @vite(['resource/js/app.js', 'resource/css/style.css'])
     <title>Modernize Bootstrap Admin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body>
     <!-- Preloader -->
     <div class="preloader">
-        <img src="../assets/images/logos/favicon.png" alt="loader" class="lds-ripple img-fluid" />
+        <img src="{{ asset('assets/images/logos/favicon.png') }}" alt="loader" class="lds-ripple img-fluid" />
     </div>
     <div id="main-wrapper" class="auth-customizer-none">
         <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
             <div class="position-relative z-index-5">
                 <div class="row">
-                    <div class="col-xl-6" style="background-image: url('../assets/images/frontend-pages/bg-sejarah2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: left;">
+                    <div class="col-xl-6"
+                        style="background-image: url('../assets/images/frontend-pages/bg-sejarah2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: left;">
                         <a href="../main/index.html" class="text-nowrap logo-img d-block px-4 py-9 w-100">
-                            <img src="../assets/images/logos/logo.png" class="dark-logo" alt="Logo-Dark" height="58" />
-                            <img src="../assets/images/logos/logo.png" class="light-logo" alt="Logo-light" height="58" />
+                            <img src="../assets/images/logos/logo.png" class="dark-logo" alt="Logo-Dark"
+                                height="58" />
+                            <img src="../assets/images/logos/logo.png" class="light-logo" alt="Logo-light"
+                                height="58" />
                         </a>
                     </div>
                     <div class="col-xl-6">
                         <div
                             class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
                             <div class="auth-max-width-register col-sm-8 col-md-6 col-xl-12 px-4">
-                                <h2 class="mb-10 fs-7 fw-bolder">Daftar menjadi anggota</h2>
-                                <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                                <h2 class="mb-10 fs-7 fw-bolder">Form Registrasi</h2>
+                                <form method="POST" id="register-form" action="{{ route('register') }}"
+                                    enctype="multipart/form-data">
                                     @csrf
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{-- start username --}}
-                                                <div class="mb-3">
-                                                    <label for="username" class="form-label">Username</label>
-                                                    <input id="username" type="text" name="username" value="{{ old('username') }}" autofocus
-                                                    autocomplete="username" class="form-control">
+                                    <div id="form-container">
+
+                                        <div class="d-none border-top border-secondary pt-3">
+                                            <h4 class="text-black mb-10">Data Pribadi</h4>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    {{-- start username --}}
+                                                    <div class="mb-3">
+                                                        <label for="username" class="form-label">Nama Lengkap</label>
+                                                        <input id="username" type="text" name="username"
+                                                            value="{{ old('username') }}" autofocus
+                                                            autocomplete="username" class="form-control">
+                                                    </div>
+                                                    @if ($errors->get('username'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('username') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end username --}}
                                                 </div>
-                                                @if ($errors->get('username'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('username') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end username --}}
+                                                <div class="col-md-6">
+                                                    {{-- start email --}}
+                                                    <div class="mb-3">
+                                                        <label for="email" class="form-label">Email</label>
+                                                        <input id="email" type="text" name="email"
+                                                            value="{{ old('email') }}" autofocus autocomplete="email"
+                                                            class="form-control">
+                                                    </div>
+                                                    @if ($errors->get('email'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('email') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end email --}}
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                {{-- start email --}}
-                                                <div class="mb-3">
-                                                    <label for="email" class="form-label">Email</label>
-                                                    <input id="email" type="text" name="email" value="{{ old('email') }}" autofocus
-                                                    autocomplete="email" class="form-control">
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    {{-- start NIP --}}
+                                                    <div class="mb-3">
+                                                        <label for="NIP" class="form-label">NIP</label>
+                                                        <input id="NIP" type="text" name="NIP"
+                                                            value="{{ old('NIP') }}" autofocus autocomplete="NIP"
+                                                            class="form-control">
+                                                    </div>
+                                                    @if ($errors->get('NIP'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('NIP') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end NIP --}}
                                                 </div>
-                                                @if ($errors->get('email'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('email') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end email --}}
+                                                <div class="col-md-6">
+                                                    {{-- start f_tanggal_lahir --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Tanggal Lahir</label>
+                                                        <input class="form-control" id="f_tanggal_lahir" type="date"
+                                                            name="f_tanggal_lahir" value="{{ old('f_tanggal_lahir') }}"
+                                                            autofocus autocomplete="f_tanggal_lahir">
+                                                        @if ($errors->get('f_tanggal_lahir'))
+                                                            <ul>
+                                                                @foreach ((array) $errors->get('f_tanggal_lahir') as $message)
+                                                                    <li class="text-danger">{{ $message }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </div>
+                                                    {{-- end f_tanggal_lahir --}}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    {{-- start f_agama --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Agama</label>
+                                                        <select class="form-select" id="f_agama" type="text"
+                                                            name="f_agama" value="{{ old('f_agama') }}" autofocus
+                                                            autocomplete="f_agama">
+                                                            <option readonly value="">-- Pilih Agama --</option>
+                                                            <option value="islam">Islam</option>
+                                                            <option value="kristen">Kristen</option>
+                                                            <option value="katolik">Katolik</option>
+                                                            <option value="hindu">Hindu</option>
+                                                            <option value="budha">Budha</option>
+                                                            <option value="khonghucu">Khonghucu</option>
+                                                        </select>
+                                                        @if ($errors->get('f_agama'))
+                                                            <ul>
+                                                                @foreach ((array) $errors->get('f_agama') as $message)
+                                                                    <li class="text-danger">{{ $message }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </div>
+                                                    {{-- end f_agama --}}
+                                                </div>
+                                                <div class="col-md-6">
+                                                    {{-- start f_no_wa --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label">No. Wa</label>
+                                                        <input class="form-control" id="f_no_wa" type="text"
+                                                            name="f_no_wa" value="{{ old('f_no_wa') }}" autofocus
+                                                            autocomplete="f_no_wa">
+                                                        @if ($errors->get('f_no_wa'))
+                                                            <ul>
+                                                                @foreach ((array) $errors->get('f_no_wa') as $message)
+                                                                    <li class="text-danger">{{ $message }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </div>
+                                                    {{-- end f_no_wa --}}
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{-- start nip --}}
-                                                <div class="mb-3">
-                                                    <label for="nip" class="form-label">NIP</label>
-                                                    <input id="nip" type="text" name="nip" value="{{ old('nip') }}" autofocus
-                                                    autocomplete="nip" class="form-control">
+
+                                        {{-- 2 --}}
+                                        <div class="d-none border-top border-secondary pt-3">
+                                            <h4 class="text-black mb-10">Pangkat dan Satuan Kerja</h4>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    {{-- start jabatan --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Jabatan</label>
+                                                        <select class="form-select" id="jabatan" type="text"
+                                                            name="jabatan" value="{{ old('jabatan') }}" autofocus
+                                                            autocomplete="jabatan">
+                                                            <option readonly value="">-- Pilih Jabatan --
+                                                            </option>
+                                                            @forelse($jabatan as $row)
+                                                                <option value="{{ $row->id }}">
+                                                                    {{ $row->j_nama }}
+                                                                </option>
+                                                            @empty
+                                                                <option readonly value=""> Data masih kosong
+                                                                </option>
+                                                            @endforelse
+                                                        </select>
+                                                        @if ($errors->get('jabatan'))
+                                                            <ul>
+                                                                @foreach ((array) $errors->get('jabatan') as $message)
+                                                                    <li class="text-danger">{{ $message }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </div>
+                                                    {{-- end jabatan --}}
                                                 </div>
-                                                @if ($errors->get('nip'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('nip') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end nip --}}
+                                                <div class="col-md-6">
+                                                    {{-- start pangkat --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Instansi</label>
+                                                        <select class="form-select" id="instansi" type="text"
+                                                            name="instansi" value="{{ old('instansi') }}" autofocus
+                                                            autocomplete="instansi">
+                                                            <option readonly value="">-- Pilih Instansi --
+                                                            </option>
+                                                            @forelse($instansi as $row)
+                                                                <option value="{{ $row->id }}">
+                                                                    {{ $row->i_nama }}
+                                                                </option>
+                                                            @empty
+                                                                <option readonly value=""> Data masih kosong
+                                                                </option>
+                                                            @endforelse
+                                                        </select>
+                                                        @if ($errors->get('instansi'))
+                                                            <ul>
+                                                                @foreach ((array) $errors->get('instansi') as $message)
+                                                                    <li class="text-danger">{{ $message }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </div>
+                                                    {{-- end pangkat --}}
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                {{-- start pangkat --}}
-                                                <div class="mb-3">
-                                                    <label class="form-label">Pangkat/Golongan</label>
-                                                    <select class="form-select" id="golongan" type="text" name="golongan" value="{{ old('golongan') }}" autofocus
-                                                    autocomplete="golongan">
-                                                        <option readonly>-- Pilih Golongan --</option>
-                                                        @forelse($golongan as $row)
-                                                            <option value="{{ $row->id }}">{{ $row->g_nama }}</option>
-                                                        @empty
-                                                            <option readonly> Data masih kosong</option>
-                                                        @endforelse
-                                                    </select>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    {{-- start pangkat --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Pangkat/Golongan</label>
+                                                        <select class="form-select" id="golongan" type="text"
+                                                            name="golongan" value="{{ old('golongan') }}" autofocus
+                                                            autocomplete="golongan">
+                                                            <option readonly value="">-- Pilih Golongan --
+                                                            </option>
+                                                            @forelse($golongan as $row)
+                                                                <option value="{{ $row->id }}">
+                                                                    {{ $row->g_nama }}
+                                                                </option>
+                                                            @empty
+                                                                <option readonly value=""> Data masih kosong
+                                                                </option>
+                                                            @endforelse
+                                                        </select>
+                                                        @if ($errors->get('golongan'))
+                                                            <ul>
+                                                                @foreach ((array) $errors->get('golongan') as $message)
+                                                                    <li class="text-danger">{{ $message }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </div>
+                                                    {{-- end pangkat --}}
                                                 </div>
-                                                {{-- end pangkat --}}
+                                                <div class="col-md-6">
+                                                    {{-- start f_unit_kerja --}}
+                                                    <div class="mb-3">
+                                                        <label for="f_unit_kerja" class="form-label">Unit
+                                                            Kerja</label>
+                                                        <input id="f_unit_kerja" type="text" name="f_unit_kerja"
+                                                            value="{{ old('f_unit_kerja') }}" autofocus
+                                                            autocomplete="f_unit_kerja" class="form-control">
+                                                    </div>
+                                                    @if ($errors->get('f_unit_kerja'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('f_unit_kerja') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end f_unit_kerja --}}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="mb-3">
+                                                    {{-- start f_keahlian --}}
+                                                    <label for="f_keahlian" class="form-label">Keahlian</label>
+                                                    <input id="f_keahlian" type="text" name="f_keahlian"
+                                                        value="{{ old('f_keahlian') }}" autofocus
+                                                        autocomplete="f_keahlian" class="form-control">
+                                                    {{-- end f_keahlian --}}
+                                                </div>
+                                                @if ($errors->get('f_keahlian'))
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('f_keahlian') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{-- start jabatan --}}
+                                        {{-- 4 --}}
+                                        <div class="d-none border-top border-secondary pt-3">
+                                            <h4 class="text-black mb-10">Riwayat Pendidikan</h4>
+                                            <div class="row">
+                                                {{-- start f_pendidikan_terakhir --}}
                                                 <div class="mb-3">
-                                                    <label class="form-label">Jabatan</label>
-                                                    <select class="form-select" id="jabatan" type="text" name="jabatan" value="{{ old('jabatan') }}" autofocus
-                                                    autocomplete="jabatan">
-                                                    <option readonly>-- Pilih Jabatan --</option>
-                                                        @forelse($jabatan as $row)
-                                                            <option value="{{ $row->id }}">{{ $row->j_nama }}</option>
-                                                        @empty
-                                                            <option readonly> Data masih kosong</option>
-                                                        @endforelse
-                                                    </select>
+                                                    <label for="f_pendidikan_terakhir" class="form-label">Pendidikan
+                                                        Terakhir</label>
+                                                    <input id="f_pendidikan_terakhir" name="f_pendidikan_terakhir"
+                                                        class="form-control"
+                                                        value="{{ old('f_pendidikan_terakhir') }}" autofocus
+                                                        autocomplete="f_pendidikan_terakhir" class="form-control">
                                                 </div>
-                                                {{-- end jabatan --}}
+                                                @if ($errors->get('f_pendidikan_terakhir'))
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('f_pendidikan_terakhir') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
+                                                {{-- end f_pendidikan_terakhir --}}
                                             </div>
-                                            <div class="col-md-6">
-                                                {{-- start pangkat --}}
+                                            <div class="row">
+                                                {{-- start f_universitas --}}
                                                 <div class="mb-3">
-                                                    <label class="form-label">Instansi</label>
-                                                    <select class="form-select" id="instansi" type="text" name="instansi" value="{{ old('instansi') }}" autofocus
-                                                    autocomplete="instansi">
-                                                        <option readonly>-- Pilih Instansi --</option>
-                                                        @forelse($instansi as $row)
-                                                            <option value="{{ $row->id }}">{{ $row->i_nama }}</option>
-                                                        @empty
-                                                            <option readonly> Data masih kosong</option>
-                                                        @endforelse
+                                                    <label class="form-label">Universitas</label>
+                                                    <select class="form-select" id="f_universitas" type="text"
+                                                        name="f_universitas" value="{{ old('f_universitas') }}"
+                                                        autofocus autocomplete="f_universitas">
+                                                        <option readonly value="">-- Pilih Universitas --
+                                                        </option>
                                                     </select>
+                                                    @if ($errors->get('f_universitas'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('f_universitas') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
                                                 </div>
-                                                {{-- end pangkat --}}
+                                                {{-- end f_universitas --}}
                                             </div>
                                         </div>
-    
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{-- start f_unit_kerja --}}
-                                                <div class="mb-3">
-                                                    <label for="f_unit_kerja" class="form-label">Unit Kerja</label>
-                                                    <input id="f_unit_kerja" type="text" name="f_unit_kerja" value="{{ old('f_unit_kerja') }}" autofocus
-                                                    autocomplete="f_unit_kerja" class="form-control">
+
+                                        {{-- 3 --}}
+                                        <div class="d-none border-top border-secondary pt-3">
+                                            <h4 class="text-black mb-10">Tempat Tinggal</h4>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    {{-- start f_kelurahan --}}
+                                                    <div class="mb-3">
+                                                        <label for="f_kelurahan" class="form-label">Kelurahan</label>
+                                                        <select id="f_kelurahan" type="text" name="f_kelurahan"
+                                                            value="{{ old('f_kelurahan') }}" autofocus
+                                                            class="form-control">
+                                                            <option disabled selected>-- Pilih Kelurahan --</option>
+                                                        </select>
+                                                    </div>
+                                                    @if ($errors->get('f_kelurahan'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('f_kelurahan') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end f_kelurahan --}}
                                                 </div>
-                                                @if ($errors->get('f_unit_kerja'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_unit_kerja') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end f_unit_kerja --}}
+
+                                                <div class="col-md-6">
+                                                    {{-- start f_kecamatan --}}
+                                                    <div class="mb-3">
+                                                        <label for="f_kecamatan" class="form-label">Kecamatan</label>
+                                                        <select id="f_kecamatan" type="text" name="f_kecamatan"
+                                                            value="{{ old('f_kecamatan') }}" autofocus
+                                                            class="form-control">
+                                                            <option disabled selected>-- Pilih Kecamatan --</option>
+                                                        </select>
+                                                    </div>
+                                                    @if ($errors->get('f_kecamatan'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('f_kecamatan') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end f_kecamatan --}}
+                                                </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                {{-- start f_no_wa --}}
-                                                <div class="mb-3">
-                                                    <label for="f_no_wa" class="form-label">No Hp/WA</label>
-                                                    <input id="f_no_wa" type="text" name="f_no_wa" value="{{ old('f_no_wa') }}" autofocus
-                                                    autocomplete="f_no_wa" class="form-control">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    {{-- start f_kabupaten --}}
+                                                    <div class="mb-3">
+                                                        <label for="f_kabupaten" class="form-label">Kabupaten</label>
+                                                        <select id="f_kabupaten" type="text" name="f_kabupaten"
+                                                            value="{{ old('f_kabupaten') }}" autofocus
+                                                            class="form-control">
+                                                            <option disabled selected>-- Pilih Kabupaten --</option>
+                                                        </select>
+                                                    </div>
+                                                    @if ($errors->get('f_kabupaten'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('f_kabupaten') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end f_kabupaten --}}
                                                 </div>
-                                                @if ($errors->get('f_no_wa'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_no_wa') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end f_no_wa --}}
+
+                                                <div class="col-md-6">
+                                                    {{-- start f_provinsi --}}
+                                                    <div class="mb-3">
+                                                        <label for="f_provinsi" class="form-label">Provinsi</label>
+                                                        <select id="f_provinsi" type="text" name="f_provinsi"
+                                                            value="{{ old('f_provinsi') }}" autofocus
+                                                            class="form-control">
+                                                            <option disabled selected>-- Pilih Provinsi --</option>
+                                                        </select>
+                                                    </div>
+                                                    @if ($errors->get('f_provinsi'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('f_provinsi') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end f_provinsi --}}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                {{-- start f_jenis_kartu --}}
-                                                <div class="mb-3">
-                                                    <label for="f_jenis_kartu" class="form-label">Jenis Kartu</label>
-                                                    <select id="f_jenis_kartu" name="f_jenis_kartu" value="{{ old('f_jenis_kartu') }}" autofocus autocomplete="f_jenis_kartu" class="form-control">
-                                                        <option value="EMONEY">EMONEY</option>
-                                                        <option value="FLAZZ">FLAZZ</option>
-                                                    </select>
-                                                </div>
-                                                @if ($errors->get('f_jenis_kartu'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_jenis_kartu') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end f_jenis_kartu --}}
-                                            </div>
-                                            <div class="col-md-6">
-                                                {{-- start f_alamat --}}
-                                                <div class="mb-3">
-                                                    <label for="f_alamat" class="form-label">Alamat Pengirim Kartu</label>
-                                                    <input id="f_alamat" type="text" name="f_alamat" value="{{ old('f_alamat') }}" autofocus
-                                                    autocomplete="f_alamat" class="form-control">
-                                                </div>
+                                            {{-- start f_alamat --}}
+                                            <div class="mb-3">
+                                                <label class="form-label">Alamat Lengkap</label>
+                                                <input class="form-control" id="f_alamat" type="text"
+                                                    name="f_alamat" value="{{ old('f_alamat') }}" autofocus
+                                                    autocomplete="f_alamat">
                                                 @if ($errors->get('f_alamat'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_alamat') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('f_alamat') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @endif
-                                                {{-- end f_alamat --}}
+                                            </div>
+                                            {{-- end f_universitas --}}
+                                        </div>
+
+                                        {{-- 5 --}}
+                                        <div class="d-none border-top border-secondary pt-3">
+                                            <h4 class="text-black mb-10">Pembayaran</h4>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    {{-- start f_bukti_pembayaran --}}
+                                                    <div class="mb-3">
+                                                        <label for="f_bukti_pembayaran" class="form-label">Bukti
+                                                            Pembayaran</label>
+                                                        <input id="f_bukti_pembayaran" type="file"
+                                                            name="f_bukti_pembayaran" autofocus
+                                                            autocomplete="f_bukti_pembayaran" class="form-control">
+                                                    </div>
+                                                    @if ($errors->get('f_bukti_pembayaran'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('f_bukti_pembayaran') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end f_bukti_pembayaran --}}
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{-- start f_bukti_pembayaran --}}
-                                                <div class="mb-3">
-                                                    <label for="f_bukti_pembayaran" class="form-label">Bukti Pembayaran</label>
-                                                    <input id="f_bukti_pembayaran" type="file" name="f_bukti_pembayaran" value="{{ old('f_bukti_pembayaran') }}" autofocus
-                                                    autocomplete="f_bukti_pembayaran" class="form-control">
-                                                </div>
-                                                @if ($errors->get('f_bukti_pembayaran'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('f_bukti_pembayaran') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end f_bukti_pembayaran --}}
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4">
-                                            <div class="col-md-6">
-                                                {{-- start password --}}
-                                                <div class="mb-3">
-                                                    <label for="password" class="form-label">Password</label>
-                                                    <input id="password" type="password" name="password" value="{{ old('password') }}" autofocus
-                                                    autocomplete="password" class="form-control">
-                                                </div>
-                                                @if ($errors->get('password'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('password') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end password --}}
-                                            </div>
-                                            <div class="col-md-6">
-                                                {{-- start password_confirmation --}}
-                                                <div class="mb-3">
-                                                    <label for="password_confirmation" class="form-label">Password Confirmation</label>
-                                                    <input id="password_confirmation" type="pass" name="password_confirmation" value="{{ old('password_confirmation') }}" autofocus
-                                                    autocomplete="password_confirmation" class="form-control">
-                                                </div>
-                                                @if ($errors->get('password_confirmation'))
-                                                <ul>
-                                                    @foreach ((array) $errors->get('password_confirmation') as $message)
-                                                        <li class="text-danger">{{ $message }}</li>
-                                                    @endforeach
-                                                </ul>
-                                                @endif
-                                                {{-- end password_confirmation --}}
-                                            </div>
-                                        </div>
-                                        
+
                                     </div>
-                                    <button class="btn btn-primary w-100 py-8 mb-4 rounded-2">Masuk</button>
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <p class="fs-4 mb-0 fw-medium">Sudah menjadi anggota?</p>
-                                        <a class="text-primary fw-medium ms-2"
-                                            href="{{ route('login') }}">Masuk</a>
+
+                                    <div class="d-absoluet button-0">
+                                        <div class="d-flex justify-content-between p-2">
+                                            <span id="back" class="btn btn-primary">Kembali</span>
+                                            <span id="navigator-count">1/2</span>
+                                            <span id="next" class="btn btn-primary">Lanjut</span>
+                                        </div>
+                                        {{-- <button class="btn btn-primary w-100 py-8 mb-4 rounded-2">Masuk</button> --}}
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <p class="fs-4 mb-0 fw-medium">Sudah menjadi anggota?</p>
+                                            <a class="text-primary fw-medium ms-2"
+                                                href="{{ route('login') }}">Masuk</a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -285,7 +494,6 @@
             function handleColorTheme(e) {
                 document.documentElement.setAttribute("data-color-theme", e);
             }
-
         </script>
         <button
             class="btn btn-primary p-3 rounded-circle d-flex align-items-center justify-content-center customizer-btn"
@@ -321,12 +529,14 @@
 
                 <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Direction</h6>
                 <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                    <input type="radio" class="btn-check" name="direction-l" id="ltr-layout" autocomplete="off" />
+                    <input type="radio" class="btn-check" name="direction-l" id="ltr-layout"
+                        autocomplete="off" />
                     <label class="btn p-9 btn-outline-primary" for="ltr-layout">
                         <i class="icon ti ti-text-direction-ltr fs-7 me-2"></i>LTR
                     </label>
 
-                    <input type="radio" class="btn-check" name="direction-l" id="rtl-layout" autocomplete="off" />
+                    <input type="radio" class="btn-check" name="direction-l" id="rtl-layout"
+                        autocomplete="off" />
                     <label class="btn p-9 btn-outline-primary" for="rtl-layout">
                         <i class="icon ti ti-text-direction-rtl fs-7 me-2"></i>RTL
                     </label>
@@ -449,7 +659,8 @@
                 <h6 class="mt-5 fw-semibold fs-4 mb-2">Card With</h6>
 
                 <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                    <input type="radio" class="btn-check" name="card-layout" id="card-with-border" autocomplete="off" />
+                    <input type="radio" class="btn-check" name="card-layout" id="card-with-border"
+                        autocomplete="off" />
                     <label class="btn p-9 btn-outline-primary" for="card-with-border">
                         <i class="icon ti ti-border-outer fs-7 me-2"></i>Border
                     </label>
@@ -465,11 +676,12 @@
     </div>
     <div class="dark-transparent sidebartoggler"></div>
     <!-- Import Js Files -->
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
-    <script src="../assets/js/theme/app.init.js"></script>
-    <script src="../assets/js/theme/theme.js"></script>
-    <script src="../assets/js/theme/app.min.js"></script>
+    <script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
+    <script src="{{ asset('assets/js/theme/app.init.js') }}"></script>
+    <script src="{{ asset('assets/js/theme/theme.js') }}"></script>
+    <script src="{{ asset('assets/js/theme/app.min.js') }}"></script>
+    <script src="{{ asset('assets/js/feature/registrationForm.js') }}"></script>
 
     <!-- solar icons -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>

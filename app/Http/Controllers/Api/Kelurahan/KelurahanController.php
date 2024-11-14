@@ -20,6 +20,6 @@ class KelurahanController extends Controller
      */
     public function search(Request $request)
     {
-        return $this->sendResponse($this->masterService->searchKelurahan($request->data), "Berhasil menampilkan data kelurahan");
+        return $this->sendResponse($this->masterService->searchKelurahan($request->name), "Berhasil menampilkan data kelurahan");
     }
 }

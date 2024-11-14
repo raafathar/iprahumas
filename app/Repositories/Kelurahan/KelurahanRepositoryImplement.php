@@ -44,7 +44,7 @@ class KelurahanRepositoryImplement implements KelurahanRepository
      */
     public function search($data, $column = "kel_nama")
     {
-        return $this->table->whereLike("id", "%" . $data . "%")->orWhereLike("kel_nama", "%" . $data . "%")->get();
+        return $this->table->whereLike("id", "%" . $data . "%")->orWhereLike($column, "%" . $data . "%")->get();
     }
 
     /**

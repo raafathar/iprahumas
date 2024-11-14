@@ -2,65 +2,24 @@
 
 namespace App\Http\Controllers\Api\Kecamatan;
 
-use App\Http\Controllers\Controller;
 use App\Models\Kecamatan;
+use App\Helper\standartData;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Services\Master\MasterService;
 
 class KecamatanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+    use standartData;
+    public function __construct(
+        public MasterService $masterService
+    ) {}
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function search(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Kecamatan $kecamatan)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Kecamatan $kecamatan)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Kecamatan $kecamatan)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Kecamatan $kecamatan)
-    {
-        //
+        return $this->sendResponse($this->masterService->searchKecamatan($request->name), "Berhasil menampilkan data kelurahan");
     }
 }

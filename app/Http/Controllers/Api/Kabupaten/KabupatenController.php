@@ -20,6 +20,6 @@ class KabupatenController extends Controller
      */
     public function search($data)
     {
-        return $this->sendResponse($this->masterService->searchKelurahan($data), "Berhasil menampilkan data kelurahan");
+        return $this->sendResponse($this->masterService->searchKabupaten($data), "Berhasil menampilkan data kelurahan");
     }
 }

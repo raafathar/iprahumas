@@ -44,7 +44,7 @@ class KecamatanRepositoryImplement implements KecamatanRepository
      */
     public function search($data, $column = "kec_nama")
     {
-        return $this->table->whereId($data)->orWhere($column, $data)->first();
+        return $this->table->whereLike("id", "%" . $data . "%")->orWhereLike($column, "%" . $data . "%")->get();
     }
 
     /**
