@@ -27,27 +27,27 @@
     {{-- start count --}}
     <div class="row mb-3">
         <div class="col-sm-6 col-xl-3">
-            <div class="card border-0 zoom-in bg-danger-subtle shadow-none">
+            <div class="card border-0 zoom-in bg-success-subtle shadow-none">
                 <div class="card-body">
                     <div class="text-center">
                         <img src="../assets/images/svgs/icon-favorites.svg" width="50" height="50" class="mb-3"
                             alt="modernize-img" />
-                        <p class="fw-semibold fs-3 text-danger mb-1">Berita</p>
-                        <h5 class="fw-semibold text-danger mb-0">696</h5>
+                        <p class="fw-semibold fs-3 text-success mb-1">Berita</p>
+                        <h5 class="fw-semibold text-success mb-0">696</h5>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-xl-3">
-            <div class="card border-0 zoom-in bg-primary-subtle shadow-none">
+            <div class="card border-0 zoom-in bg-info-subtle shadow-none">
                 <div class="card-body">
                     <div class="text-center">
                         <img src="../assets/images/svgs/icon-user-male.svg" width="50" height="50" class="mb-3"
                             alt="modernize-img" />
-                        <p class="fw-semibold fs-3 text-primary mb-1">
+                        <p class="fw-semibold fs-3 text-info mb-1">
                             Anggota
                         </p>
-                        <h5 class="fw-semibold text-primary mb-0">1014</h5>
+                        <h5 class="fw-semibold text-info mb-0">{{ $countAccept }}</h5>
                     </div>
                 </div>
             </div>
@@ -78,6 +78,54 @@
         </div>
     </div>
     {{-- end count --}}
+
+    @if ($countPending > 0)
+        <div class="row">
+            <div class="col-8">
+                <div class="card bg-primary-subtle overflow-hidden shadow-none">
+                    <div class="card-body py-3">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-sm-6">
+                                <h5 class="fw-semibold mb-9 fs-5">Setujui beberapa anggota</h5>
+                                <p class="mb-9">
+                                    Selesaikan beberapa proses pendaftaran anggota yang memerlukan persetujuan
+                                </p>
+                                <button class="btn btn-primary">Selesaikan</button>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="position-relative mb-n5 text-center">
+                                    <img src="../assets/images/backgrounds/track-bg.png" alt="modernize-img"
+                                        class="img-fluid" width="180" height="230" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-stretch">
+                <a href="javascript:void(0)" class="card text-bg-primary text-white w-100 card-hover">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <i class="ti ti-alert-octagon  display-6"></i>
+                            <div class="ms-auto">
+                                <i class="ti ti-arrow-right fs-8"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h4 class="card-title mb-1 text-white">
+                                {{ $countPending }}
+                            </h4>
+                            <p class="card-text fw-normal text-white opacity-75">
+                                Pendaftaran belum disetujui
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    @else
+    @endif
+
     {{-- start statistik --}}
     <div class="row">
         <div class="col-12">
@@ -103,78 +151,102 @@
         </div>
     </div>
     {{-- end statistik --}}
+
 </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            
-            const registrations = @json($registrations);
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            let chart; 
-    
-            const yearFilter = document.getElementById('yearFilter');
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
 
-            const filterData = () => {
-                const selectedYear = yearFilter.value;
-    
-                const filteredRegistrations = registrations.filter(item => 
-                    selectedYear ? item.year == selectedYear : true
-                );
-    
-                // Menyiapkan data untuk chart
-                const monthlyData = filteredRegistrations.map(item => item.total);  // Jumlah registrasi
-                const labels = filteredRegistrations.map(item => monthNames[item.month - 1]);  // Nama bulan
-    
-                updateChart(monthlyData, labels);
-            };
-    
-            const updateChart = (monthlyData, labels) => {
-                if (chart) {
-                    chart.destroy();
-                }
-    
-                const options = {
-                    series: [{
-                        name: "Pendaftar",
-                        data: monthlyData,
-                    }],
-                    chart: {
-                        height: 350,
-                        type: "line",
-                        fontFamily: "inherit",
-                        zoom: { enabled: false },
-                        toolbar: { show: false },
+        const registrations = @json($registrations);
+
+        console.log(registrations);
+        
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let chart;
+
+        const yearFilter = document.getElementById('yearFilter');
+
+        const filterData = () => {
+            const selectedYear = yearFilter.value;
+
+            const filteredRegistrations = registrations.filter(item =>
+                selectedYear ? item.year == selectedYear : true
+            );
+
+            // Menyiapkan data untuk chart
+            const monthlyData = filteredRegistrations.map(item => item.total); // Jumlah registrasi
+            const labels = filteredRegistrations.map(item => monthNames[item.month - 1]); // Nama bulan
+
+            updateChart(monthlyData, labels);
+        };
+
+        const updateChart = (monthlyData, labels) => {
+            if (chart) {
+                chart.destroy();
+            }
+
+            const options = {
+                series: [{
+                    name: "Pendaftar",
+                    data: monthlyData,
+                }],
+                chart: {
+                    height: 350,
+                    type: "line",
+                    fontFamily: "inherit",
+                    zoom: {
+                        enabled: false
                     },
-                    dataLabels: { enabled: false },
-                    colors: ["var(--bs-primary)"],
-                    stroke: { curve: "straight" },
-                    grid: {
-                        row: { colors: ["transparent"], opacity: 0.5 },
-                        borderColor: "transparent",
+                    toolbar: {
+                        show: false
                     },
-                    xaxis: {
-                        categories: labels,
-                        labels: { style: { colors: Array(12).fill("#a1aab2") } },
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                colors: ["var(--bs-primary)"],
+                stroke: {
+                    curve: "straight"
+                },
+                grid: {
+                    row: {
+                        colors: ["transparent"],
+                        opacity: 0.5
                     },
-                    yaxis: {
-                        labels: {
-                            formatter(value) {
-                                return value.toFixed(0);
-                            },
-                            style: { colors: Array(6).fill("#a1aab2") },
+                    borderColor: "transparent",
+                },
+                xaxis: {
+                    categories: labels,
+                    labels: {
+                        style: {
+                            colors: Array(12).fill("#a1aab2")
+                        }
+                    },
+                },
+                yaxis: {
+                    labels: {
+                        formatter(value) {
+                            return value.toFixed(0);
+                        },
+                        style: {
+                            colors: Array(6).fill("#a1aab2")
                         },
                     },
-                    tooltip: { theme: "dark" },
-                };
-    
-                chart = new ApexCharts(document.querySelector("#chart-line-pendaftar"), options);
-                chart.render();  // Render chart
+                },
+                tooltip: {
+                    theme: "dark"
+                },
             };
-    
-            yearFilter.addEventListener('change', filterData);
-    
-            filterData();
-        });
-    </script>
-    
+
+            chart = new ApexCharts(document.querySelector("#chart-line-pendaftar"), options);
+            chart.render(); // Render chart
+        };
+
+        yearFilter.addEventListener('change', filterData);
+
+        filterData();
+    });
+
+</script>
+
 @endsection
