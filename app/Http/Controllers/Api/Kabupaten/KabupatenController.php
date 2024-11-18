@@ -18,8 +18,8 @@ class KabupatenController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function search($data)
+    public function search(Request $request)
     {
-        return $this->sendResponse($this->masterService->searchKabupaten($data), "Berhasil menampilkan data kelurahan");
+        return $this->sendResponse($this->masterService->searchKabupaten($request->nama), "Berhasil menampilkan data Kabupaten");
     }
 }

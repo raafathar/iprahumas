@@ -44,7 +44,7 @@ class KabupatenRepositoryImplement implements KabupatenRepository
      */
     public function search($data, $column = "kab_nama")
     {
-        return $this->table->whereLike("id", "%" . $data . "%")->orWhereLike($column, "%" . $data . "%")->first();
+        return $this->table->whereLike("id", "%" . $data . "%")->orWhereLike($column, "%" . $data . "%")->get();
     }
 
     /**

@@ -38,7 +38,6 @@ const changeNavigator = () => {
     }
 
     if (currentGroup === 0) {
-        console.log($("#back"));
 
         $("#back").addClass("disabled")
     } else {

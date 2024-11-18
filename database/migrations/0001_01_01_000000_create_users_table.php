@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid("id")->primary();
             $table->string('username');
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->enum('level', ["admin", "anggota"])->default("anggota");
             $table->rememberToken();
             $table->timestamps();

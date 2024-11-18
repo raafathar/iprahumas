@@ -17,8 +17,7 @@ trait standartData
             $data["id"] = Str::uuid()->toString();
 
         if (!isset($data["created_at"]))
-            $data["created_
-        at"] = now();
+            $data["created_at"] = now();
 
         return $data;
     }

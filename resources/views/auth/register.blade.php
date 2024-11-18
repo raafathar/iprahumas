@@ -280,16 +280,23 @@
                                             </div>
                                             <div class="row">
                                                 <div class="mb-3">
-                                                    {{-- start f_keahlian --}}
-                                                    <label for="f_keahlian" class="form-label">Keahlian</label>
-                                                    <input id="f_keahlian" type="text" name="f_keahlian"
-                                                        value="{{ old('f_keahlian') }}" autofocus
-                                                        autocomplete="f_keahlian" class="form-control">
-                                                    {{-- end f_keahlian --}}
+                                                    {{-- start keahlian --}}
+                                                    <label for="keahlian" class="form-label">Keahlian</label>
+                                                    <select id="keahlian" type="text" name="keahlian"
+                                                        value="{{ old('keahlian') }}" autofocus
+                                                        autocomplete="keahlian" class="form-control">
+                                                        <option value="" selected disabled>-- PILIH KEAHLIAN --
+                                                        </option>
+                                                        @foreach ($keahlian as $row)
+                                                            <option value="{{ $row->id }}">{{ $row->k_nama }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                    {{-- end keahlian --}}
                                                 </div>
-                                                @if ($errors->get('f_keahlian'))
+                                                @if ($errors->get('keahlian'))
                                                     <ul>
-                                                        @foreach ((array) $errors->get('f_keahlian') as $message)
+                                                        @foreach ((array) $errors->get('keahlian') as $message)
                                                             <li class="text-danger">{{ $message }}</li>
                                                         @endforeach
                                                     </ul>
@@ -305,10 +312,18 @@
                                                 <div class="mb-3">
                                                     <label for="f_pendidikan_terakhir" class="form-label">Pendidikan
                                                         Terakhir</label>
-                                                    <input id="f_pendidikan_terakhir" name="f_pendidikan_terakhir"
+                                                    <select id="f_pendidikan_terakhir" name="f_pendidikan_terakhir"
                                                         class="form-control"
                                                         value="{{ old('f_pendidikan_terakhir') }}" autofocus
                                                         autocomplete="f_pendidikan_terakhir" class="form-control">
+                                                        <option value="" disabled selected>-- PILIH PENDIDIKAN
+                                                            TERAKHIR --</option>
+                                                        <option value="SMA">SMA</option>
+                                                        <option value="D3">D3</option>
+                                                        <option value="D4\S1">D4\S1</option>
+                                                        <option value="S2">S2</option>
+                                                        <option value="S3">S3</option>
+                                                    </select>
                                                 </div>
                                                 @if ($errors->get('f_pendidikan_terakhir'))
                                                     <ul>
@@ -346,87 +361,95 @@
                                             <h4 class="text-black mb-10">Tempat Tinggal</h4>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    {{-- start f_kelurahan --}}
+                                                    {{-- start provinsi --}}
                                                     <div class="mb-3">
-                                                        <label for="f_kelurahan" class="form-label">Kelurahan</label>
-                                                        <select id="f_kelurahan" type="text" name="f_kelurahan"
-                                                            value="{{ old('f_kelurahan') }}" autofocus
+                                                        <label for="provinsi" class="form-label">Provinsi</label>
+                                                        <select id="provinsi" type="text" name="provinsi"
+                                                            value="{{ old('provinsi') }}" autofocus
                                                             class="form-control">
-                                                            <option disabled selected>-- Pilih Kelurahan --</option>
+                                                            <option disabled selected value="">-- Pilih Provinsi
+                                                                --</option>
                                                         </select>
                                                     </div>
-                                                    @if ($errors->get('f_kelurahan'))
+                                                    @if ($errors->get('provinsi'))
                                                         <ul>
-                                                            @foreach ((array) $errors->get('f_kelurahan') as $message)
+                                                            @foreach ((array) $errors->get('provinsi') as $message)
                                                                 <li class="text-danger">{{ $message }}</li>
                                                             @endforeach
                                                         </ul>
                                                     @endif
-                                                    {{-- end f_kelurahan --}}
+                                                    {{-- end provinsi --}}
+                                                </div>
+                                                <div class="col-md-6">
+                                                    {{-- start kabupaten --}}
+                                                    <div class="mb-3">
+                                                        <label for="kabupaten" class="form-label">Kabupaten</label>
+                                                        <select id="kabupaten" type="text" name="kabupaten"
+                                                            value="{{ old('kabupaten') }}" autofocus disabled
+                                                            class="form-control">
+                                                            <option disabled selected value="">-- Pilih Kabupaten
+                                                                --</option>
+                                                        </select>
+                                                    </div>
+                                                    @if ($errors->get('kabupaten'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('kabupaten') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end kabupaten --}}
                                                 </div>
 
-                                                <div class="col-md-6">
-                                                    {{-- start f_kecamatan --}}
-                                                    <div class="mb-3">
-                                                        <label for="f_kecamatan" class="form-label">Kecamatan</label>
-                                                        <select id="f_kecamatan" type="text" name="f_kecamatan"
-                                                            value="{{ old('f_kecamatan') }}" autofocus
-                                                            class="form-control">
-                                                            <option disabled selected>-- Pilih Kecamatan --</option>
-                                                        </select>
-                                                    </div>
-                                                    @if ($errors->get('f_kecamatan'))
-                                                        <ul>
-                                                            @foreach ((array) $errors->get('f_kecamatan') as $message)
-                                                                <li class="text-danger">{{ $message }}</li>
-                                                            @endforeach
-                                                        </ul>
-                                                    @endif
-                                                    {{-- end f_kecamatan --}}
-                                                </div>
+
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    {{-- start f_kabupaten --}}
+                                                    {{-- start kecamatan --}}
                                                     <div class="mb-3">
-                                                        <label for="f_kabupaten" class="form-label">Kabupaten</label>
-                                                        <select id="f_kabupaten" type="text" name="f_kabupaten"
-                                                            value="{{ old('f_kabupaten') }}" autofocus
+                                                        <label for="kecamatan" class="form-label">Kecamatan</label>
+                                                        <select id="kecamatan" type="text" name="kecamatan"
+                                                            value="{{ old('kecamatan') }}" autofocus disabled
                                                             class="form-control">
-                                                            <option disabled selected>-- Pilih Kabupaten --</option>
+                                                            <option disabled selected value="">-- Pilih Kecamatan
+                                                                --</option>
                                                         </select>
                                                     </div>
-                                                    @if ($errors->get('f_kabupaten'))
+                                                    @if ($errors->get('kecamatan'))
                                                         <ul>
-                                                            @foreach ((array) $errors->get('f_kabupaten') as $message)
+                                                            @foreach ((array) $errors->get('kecamatan') as $message)
                                                                 <li class="text-danger">{{ $message }}</li>
                                                             @endforeach
                                                         </ul>
                                                     @endif
-                                                    {{-- end f_kabupaten --}}
+                                                    {{-- end kecamatan --}}
+                                                </div>
+                                                <div class="col-md-6">
+                                                    {{-- start kelurahan --}}
+                                                    <div class="mb-3">
+                                                        <label for="kelurahan" class="form-label">Kelurahan</label>
+                                                        <select id="kelurahan" type="text" name="kelurahan"
+                                                            value="{{ old('kelurahan') }}" autofocus disabled
+                                                            class="form-control">
+                                                            <option disabled selected value="">-- Pilih Kelurahan
+                                                                --</option>
+                                                        </select>
+                                                    </div>
+                                                    @if ($errors->get('kelurahan'))
+                                                        <ul>
+                                                            @foreach ((array) $errors->get('kelurahan') as $message)
+                                                                <li class="text-danger">{{ $message }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    {{-- end kelurahan --}}
                                                 </div>
 
-                                                <div class="col-md-6">
-                                                    {{-- start f_provinsi --}}
-                                                    <div class="mb-3">
-                                                        <label for="f_provinsi" class="form-label">Provinsi</label>
-                                                        <select id="f_provinsi" type="text" name="f_provinsi"
-                                                            value="{{ old('f_provinsi') }}" autofocus
-                                                            class="form-control">
-                                                            <option disabled selected>-- Pilih Provinsi --</option>
-                                                        </select>
-                                                    </div>
-                                                    @if ($errors->get('f_provinsi'))
-                                                        <ul>
-                                                            @foreach ((array) $errors->get('f_provinsi') as $message)
-                                                                <li class="text-danger">{{ $message }}</li>
-                                                            @endforeach
-                                                        </ul>
-                                                    @endif
-                                                    {{-- end f_provinsi --}}
-                                                </div>
+
                                             </div>
-                                            {{-- start f_alamat --}}
+
+
+
                                             <div class="mb-3">
                                                 <label class="form-label">Alamat Lengkap</label>
                                                 <input class="form-control" id="f_alamat" type="text"
@@ -440,7 +463,6 @@
                                                     </ul>
                                                 @endif
                                             </div>
-                                            {{-- end f_universitas --}}
                                         </div>
 
                                         {{-- 5 --}}
@@ -682,6 +704,138 @@
     <script src="{{ asset('assets/js/theme/theme.js') }}"></script>
     <script src="{{ asset('assets/js/theme/app.min.js') }}"></script>
     <script src="{{ asset('assets/js/feature/registrationForm.js') }}"></script>
+    <script>
+        $(`select`).select2()
+
+        $("select#f_universitas").select2({
+            ajax: {
+                url: "http://universities.hipolabs.com/search",
+                dataType: 'json',
+                delay: 250,
+                data: (params) => {
+                    return {
+                        name: params.term
+                    }
+                },
+                processResults: function(data) {
+
+                    const result = data.map(elm => {
+                        return {
+                            id: elm.name,
+                            text: elm.name
+                        }
+                    })
+
+                    return {
+                        results: result
+                    }
+                },
+                cache: true,
+                minimumInputLength: 1
+            }
+        })
+
+        const ajaxAdministrasi = (category, processData) => {
+            return {
+                url: `${window.location.origin}/api/${category}/search`,
+                dataType: 'json',
+                delay: 500,
+                data: (params) => {
+                    return {
+                        nama: params.term
+                    }
+                },
+                processResults: processData,
+                cache: true,
+                minimumInputLength: 2
+            }
+        }
+
+        $("select#kelurahan").select2({
+            ajax: ajaxAdministrasi("kelurahan", (data) => {
+
+                const result = (data.data)
+                    .filter((val) => val.kecamatan_id == $("select#kecamatan").val())
+                    .map(elm => {
+                        return {
+                            id: elm.id,
+                            text: elm.kel_nama
+                        }
+                    })
+
+                return {
+                    results: result
+                }
+            })
+        });
+
+        $("select#kecamatan").select2({
+            ajax: ajaxAdministrasi("kecamatan", (data) => {
+                const result = (data.data)
+                    .filter((val) => val.kabupaten_id == $("select#kabupaten").val())
+                    .map(elm => {
+                        return {
+                            id: elm.id,
+                            text: elm.kec_nama
+                        }
+                    })
+
+                return {
+                    results: result
+                }
+            })
+        });
+
+        $("select#kabupaten").select2({
+            ajax: ajaxAdministrasi("kabupaten", (data) => {
+
+                const result = (data.data)
+                    .filter((val) => val.provinsi_id == $("select#provinsi").val())
+                    .map(elm => {
+                        return {
+                            id: elm.id,
+                            text: elm.kab_nama
+                        }
+                    })
+
+                return {
+                    results: result
+                }
+            })
+        });
+
+        $("select#provinsi").select2({
+            ajax: ajaxAdministrasi("provinsi", (data) => {
+                const result = (data.data)
+                    .map(elm => {
+                        return {
+                            id: elm.id,
+                            text: elm.prov_nama
+                        }
+                    })
+
+                return {
+                    results: result
+                }
+            })
+        });
+
+        $("select#provinsi").on("change", () => {
+            $("select#kabupaten").attr("disabled", false).val("").trigger("change")
+            $("select#kecamatan").attr("disabled", true).val("").trigger("change")
+            $("select#kelurahan").attr("disabled", true).val("").trigger("change")
+            $("select#kelurahan").val("")
+        })
+
+        $("select#kabupaten").on("change", () => {
+            $("select#kecamatan").attr("disabled", false).val("").trigger("change")
+            $("select#kelurahan").attr("disabled", true).val("").trigger("change")
+        })
+
+        $("select#kecamatan").on("change", () => {
+            $("select#kelurahan").attr("disabled", false).val("").trigger("change")
+        })
+    </script>
 
     <!-- solar icons -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>

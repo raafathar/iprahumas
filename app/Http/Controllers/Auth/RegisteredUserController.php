@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\Services\Master\MasterService;
 use App\DTO\Registration\RegistrationDTO;
+use App\Helper\StringModify;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\Keahlian;
 use App\Models\Kecamatan;
@@ -15,7 +16,7 @@ use App\Services\Registration\RegistrationService;
 
 class RegisteredUserController extends Controller
 {
-    use fileHandler;
+    use fileHandler, StringModify;
 
     public function __construct(
         private RegistrationService $registrationService,
@@ -45,21 +46,7 @@ class RegisteredUserController extends Controller
     {
         $validate = $request->validated();
         $validate['f_bukti_pembayaran'] = $this->fileImageHandler($request, "f_bukti_pembayaran", "bukti_pembelajaran");
-
-        $registrationDTO = new RegistrationDTO(
-            $validate["jabatan"],
-            $validate["golongan"],
-            $validate["instansi"],
-            $validate["NIP"],
-            $validate["f_unit_kerja"],
-            $validate["f_no_wa"],
-            $validate["f_alamat"],
-            $validate["f_bukti_pembayaran"],
-            $validate["username"],
-            $validate["email"],
-            $validate["password"],
-            False,
-        );
+        $registrationDTO = RegistrationDTO::getRequest($validate);
 
         try {
             $this->registrationService->RegisterMembership($registrationDTO);

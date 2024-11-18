@@ -20,6 +20,6 @@ class KecamatanController extends Controller
      */
     public function search(Request $request)
     {
-        return $this->sendResponse($this->masterService->searchKecamatan($request->name), "Berhasil menampilkan data kelurahan");
+        return $this->sendResponse($this->masterService->searchKecamatan($request->nama), "Berhasil menampilkan data Kecamatan");
     }
 }

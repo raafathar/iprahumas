@@ -25,12 +25,13 @@ class RegisterRequest extends FormRequest
      */
     public function rules(): array
     {
-        dd($this->all());
+        // dd($this->all());
         return [
             'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'jabatan' => ['required'],
             'golongan' => ['required'],
+            'keahlian' => ['required'],
             'f_agama' => ['required'],
             'instansi' => ['required'],
             'NIP' => ['required', 'string', Rule::unique("forms", "NIP")->where(function ($q) {
@@ -40,11 +41,10 @@ class RegisterRequest extends FormRequest
             'f_pendidikan_terakhir' => ['required'],
             'f_universitas' => ['required'],
             'f_tanggal_lahir' => ['required', 'date'],
-            'f_keahlian' => ['required'],
-            'f_kelurahan' => ['required'],
-            'f_kecamatan' => ['required'],
-            'f_kabupaten' => ['required'],
-            'f_provinsi' => ['required'],
+            'kelurahan' => ['required'],
+            'kecamatan' => ['required'],
+            'kabupaten' => ['required'],
+            'provinsi' => ['required'],
             'f_no_wa' => ['required', 'string'],
             'f_alamat' => ['required', 'string', 'max:255'],
             "f_bukti_pembayaran" => ["required", "extensions:jpg,png"]
