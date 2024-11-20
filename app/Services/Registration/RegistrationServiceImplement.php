@@ -26,12 +26,14 @@ class RegistrationServiceImplement implements RegistrationService
      */
     public function RegisterMembership(RegistrationDTO $data): void
     {
-        try {
-            $user = $this->userRepository->create($data->getUserFormat());
-            $this->formRepository->create($data->getFormFormat($user));
-        } catch (\Exception $th) {
-            throw new InvalidArgumentException($th);
-        }
+        $user = $this->userRepository->create($data->getUserFormat());
+        $this->formRepository->create($data->getFormFormat($user));
+
+        // dd($data);
+        // try {
+        // } catch (\Exception $th) {
+        //     throw new InvalidArgumentException($th);
+        // }
         // DB::transaction(function () use ($data) {
         // });
     }

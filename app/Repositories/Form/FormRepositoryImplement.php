@@ -45,6 +45,7 @@ class FormRepositoryImplement implements FormRepository
      */
     public function create($data)
     {
+        // dd($data);
         return $this->table->insert(
             $this->baseCreateData($data, true)
         );
