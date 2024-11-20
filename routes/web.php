@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 require __DIR__ . "\Auth\auth.php";
+require __DIR__ . "\Dashboard\admin.php";
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -72,8 +73,4 @@ Route::get('/contact', function () {
 
 Route::get('/test', function () {
     return view('auth.uiregister');
-});
-
-Route::group(["prefix" => "admin"], function () {
-    Route::resource("instansi", InstansiController::class);
 });

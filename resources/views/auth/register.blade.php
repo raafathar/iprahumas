@@ -78,8 +78,8 @@
                                             <div class="col-md-6">
                                                 {{-- start nip --}}
                                                 <div class="mb-3">
-                                                    <label for="nip" class="form-label">NIP</label>
-                                                    <input id="nip" type="text" name="nip" value="{{ old('nip') }}" autofocus
+                                                    <label for="NIP" class="form-label">NIP</label>
+                                                    <input id="NIP" type="text" name="NIP" value="{{ old('NIP') }}" autofocus
                                                     autocomplete="nip" class="form-control">
                                                 </div>
                                                 @if ($errors->get('nip'))
