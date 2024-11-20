@@ -45,16 +45,14 @@
                         <div
                             class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
                             <div class="auth-max-width-register col-sm-8 col-md-6 col-xl-12 px-4">
-                                <h2 class="mb-10 fs-7 fw-bolder">Form Registrasi</h2>
                                 <form method="POST" id="register-form" action="{{ route('register') }}"
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div id="form-container">
-
-                                        <div class="d-none border-top border-secondary pt-3">
+                                        <div class="d-none pt-3">
                                             <h4 class="text-black mb-10">Data Pribadi</h4>
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-12">
                                                     {{-- start username --}}
                                                     <div class="mb-3">
                                                         <label for="username" class="form-label">Nama Lengkap</label>
@@ -72,7 +70,7 @@
                                                     @endif
                                                     {{-- end username --}}
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-12">
                                                     {{-- start email --}}
                                                     <div class="mb-3">
                                                         <label for="email" class="form-label">Email</label>
@@ -93,7 +91,7 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-12">
                                                     {{-- start NIP --}}
                                                     <div class="mb-3">
                                                         <label for="NIP" class="form-label">NIP</label>
@@ -111,7 +109,7 @@
                                                     @endif
                                                     {{-- end NIP --}}
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-12">
                                                     {{-- start f_tanggal_lahir --}}
                                                     <div class="mb-3">
                                                         <label class="form-label">Tanggal Lahir</label>
@@ -131,7 +129,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-12">
                                                     {{-- start f_agama --}}
                                                     <div class="mb-3">
                                                         <label class="form-label">Agama</label>
@@ -157,7 +155,7 @@
                                                     </div>
                                                     {{-- end f_agama --}}
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-12">
                                                     {{-- start f_no_wa --}}
                                                     <div class="mb-3">
                                                         <label class="form-label">No. Wa</label>
@@ -501,19 +499,18 @@
                                         </div>
 
                                     </div>
-
                                     <div class="d-absoluet button-0">
                                         <div class="d-flex justify-content-between p-2">
                                             <span id="back" class="btn btn-primary">Kembali</span>
-                                            <span id="navigator-count">1/2</span>
+                                            {{-- <span id="navigator-count">1/2</span> --}}
                                             <span id="next" class="btn btn-primary">Lanjut</span>
                                         </div>
                                         {{-- <button class="btn btn-primary w-100 py-8 mb-4 rounded-2">Masuk</button> --}}
-                                        <div class="d-flex align-items-center justify-content-between">
+                                        {{-- <div class="d-flex align-items-center justify-content-between">
                                             <p class="fs-4 mb-0 fw-medium">Sudah menjadi anggota?</p>
                                             <a class="text-primary fw-medium ms-2"
                                                 href="{{ route('login') }}">Masuk</a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </form>
                             </div>
