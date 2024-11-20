@@ -71,13 +71,15 @@ const minMaxValidation = (min, max, val, elmError = null, callbackMsg = null) =>
 }
 
 const phoneNumberValidation = (val, elmError = null, msg = null, isUseMessage = true) => {
-    const patternOfNumberPhone = /[62|0]8\d{2}[\s-]?\d{4}[\s-]?\d{4}/g
+    // Ganti pola regex untuk hanya mencocokkan angka saja
+    const patternOfNumberPhone = /^\d{10,15}$/; // Hanya angka dengan panjang antara 10 sampai 15 digit
     if (!(patternOfNumberPhone.test(val.trim()))) {
-        isUseMessage ? elmError.text(msg) : ""
-        return false
+        isUseMessage ? elmError.text(msg) : "";
+        return false;
     }
-    return true
+    return true;
 }
+
 
 const emailValidation = (val, elmError = null, msg = null) => {
     const emailValidation = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
@@ -89,13 +91,16 @@ const emailValidation = (val, elmError = null, msg = null) => {
 }
 
 const NIPValidation = (val, elmError = null, msg = null) => {
-    const NIPValidation = /^[\d]{4}(0|1)([\d]){1}([0-3][\d])\s[\d]{4}(([0-3][0-9]))\s[1-2]{1}[\s][\d]{3}$/
+    // Ganti pola regex untuk hanya angka
+    const NIPValidation = /^\d{18}$/; // Hanya angka dengan panjang tepat 18 digit
     if (!(NIPValidation.test(val.trim()))) {
-        msg !== null ? elmError.text(msg) : ""
-        return false
+        msg !== null ? elmError.text(msg) : "";
+        return false;
     }
-    return true
+    return true;
 }
+
+
 
 const DateValidation = (val, elmError = null, msg = null) => {
     if (!(isDateValid(val.trim()))) {
@@ -114,6 +119,7 @@ const DateValidation = (val, elmError = null, msg = null) => {
  */
 
 const validationGroup = (index) => {
+    console.log('test', index)
     switch (index) {
         case 0:
             const username = requiredValidation($("input#username").val(), $("span#username-message"), "Nama lengkap mohon diisi !")
@@ -122,10 +128,47 @@ const validationGroup = (index) => {
             const tanggalLahir = requiredValidation($("input#f_tanggal_lahir").val(), $("span#f_tanggal_lahir-message"), "Tanggal Lahir mohon diisi !") && DateValidation($("input#f_tanggal_lahir").val(), $("span#f_tanggal_lahir-message"), "Tanggal Lahir tidak valid !")
             const agama = requiredValidation($("select#f_agama").val(), $("span#f_agama-message"), "Agama mohon diisi !")
             const noWa = requiredValidation($("input#f_no_wa").val(), $("span#f_no_wa-message"), "No Wa mohon diisi !") && phoneNumberValidation($("input#f_no_wa").val(), $("span#f_no_wa-message"), "No Wa tidak valid !")
-
+            
             if (!username || !email || !NIP || !tanggalLahir || !agama || !noWa)
                 return false
-    }
+            break;
+        case 1:
+            const jabatan = requiredValidation($("select#jabatan").val() || "", $("span#jabatan_message"), "Jabatan mohon diisi!")
+            const instansi = requiredValidation($("select#instansi").val() || "", $("span#instansi_message"), "Instansi mohon diisi!")
+            const golongan = requiredValidation($("select#golongan").val() || "", $("span#golongan_message"), "Golongan mohon diisi!")
+            const f_unit_kerja = requiredValidation($("input#f_unit_kerja").val() || "", $("span#f_unit_kerja_message"), "Unit Kerja mohon diisi!")
+            const keahlian = requiredValidation($("select#keahlian").val() || "", $("span#keahlian_message"), "Keahlian mohon diisi!")
+            
+            if (!jabatan || !instansi || !golongan || !f_unit_kerja || !keahlian)
+                return false
+            break;
+
+        case 2:
+            const f_pendidikan_terakhir = requiredValidation($("select#f_pendidikan_terakhir").val() || "", $("span#f_pendidikan_terakhir_message"), "Pendidikan terakhir mohon diisi!")
+            const f_universitas = requiredValidation($("select#f_universitas").val() || "", $("span#f_universitas_message"), "Universitas mohon diisi!")
+
+            if (!f_pendidikan_terakhir || !f_universitas)
+                return false
+            break;
+
+        case 3:
+            const provinsi = requiredValidation($("select#provinsi").val() || "", $("span#provinsi_message"), "Provinsi mohon diisi!")
+            const kabupaten = requiredValidation($("select#kabupaten").val() || "", $("span#kabupaten_message"), "Kabupaten mohon diisi!")
+            const kecamatan = requiredValidation($("select#kecamatan").val() || "", $("span#kecamatan_message"), "Kecamatan mohon diisi!")
+            const kelurahan = requiredValidation($("select#kelurahan").val() || "", $("span#kelurahan_message"), "Kelurahan mohon diisi!")
+            const f_alamat = requiredValidation($("input#f_alamat").val() || "", $("span#f_alamat_message"), "Alamat mohon diisi!")
+
+            if (!provinsi || !kabupaten || !kecamatan || !kelurahan || !f_alamat)
+                return false
+            break;
+
+        case 4:
+            const f_bukti_pembayaran = requiredValidation($("input#f_bukti_pembayaran").val() || "", $("span#f_bukti_pembayaran_message"), "Bukti Pembayaran mohon diisi!")
+            if (!f_bukti_pembayaran)
+                return false
+            break;
+        }
+
     return true
 }
 
@@ -145,9 +188,9 @@ const moveGroup = () => {
 // Mengubah nama navigator form sudah mentok
 const changeNavigator = () => {
     if (currentGroup >= lengthGroup - 1) {
-        $("#next").text("Submit")
+        $("#next").text("Daftar Sekarang")
     } else {
-        $("#next").text("Lanjut")
+        $("#next").text("Berikutnya")
     }
 
     if (currentGroup === 0) {
@@ -161,7 +204,7 @@ const changeNavigator = () => {
 // Mengubah index navigator
 const changeNavigatorCounter = () => {
     if (currentGroup < lengthGroup) {
-        $("#navigator-count").text(`${currentGroup + 1} / ${lengthGroup}`)
+        $("#navigator-count").text(`Formulir pendafataran anggota bagian ${currentGroup + 1} dari ${lengthGroup}`)
     }
 }
 
