@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Instansi;
 
+use App\DataTables\InstansiDataTable;
 use App\DTO\Instansi\InstansiDTO;
 use App\Http\Controllers\Controller;
 use App\Services\Master\MasterService;
@@ -19,9 +20,9 @@ class InstansiController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(InstansiDataTable $dataTable)
     {
-        //
+        return $dataTable->render("dashboard.admin.instansi.lihat");
     }
 
     /**
@@ -70,7 +71,10 @@ class InstansiController extends Controller
     public function update(InstansiRequest $request, string $id)
     {
         try {
-            $this->masterService->updateInstansi($request->validated(), $id);
+            $instansiDTO = new InstansiDTO(
+                $request->input("i_nama")
+            );
+            $this->masterService->updateInstansi($instansiDTO, $id);
         } catch (\Exception $th) {
             return back()->with("error", "Internal Error");
         }
@@ -83,10 +87,11 @@ class InstansiController extends Controller
     public function destroy(string $id)
     {
         try {
+            $item = $this->masterService->getDataInstansiById($id);
             $this->masterService->deleteInstansi($id);
         } catch (\Exception $th) {
             return back()->with("error", "Internal Error");
         }
-        return back()->with("success", "Data berhasil ditambahkan");
+        return back()->with("success", "Berhasil menghapus " . $item->i_nama);
     }
 }

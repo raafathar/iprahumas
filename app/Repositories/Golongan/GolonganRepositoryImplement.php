@@ -34,7 +34,7 @@ class GolonganRepositoryImplement implements GolonganRepository
      */
     public function getData($id)
     {
-        return $this->table->whereId($id)->get();
+        return $this->table->whereId($id)->first();
     }
 
     /**

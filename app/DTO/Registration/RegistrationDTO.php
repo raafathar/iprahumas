@@ -4,6 +4,7 @@ namespace App\DTO\Registration;
 
 class RegistrationDTO
 {
+
     public function __construct(
         public string $username,
         public string $email,

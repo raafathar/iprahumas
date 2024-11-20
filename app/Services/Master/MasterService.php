@@ -28,6 +28,14 @@ interface MasterService
     public function getAllDataInstansi();
 
     /**
+     * Get Data By Id
+     * 
+     * @param string $id
+     * @return object|\Illuminate\Support\Facades\DB
+     */
+    public function getDataInstansiById($id);
+
+    /**
      * Create Instansi
      * 
      * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
@@ -74,6 +82,14 @@ interface MasterService
     public function getAllDataJabatan();
 
     /**
+     * Get Data By Id
+     * 
+     * @param string $id
+     * @return object|\Illuminate\Support\Facades\DB
+     */
+    public function getDataJabatanById($id);
+
+    /**
      * Create Jabatan
      * 
      * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
@@ -89,7 +105,7 @@ interface MasterService
      * @param \App\DTO\Jabatan\JabatanDTO $data
      * @param string|int $id
      * @param string $column
-     * @return \Illuminate\Support\Facades\DB
+     * @return object|\Illuminate\Support\Facades\DB
      */
     public function updateJabatan(JabatanDTO $data, $id, $column = "id");
 
@@ -120,6 +136,14 @@ interface MasterService
     public function getAllDataGolongan();
 
     /**
+     * Get Data By Id
+     * 
+     * @param string $id
+     * @return object|\Illuminate\Support\Facades\DB
+     */
+    public function getDataGolonganById($id);
+
+    /**
      * Create Golongan
      * 
      * @see https://medium.com/@mohammad.roshandelpoor/dto-data-transfer-objects-in-laravel-6b391e1c2c29
@@ -135,7 +159,7 @@ interface MasterService
      * @param \App\DTO\Golongan\GolonganDTO $data
      * @param string|int $id
      * @param string $column
-     * @return \Illuminate\Support\Facades\DB
+     * @return object|\Illuminate\Support\Facades\DB
      */
     public function updateGolongan(GolonganDTO $data, $id, $column = "id");
 

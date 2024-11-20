@@ -25,4 +25,11 @@ class InstansiRequest extends FormRequest
             "i_nama" => ["required", "string"]
         ];
     }
+
+    public function messages()
+    {
+        return [
+            "i_nama.required" => "Nama belum diisi !"
+        ];
+    }
 }
