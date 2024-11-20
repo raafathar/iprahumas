@@ -311,7 +311,6 @@
 
                                             {{-- 3 --}}
                                             <div class="d-none">
-                                                <h4 class="text-black mb-10">Riwayat Pendidikan</h4>
                                                 <div class="row">
                                                     {{-- start f_pendidikan_terakhir --}}
                                                     <div class="mb-3">
@@ -364,7 +363,6 @@
 
                                             {{-- 4 --}}
                                             <div class="d-none">
-                                                <h4 class="text-black mb-10">Tempat Tinggal</h4>
                                                 <div class="row">
                                                     <div class="col-12">
                                                         {{-- start provinsi --}}
@@ -475,8 +473,7 @@
                                             </div>
 
                                             {{-- 5 --}}
-                                            <div class="d-none border-top border-secondary pt-3">
-                                                <h4 class="text-black mb-10">Pembayaran</h4>
+                                            <div class="d-none">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         {{-- start f_bukti_pembayaran --}}
@@ -502,7 +499,7 @@
                                         </div>
                                         <div class="d-absoluet button-0 mt-2">
                                             <div class="d-flex justify-content-end gap-3">
-                                                <span id="back" class="btn btn-primary w-100">Kembali</span>
+                                                <span id="back" class="btn btn-outline-primary w-100">Kembali</span>
                                                 <span id="next" class="btn btn-primary w-100"></span>
                                             </div>
                                             <p class="mt-3 fs-3">
