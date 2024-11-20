@@ -37,6 +37,7 @@ class RegisterRequest extends FormRequest
             'NIP' => ['required', 'string', Rule::unique("forms", "NIP")->where(function ($q) {
                 $q->where("isAccept", 1);
             })],
+            'f_agama' => ['required'],
             'f_unit_kerja' => ['required'],
             'f_pendidikan_terakhir' => ['required'],
             'f_universitas' => ['required'],
@@ -74,8 +75,7 @@ class RegisterRequest extends FormRequest
             "f_unit_kerja.required" => "Unit Kerja mohon diisi !",
             "f_no_wa.required" => "No WA mohon diisi !",
 
-            "f_jenis_kartu.required" => "Jenis Kartu mohon diisi !",
-            "f_jenis_kartu.in" => "Jenis Kartu tidak valid !",
+            "f_agama.required" => "Agama mohon diisi !",
 
             "f_alamat.required" => "Alamat mohon diisi !",
             "f_alamat.max" => "Alamat terlalu panjang !",
@@ -87,11 +87,11 @@ class RegisterRequest extends FormRequest
             'f_tanggal_lahir.required' => "Tanggal Lahir mohon diisi !",
             'f_tanggal_lahir.date' => "Tanggal lahir tidak valid !",
 
-            'f_keahlian.required' => "Keahlian mohon diisi !",
-            'f_kelurahan.required' => "Kelurahan mohon diisi !",
-            'f_kecamatan.required' => "Kecamatan mohon diisi !",
-            'f_kabupaten.required' => "Kabupaten mohon diisi !",
-            'f_provinsi.required' => "Provinsi mohon diisi !",
+            'keahlian.required' => "Keahlian mohon diisi !",
+            'kelurahan.required' => "Kelurahan mohon diisi !",
+            'kecamatan.required' => "Kecamatan mohon diisi !",
+            'kabupaten.required' => "Kabupaten mohon diisi !",
+            'provinsi.required' => "Provinsi mohon diisi !",
 
             "f_bukti_pembayaran.required" => "Bukti pembayaran mohon diisi !",
             "f_bukti_pembayaran.extensions" => "Bukti pembayaran gunakan format jpg atau png !",

@@ -17,6 +17,10 @@
     <title>Modernize Bootstrap Admin</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    {{-- Mask Jquery --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+        integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -58,6 +62,7 @@
                                                             value="{{ old('username') }}" autofocus
                                                             autocomplete="username" class="form-control">
                                                     </div>
+                                                    <span class="text-danger" id="username-message"></span>
                                                     @if ($errors->get('username'))
                                                         <ul>
                                                             @foreach ((array) $errors->get('username') as $message)
@@ -75,6 +80,7 @@
                                                             value="{{ old('email') }}" autofocus autocomplete="email"
                                                             class="form-control">
                                                     </div>
+                                                    <span class="text-danger" id="email-message"></span>
                                                     @if ($errors->get('email'))
                                                         <ul>
                                                             @foreach ((array) $errors->get('email') as $message)
@@ -95,6 +101,7 @@
                                                             value="{{ old('NIP') }}" autofocus autocomplete="NIP"
                                                             class="form-control">
                                                     </div>
+                                                    <span class="text-danger" id="NIP-message"></span>
                                                     @if ($errors->get('NIP'))
                                                         <ul>
                                                             @foreach ((array) $errors->get('NIP') as $message)
@@ -108,9 +115,10 @@
                                                     {{-- start f_tanggal_lahir --}}
                                                     <div class="mb-3">
                                                         <label class="form-label">Tanggal Lahir</label>
-                                                        <input class="form-control" id="f_tanggal_lahir" type="date"
+                                                        <input class="form-control" id="f_tanggal_lahir" type="text"
                                                             name="f_tanggal_lahir" value="{{ old('f_tanggal_lahir') }}"
                                                             autofocus autocomplete="f_tanggal_lahir">
+                                                        <span class="text-danger" id="f_tanggal_lahir-message"></span>
                                                         @if ($errors->get('f_tanggal_lahir'))
                                                             <ul>
                                                                 @foreach ((array) $errors->get('f_tanggal_lahir') as $message)
@@ -138,6 +146,7 @@
                                                             <option value="budha">Budha</option>
                                                             <option value="khonghucu">Khonghucu</option>
                                                         </select>
+                                                        <span class="text-danger" id="f_agama-message"></span>
                                                         @if ($errors->get('f_agama'))
                                                             <ul>
                                                                 @foreach ((array) $errors->get('f_agama') as $message)
@@ -155,6 +164,7 @@
                                                         <input class="form-control" id="f_no_wa" type="text"
                                                             name="f_no_wa" value="{{ old('f_no_wa') }}" autofocus
                                                             autocomplete="f_no_wa">
+                                                        <span class="text-danger" id="f_no_wa-message"></span>
                                                         @if ($errors->get('f_no_wa'))
                                                             <ul>
                                                                 @foreach ((array) $errors->get('f_no_wa') as $message)
@@ -304,7 +314,7 @@
                                             </div>
                                         </div>
 
-                                        {{-- 4 --}}
+                                        {{-- 3 --}}
                                         <div class="d-none border-top border-secondary pt-3">
                                             <h4 class="text-black mb-10">Riwayat Pendidikan</h4>
                                             <div class="row">
@@ -356,7 +366,7 @@
                                             </div>
                                         </div>
 
-                                        {{-- 3 --}}
+                                        {{-- 4 --}}
                                         <div class="d-none border-top border-secondary pt-3">
                                             <h4 class="text-black mb-10">Tempat Tinggal</h4>
                                             <div class="row">
@@ -703,139 +713,11 @@
     <script src="{{ asset('assets/js/theme/app.init.js') }}"></script>
     <script src="{{ asset('assets/js/theme/theme.js') }}"></script>
     <script src="{{ asset('assets/js/theme/app.min.js') }}"></script>
-    <script src="{{ asset('assets/js/feature/registrationForm.js') }}"></script>
-    <script>
-        $(`select`).select2()
 
-        $("select#f_universitas").select2({
-            ajax: {
-                url: "http://universities.hipolabs.com/search",
-                dataType: 'json',
-                delay: 250,
-                data: (params) => {
-                    return {
-                        name: params.term
-                    }
-                },
-                processResults: function(data) {
-
-                    const result = data.map(elm => {
-                        return {
-                            id: elm.name,
-                            text: elm.name
-                        }
-                    })
-
-                    return {
-                        results: result
-                    }
-                },
-                cache: true,
-                minimumInputLength: 1
-            }
-        })
-
-        const ajaxAdministrasi = (category, processData) => {
-            return {
-                url: `${window.location.origin}/api/${category}/search`,
-                dataType: 'json',
-                delay: 500,
-                data: (params) => {
-                    return {
-                        nama: params.term
-                    }
-                },
-                processResults: processData,
-                cache: true,
-                minimumInputLength: 2
-            }
-        }
-
-        $("select#kelurahan").select2({
-            ajax: ajaxAdministrasi("kelurahan", (data) => {
-
-                const result = (data.data)
-                    .filter((val) => val.kecamatan_id == $("select#kecamatan").val())
-                    .map(elm => {
-                        return {
-                            id: elm.id,
-                            text: elm.kel_nama
-                        }
-                    })
-
-                return {
-                    results: result
-                }
-            })
-        });
-
-        $("select#kecamatan").select2({
-            ajax: ajaxAdministrasi("kecamatan", (data) => {
-                const result = (data.data)
-                    .filter((val) => val.kabupaten_id == $("select#kabupaten").val())
-                    .map(elm => {
-                        return {
-                            id: elm.id,
-                            text: elm.kec_nama
-                        }
-                    })
-
-                return {
-                    results: result
-                }
-            })
-        });
-
-        $("select#kabupaten").select2({
-            ajax: ajaxAdministrasi("kabupaten", (data) => {
-
-                const result = (data.data)
-                    .filter((val) => val.provinsi_id == $("select#provinsi").val())
-                    .map(elm => {
-                        return {
-                            id: elm.id,
-                            text: elm.kab_nama
-                        }
-                    })
-
-                return {
-                    results: result
-                }
-            })
-        });
-
-        $("select#provinsi").select2({
-            ajax: ajaxAdministrasi("provinsi", (data) => {
-                const result = (data.data)
-                    .map(elm => {
-                        return {
-                            id: elm.id,
-                            text: elm.prov_nama
-                        }
-                    })
-
-                return {
-                    results: result
-                }
-            })
-        });
-
-        $("select#provinsi").on("change", () => {
-            $("select#kabupaten").attr("disabled", false).val("").trigger("change")
-            $("select#kecamatan").attr("disabled", true).val("").trigger("change")
-            $("select#kelurahan").attr("disabled", true).val("").trigger("change")
-            $("select#kelurahan").val("")
-        })
-
-        $("select#kabupaten").on("change", () => {
-            $("select#kecamatan").attr("disabled", false).val("").trigger("change")
-            $("select#kelurahan").attr("disabled", true).val("").trigger("change")
-        })
-
-        $("select#kecamatan").on("change", () => {
-            $("select#kelurahan").attr("disabled", false).val("").trigger("change")
-        })
-    </script>
+    {{-- Handle Group Form --}}
+    <script src="{{ asset('assets/js/feature/registrationForm/registrationForm.js') }}"></script>
+    {{-- Handle Select2 Form --}}
+    <script src="{{ asset('assets/js/feature/registrationForm/registrationSelect2.js') }}"></script>
 
     <!-- solar icons -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
