@@ -7,6 +7,8 @@ use App\Models\Form;
 use App\Models\User;
 use App\Repositories\Form\FormRepository;
 use App\Repositories\User\UserRepository;
+use Illuminate\Support\Facades\DB;
+use InvalidArgumentException;
 
 class RegistrationServiceImplement implements RegistrationService
 {
@@ -24,29 +26,14 @@ class RegistrationServiceImplement implements RegistrationService
      */
     public function RegisterMembership(RegistrationDTO $data): void
     {
-        /* The line `// dd();` is a comment in PHP code. Comments are used to provide explanations
-        or notes within the code for developers to understand the code better. In this case,
-        `dd();` is likely a debugging statement that is commented out. */
-        // dd($data);
-        $user = $this->userRepository->create([
-            "username" => $data->username,
-            "email" => $data->email,
-            "password" => $data->password,
-        ]);
-
-        $this->formRepository->create([
-            "user_id" => $user->id,
-            "jabatan_id" => $data->jabatan_id,
-            "golongan_id" => $data->golongan_id,
-            "instansi_id" => $data->instansi_id,
-            "NIP" => $data->NIP,
-            "f_unit_kerja" => $data->f_unit_kerja,
-            "f_no_wa" => $data->f_no_wa,
-            "f_jenis_kartu" => $data->f_jenis_kartu,
-            "f_alamat" => $data->f_alamat,
-            "f_bukti_pembayaran" => $data->f_bukti_pembayaran,
-            "isAccept" => $data->isAccept,
-        ]);
+        try {
+            $user = $this->userRepository->create($data->getUserFormat());
+            $this->formRepository->create($data->getFormFormat($user));
+        } catch (\Exception $th) {
+            throw new InvalidArgumentException($th);
+        }
+        // DB::transaction(function () use ($data) {
+        // });
     }
 
     public function getAnggotaById($id)
