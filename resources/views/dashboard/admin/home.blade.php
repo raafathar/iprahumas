@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-sm-7">
                             <div class="py-4">
-                                <h5 class="fw-semibold fs-5">Selamat Pagi 👋 <br> Mathew Anderson!
+                                <h5 class="fw-semibold fs-5">Selamat Pagi 👋 <br> {{ Auth::user()->username }}
                                 </h5>
                             </div>
                         </div>
