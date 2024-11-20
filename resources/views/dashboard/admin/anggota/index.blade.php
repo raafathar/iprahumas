@@ -7,7 +7,7 @@
     @session('error')
         <x-alert-dashboard :error="true">{{ $value }}</x-alert-dashboard>
     @endsession
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="card card-body p-4">
             <div class="overflow-auto">
                 {{ $dataTable->table() }}

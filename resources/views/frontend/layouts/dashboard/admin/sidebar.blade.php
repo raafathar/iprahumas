@@ -122,7 +122,7 @@
                     'icon' => 'bi bi-building-fill',
                 ],
                 [
-                    'name' => 'Jabtan',
+                    'name' => 'Jabatan',
                     'type' => 'single',
                     'url' => route('admin.dashboard.jabatan.index'),
                     'icon' => 'bi bi-substack',

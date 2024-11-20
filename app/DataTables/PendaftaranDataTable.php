@@ -84,11 +84,11 @@ class PendaftaranDataTable extends DataTable
             ->join('instansis', 'forms.instansi_id', '=', 'instansis.id');
 
         if (request()->is('admin/dashboard/pendaftaran/diterima')) {
-            $query->where('isAccept', '1');
+            $query->where('isAccept', "1");
         } else if (request()->is('admin/dashboard/pendaftaran/ditolak')) {
-            $query->where('isAccept', '2');
+            $query->where('isAccept', "2");
         } else if (request()->is('admin/dashboard/pendaftaran/diproses')) {
-            $query->where('isAccept', '0');
+            $query->where('isAccept', "0");
         }
 
         return $query;
