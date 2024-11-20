@@ -29,7 +29,8 @@ class RegisterRequest extends FormRequest
             'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'jabatan' => ['required'],
-            'golongan' => ['required'],
+            'golongan' =>
+            ['required', 'string', 'max:255'],
             'instansi' => ['required'],
             'NIP' => ['required', 'string', Rule::unique("forms", "NIP")->where(function ($q) {
                 $q->where("isAccept", 1);

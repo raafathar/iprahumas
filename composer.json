@@ -9,6 +9,7 @@
         "barryvdh/laravel-snappy": "^1.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "spatie/laravel-pdf": "^1.5",
         "twbs/bootstrap-icons": "^1.11",
         "yajra/laravel-datatables": "^11.0"
     },

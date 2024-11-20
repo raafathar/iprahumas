@@ -22,6 +22,7 @@ class PendaftaranRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'email' => ['email'],
             'isAccept' => ['required'],
         ];
     }

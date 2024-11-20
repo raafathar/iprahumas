@@ -3,6 +3,8 @@
 namespace App\Services\Registration;
 
 use App\DTO\Registration\RegistrationDTO;
+use App\Models\Form;
+use App\Models\User;
 use App\Repositories\Form\FormRepository;
 use App\Repositories\User\UserRepository;
 
@@ -47,16 +49,28 @@ class RegistrationServiceImplement implements RegistrationService
         ]);
     }
 
+    public function getAnggotaById($id)
+    {
+        return $this->userRepository->getData($id);
+    }
+
     // Pendaftaran
     public function getPendaftaranById($id)
     {
         $user = $this->userRepository->getData($id);
 
+        // dd($user);
         if (!$user) {
             return null;
         }
 
         return $this->formRepository->getFormByUser($user->id);
+    }
+
+    public function getDataAnggotaById($id)
+    {
+        return
+            Form::with('user', 'golongan', 'jabatan', 'instansi')->where('user_id', $id)->first();
     }
 
     // Update Pendaftaran

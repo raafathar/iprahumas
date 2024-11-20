@@ -9,7 +9,7 @@
 
 <!-- Modal Update -->
 <div class="modal fade" id="update{{ $model->id }}" tabindex="-1" aria-labelledby="hapusLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="d-flex justify-contemt-center align-items-center gap-3">

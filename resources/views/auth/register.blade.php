@@ -101,9 +101,8 @@
                                                 {{-- start pangkat --}}
                                                 <div class="mb-3">
                                                     <label class="form-label">Pangkat/Golongan</label>
-                                                    <select class="form-select" id="golongan" type="text"
-                                                        name="golongan" value="{{ old('golongan') }}" autofocus
-                                                        autocomplete="golongan">
+                                                    <select class="form-select" id="golongan" name="golongan" required
+                                                        value="{{ old('golongan') }}" autofocus autocomplete="golongan">
                                                         <option readonly>-- Pilih Golongan --</option>
                                                         @forelse($golongan as $row)
                                                             <option value="{{ $row->id }}">{{ $row->g_nama }}
@@ -113,6 +112,13 @@
                                                         @endforelse
                                                     </select>
                                                 </div>
+                                                @if ($errors->get('golongan'))
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('golongan') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
                                                 {{-- end pangkat --}}
                                             </div>
                                         </div>
@@ -134,6 +140,13 @@
                                                         @endforelse
                                                     </select>
                                                 </div>
+                                                @if ($errors->get('jabatan'))
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('jabatan') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
                                                 {{-- end jabatan --}}
                                             </div>
                                             <div class="col-md-6">
@@ -152,6 +165,13 @@
                                                         @endforelse
                                                     </select>
                                                 </div>
+                                                @if ($errors->get('instansi'))
+                                                    <ul>
+                                                        @foreach ((array) $errors->get('instansi') as $message)
+                                                            <li class="text-danger">{{ $message }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
                                                 {{-- end pangkat --}}
                                             </div>
                                         </div>

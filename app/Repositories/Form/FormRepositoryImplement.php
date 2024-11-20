@@ -89,7 +89,7 @@ class FormRepositoryImplement implements FormRepository
 
     public function getFormByUser($user_id)
     {
-        return $this->table->where("user_id", $user_id)->get();
+        return $this->table->where("user_id", $user_id)->first();
     }
 
     public function deletePendaftaran($id)

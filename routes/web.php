@@ -25,6 +25,10 @@ Route::get('/berita/1', function () {
     return view('frontend.landingpage.beritadetail');
 });
 
+Route::get('/sk-pendaftaran', function () {
+    return view('documents.pdf_sk_diterima');
+});
+
 Route::get('/berita', function () {
     return view('frontend.landingpage.berita');
 });

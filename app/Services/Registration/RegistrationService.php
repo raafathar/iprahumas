@@ -14,7 +14,11 @@ interface RegistrationService
      */
     public function RegisterMembership(RegistrationDTO $data): void;
 
+    public function getAnggotaById($id);
+
     public function getPendaftaranById($id);
+
+    public function getDataAnggotaById($id);
 
     // Update Pendaftaran
     public function updatePendaftaran(RegistrationDTO $data, $id, $column = "id");
