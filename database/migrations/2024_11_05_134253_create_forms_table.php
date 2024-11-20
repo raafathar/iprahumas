@@ -13,14 +13,24 @@ return new class extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->foreignUuid("user_id")->constrained("users");
+            // Data Pribadi
             $table->foreignUuid("jabatan_id")->constrained("jabatans");
             $table->foreignUuid("golongan_id")->constrained("golongans");
             $table->foreignUuid("instansi_id")->constrained("instansis");
+            $table->foreignUuid("keahlian_id")->constrained("keahlians");
+            $table->foreignId("provinsi_id")->constrained("provinsis");
+            $table->foreignId("kabupaten_id")->constrained("kabupatens");
+            $table->foreignId("kecamatan_id")->constrained("kecamatans");
+            $table->foreignId("kelurahan_id")->constrained("kelurahans");
             $table->string("NIP")->unique();
+            $table->enum("f_agama", ["islam", "kristen", "katolik", "hindu", "budha", "khonghucu"]);
+            $table->date("f_tanggal_lahir");
+            $table->string("f_alamat");
+            //2
+            $table->enum("f_pendidikan_terakhir", ['SMA', 'D3', 'D4/S1', 'S2', 'S3']);
+            $table->string("f_universitas")->nullable();
             $table->string("f_unit_kerja");
             $table->string("f_no_wa");
-            $table->enum("f_jenis_kartu", ["EMONEY", "FLAZZ"]);
-            $table->string("f_alamat");
             $table->string("f_bukti_pembayaran");
             $table->boolean("isAccept")->default(False);
             $table->timestamps();
