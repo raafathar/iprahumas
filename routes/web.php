@@ -8,8 +8,8 @@ Route::get('/', function () {
     return view('frontend.landingpage.index');
 });
 
-require __DIR__ . "\Auth\auth.php";
-require __DIR__ . "\Dashboard\admin.php";
+require __DIR__ . "/Auth/auth.php";
+require __DIR__ . "/Dashboard/admin.php";
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -23,6 +23,10 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/berita/1', function () {
     return view('frontend.landingpage.beritadetail');
+});
+
+Route::get('/sk-pendaftaran', function () {
+    return view('documents.pdf_sk_diterima');
 });
 
 Route::get('/berita', function () {

@@ -72,7 +72,43 @@
                     'name' => 'Home',
                     'type' => 'single',
                     'url' => route('admin.dashboard.index'),
-                    'icon' => 'bi bi-house',
+                    'icon' => 'bi bi-house-fill',
+                ],
+            ],
+        ],
+        [
+            'title' => 'Manajemen Data Anggota',
+            'child' => [
+                [
+                    'name' => 'Data Anggota',
+                    'type' => 'single',
+                    'url' => route('admin.dashboard.data-anggota.index'),
+                    'icon' => 'bi bi-people-fill',
+                ],
+                [
+                    'name' => 'Grafik Anggota',
+                    'type' => 'single',
+                    'url' => route('admin.dashboard.grafik-anggota.index'),
+                    'icon' => 'bi bi-bar-chart-fill',
+                ],
+                [
+                    'name' => 'Pendaftaran',
+                    'type' => 'multiple',
+                    'icon' => 'bi bi-file-earmark',
+                    'contain-multiple' => [
+                        [
+                            'name' => 'Pendaftar Diproses',
+                            'url' => route('admin.dashboard.pendaftaran.index', ['status' => 'diproses']),
+                        ],
+                        [
+                            'name' => 'Pendaftar Diterima',
+                            'url' => route('admin.dashboard.pendaftaran.index', ['status' => 'diterima']),
+                        ],
+                        [
+                            'name' => 'Pendaftar Ditolak',
+                            'url' => route('admin.dashboard.pendaftaran.index', ['status' => 'ditolak']),
+                        ],
+                    ],
                 ],
             ],
         ],
@@ -86,7 +122,7 @@
                     'icon' => 'bi bi-building-fill',
                 ],
                 [
-                    'name' => 'Jabtan',
+                    'name' => 'Jabatan',
                     'type' => 'single',
                     'url' => route('admin.dashboard.jabatan.index'),
                     'icon' => 'bi bi-substack',

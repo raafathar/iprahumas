@@ -26,13 +26,13 @@ class RegistrationDTO
         public string $f_no_wa,
         public string $f_alamat,
         public string $f_bukti_pembayaran,
-        public Bool $isAccept,
+        public string $isAccept,
     ) {}
 
     /**
      * Request Format
      */
-    public static function getRequest($request, $isAccept = False): self
+    public static function getRequest($request, $isAccept = "0"): self
     {
         return new self(
             $request["username"],

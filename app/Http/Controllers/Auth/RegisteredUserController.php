@@ -48,11 +48,7 @@ class RegisteredUserController extends Controller
         $validate['f_bukti_pembayaran'] = $this->fileImageHandler($request, "f_bukti_pembayaran", "bukti_pembelajaran");
         $registrationDTO = RegistrationDTO::getRequest($validate);
 
-        try {
-            $this->registrationService->RegisterMembership($registrationDTO);
-        } catch (\Exception $th) {
-            return back()->with("error", "Terjadi Error");
-        }
+        // dd($registrationDTO);
         try {
             $this->registrationService->RegisterMembership($registrationDTO);
         } catch (\Exception $th) {

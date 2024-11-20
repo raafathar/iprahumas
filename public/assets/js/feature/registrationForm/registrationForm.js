@@ -7,11 +7,11 @@ let lengthGroup = listChildren.length
 // Index grup
 let currentGroup = 0
 
-console.log($("input#f_tanggal_lahir"));
+// console.log($("input#f_tanggal_lahir"));
 
-$("input#f_tanggal_lahir").mask("##-##-####", { 'placeholder': "tanggal-bulan-tahun" }).attr({
-    maxLength: 10,
-})
+// $("input#f_tanggal_lahir").mask("##-##-####", { 'placeholder': "tanggal-bulan-tahun" }).attr({
+//     maxLength: 10,
+// })
 
 
 // Reset group
@@ -125,7 +125,8 @@ const validationGroup = (index) => {
             const username = requiredValidation($("input#username").val(), $("span#username-message"), "Nama lengkap mohon diisi !")
             const email = requiredValidation($("input#email").val(), $("span#email-message"), "Email mohon diisi !") && emailValidation($("input#email").val(), $("span#email-message"), "Email tidak valid !")
             const NIP = requiredValidation($("input#NIP").val(), $("span#NIP-message"), "NIP mohon diisi !") && NIPValidation($("input#NIP").val(), $("span#NIP-message"), "NIP tidak valid !")
-            const tanggalLahir = requiredValidation($("input#f_tanggal_lahir").val(), $("span#f_tanggal_lahir-message"), "Tanggal Lahir mohon diisi !") && DateValidation($("input#f_tanggal_lahir").val(), $("span#f_tanggal_lahir-message"), "Tanggal Lahir tidak valid !")
+            const tanggalLahir = requiredValidation($("input#f_tanggal_lahir").val(), $("span#f_tanggal_lahir-message"), "Tanggal Lahir mohon diisi !") 
+            // && DateValidation($("input#f_tanggal_lahir").val(), $("span#f_tanggal_lahir-message"), "Tanggal Lahir tidak valid !")
             const agama = requiredValidation($("select#f_agama").val(), $("span#f_agama-message"), "Agama mohon diisi !")
             const noWa = requiredValidation($("input#f_no_wa").val(), $("span#f_no_wa-message"), "No Wa mohon diisi !") && phoneNumberValidation($("input#f_no_wa").val(), $("span#f_no_wa-message"), "No Wa tidak valid !")
             

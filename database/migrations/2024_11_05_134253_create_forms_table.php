@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string("f_unit_kerja");
             $table->string("f_no_wa");
             $table->string("f_bukti_pembayaran");
-            $table->boolean("isAccept")->default(False);
+            $table->enum("isAccept", [0, 1, 2]);
             $table->timestamps();
         });
     }
