@@ -84,9 +84,8 @@
                                                 {{-- start NIP --}}
                                                 <div class="mb-3">
                                                     <label for="NIP" class="form-label">NIP</label>
-                                                    <input id="NIP" type="text" name="NIP"
-                                                        value="{{ old('NIP') }}" autofocus autocomplete="NIP"
-                                                        class="form-control">
+                                                    <input id="NIP" type="text" name="NIP" value="{{ old('NIP') }}" autofocus
+                                                    autocomplete="nip" class="form-control">
                                                 </div>
                                                 @if ($errors->get('NIP'))
                                                     <ul>

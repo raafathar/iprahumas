@@ -7,8 +7,8 @@
             <!-- ---------------------------------- -->
             <div class="brand-logo d-flex align-items-center justify-content-between">
                 <a href="../main/index.html" class="text-nowrap logo-img">
-                    <img src="{{ asset('/assets/images/logos/dark-logo.svg') }}" class="dark-logo" alt="Logo-Dark" />
-                    <img src="{{ asset('/assets/images/logos/light-logo.svg') }}" class="light-logo" alt="Logo-light" />
+                    <img src="{{ asset('/assets/images/logos/logo.png') }}" class="dark-logo" alt="Logo-Dark" height="58" />
+                    <img src="{{ asset('/assets/images/logos/logo.png') }}" class="light-logo" alt="Logo-light" height="58" />
                 </a>
                 <a href="javascript:void(0)" class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
                     <i class="ti ti-x"></i>
