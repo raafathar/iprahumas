@@ -25,6 +25,10 @@ Route::get('/berita/1', function () {
     return view('frontend.landingpage.beritadetail');
 });
 
+Route::get('/berita', function () {
+    return view('frontend.landingpage.berita');
+});
+
 
 Route::get('/pelatihan', function () {
     return view('frontend.landingpage.pelatihan.pelatihan');
