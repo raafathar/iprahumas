@@ -162,7 +162,6 @@
 </div>
 
 <script>
-
     document.addEventListener("DOMContentLoaded", function () {
 
 
@@ -376,20 +375,103 @@
 
         // end golongan
 
+        // start pendidikan
+
+        const pendidikan = @json($grafikPendidikan);
+
+        const pendidikanJumlah = pendidikan.map(item => item.jumlah);
+        const pendidikanNama = pendidikan.map(item => item.f_pendidikan_terakhir);
+
+        var pendidikanChart = {
+            series: pendidikanJumlah,
+            labels: pendidikanNama,
+            chart: {
+                type: "pie",
+                fontFamily: "inherit",
+                foreColor: "#c6d1e9",
+            },
+
+            tooltip: {
+                theme: "dark",
+                fillSeriesColor: false,
+            },
+
+            dataLabels: {
+                enabled: false,
+            },
+
+            legend: {
+                show: false,
+            },
+
+            stroke: {
+                show: false,
+            },
+
+            plotOptions: {
+                pie: {
+                    pie: {
+                        size: "70%",
+                        background: "none",
+                        labels: {
+                            show: true,
+                            name: {
+                                show: true,
+                                fontSize: "18px",
+                                color: undefined,
+                                offsetY: -10,
+                            },
+                            value: {
+                                show: false,
+                                color: "#98aab4",
+                            },
+                        },
+                    },
+                },
+            },
+        };
+
+        new ApexCharts(document.querySelector("#grafik-pendidikan"), pendidikanChart).render();
+
+        // end pendidikan
+
 
 
         const registrations = @json($registrations);
+
+        console.log(registrations);
+
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         let chart;
 
         const yearFilter = document.getElementById('yearFilter');
 
+        const fillMissingMonths = (filteredRegistrations) => {
+            const allMonths = Array.from({
+                length: 12
+            }, (_, i) => i + 1); // Bulan 1 sampai 12
+            const filledData = allMonths.map(month => {
+                // Mencari data untuk bulan tertentu
+                const dataForMonth = filteredRegistrations.find(item => item.month === month);
+                return {
+                    month: month,
+                    total: dataForMonth ? dataForMonth.total : 0 // Jika tidak ada data, set ke 0
+                };
+            });
+
+            return filledData;
+        };
+
         const filterData = () => {
             const selectedYear = yearFilter.value;
 
-            const filteredRegistrations = registrations.filter(item =>
+            // Filter berdasarkan tahun
+            let filteredRegistrations = registrations.filter(item =>
                 selectedYear ? item.year == selectedYear : true
             );
+
+            // Isi bulan yang tidak ada data dengan nilai 0
+            filteredRegistrations = fillMissingMonths(filteredRegistrations);
 
             // Menyiapkan data untuk chart
             const monthlyData = filteredRegistrations.map(item => item.total); // Jumlah registrasi
@@ -463,6 +545,7 @@
         yearFilter.addEventListener('change', filterData);
 
         filterData();
+
 
 
     });

@@ -26,12 +26,17 @@ class GrafikAnggotaController extends Controller
             ->selectRaw('count(forms.user_id) as jumlah')
             ->groupBy('golongans.g_nama')
             ->get();
-
+            
+        $grafikPendidikan = Form::select('f_pendidikan_terakhir')
+            ->selectRaw('count(user_id) as jumlah')
+            ->groupBy('f_pendidikan_terakhir')
+            ->get();
 
         $registrations = Form::selectRaw('YEAR(created_at) as year, MONTH(created_at) as month, COUNT(*) as total')
             ->groupBy('year', 'month')
             ->get();
 
-        return view("dashboard.admin.grafik.index", compact('countPending', 'countAccept', 'countRejected', 'registrations', 'grafikJabatan', 'grafikGolongan'));
+        return view("dashboard.admin.grafik.index", compact('countPending', 'countAccept', 'countRejected', 'registrations', 'grafikJabatan', 'grafikGolongan', 'grafikPendidikan'));
+
     }
 }
