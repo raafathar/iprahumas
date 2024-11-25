@@ -146,7 +146,6 @@
                         </div>
                         <div>
                             <select id="yearFilter" class="form-select">
-                                <option value="2025">2025</option>
                                 <option value="2024">2024</option>
                             </select>
                         </div>
@@ -164,13 +163,17 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
 
+        const keahlian = @json($grafikKeahlian);
 
-        var keahlian = {
+        console.log(keahlian)
+
+        const keahlianJumlah = keahlian.map(item => item.jumlah);
+        const keahlianNama = keahlian.map(item => item.k_nama);
+
+        var keahlianChart = {
             series: [{
                 name: "Total anggota",
-                data: [20, 15, 30, 25, 10, 15, 42, 50, 24, 25, 14, 50, 24, 68, 42, 34, 24, 13, 86,
-                    54
-                ],
+                data: keahlianJumlah,
             }, ],
 
             chart: {
@@ -213,28 +216,7 @@
                 },
             },
             xaxis: {
-                categories: [
-                    ["Apr"],
-                    ["May"],
-                    ["June"],
-                    ["July"],
-                    ["Aug"],
-                    ["Sept"],
-                    ["Ari"],
-                    ["End"],
-                    ["Sec"],
-                    ["Esc"],
-                    ["Ent"],
-                    ["Rept"],
-                    ["Stat"],
-                    ["Pre"],
-                    ["Point"],
-                    ["Arf"],
-                    ["Zec"],
-                    ["Script"],
-                    ["Note"],
-                    ["Book"]
-                ],
+                categories: keahlianNama,
                 axisBorder: {
                     show: false,
                 },
@@ -244,7 +226,10 @@
             },
             yaxis: {
                 labels: {
-                    show: false,
+                    formatter(value) {
+                        return value.toFixed(0);
+                    },
+                    show: true,
                 },
             },
             tooltip: {
@@ -252,7 +237,7 @@
             },
         };
 
-        new ApexCharts(document.querySelector("#statistik-keahlian"), keahlian).render();
+        new ApexCharts(document.querySelector("#statistik-keahlian"), keahlianChart).render();
 
         // start jabatan
 

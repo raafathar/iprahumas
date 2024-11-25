@@ -15,6 +15,17 @@ class GrafikAnggotaController extends Controller
         $countAccept     = Form::where('isAccept', "1")->count();
         $countRejected   = Form::where('isAccept', "2")->count();
 
+        $grafikKeahlian = Form::rightJoin('keahlians', 'forms.keahlian_id', '=', 'keahlians.id')
+            ->select('keahlians.k_nama')
+            ->selectRaw('COUNT(forms.user_id) as jumlah')
+            ->groupBy('keahlians.k_nama')
+            ->get()
+            ->map(function($item) {
+                // Jika jumlah keahlian tidak ada (null), ganti menjadi 0
+                $item->jumlah = $item->jumlah ?? 0;
+                return $item;
+            });
+    
         $grafikJabatan = Form::join('jabatans', 'forms.jabatan_id', '=', 'jabatans.id')
             ->select('jabatans.j_nama')
             ->selectRaw('count(forms.user_id) as jumlah')
@@ -36,7 +47,7 @@ class GrafikAnggotaController extends Controller
             ->groupBy('year', 'month')
             ->get();
 
-        return view("dashboard.admin.grafik.index", compact('countPending', 'countAccept', 'countRejected', 'registrations', 'grafikJabatan', 'grafikGolongan', 'grafikPendidikan'));
+        return view("dashboard.admin.grafik.index", compact('countPending', 'countAccept', 'countRejected', 'registrations', 'grafikKeahlian', 'grafikJabatan', 'grafikGolongan', 'grafikPendidikan'));
 
     }
 }
