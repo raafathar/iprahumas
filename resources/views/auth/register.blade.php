@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
 
 <head>
     <!-- Required meta tags -->
@@ -51,7 +51,7 @@
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div id="form-container">
-                                        <div class="d-none pt-3">
+                                        <div class="d-none mt-4">
                                             <div class="row">
                                                 <div class="col-12">
                                                     {{-- start username --}}
@@ -191,7 +191,7 @@
 
 
                                         {{-- 2 --}}
-                                        <div class="d-none">
+                                        <div class="d-none mt-4">
                                             <div class="row">
                                                 <div class="col-12">
                                                     {{-- start jabatan --}}
@@ -333,7 +333,7 @@
                                         </div>
 
                                         {{-- 3 --}}
-                                        <div class="d-none">
+                                        <div class="d-none mt-4">
                                             <div class="row">
                                                 {{-- start f_pendidikan_terakhir --}}
                                                 <div class="mb-3">
@@ -492,7 +492,7 @@
 
 
 
-                                            <div class="mb-3">
+                                            <div class="mb-3 mt-4">
                                                 <label class="form-label">Alamat Lengkap</label>
                                                 <input class="form-control" id="f_alamat" type="text"
                                                     name="f_alamat" value="{{ old('f_alamat') }}" autofocus
@@ -509,7 +509,7 @@
                                         </div>
 
                                         {{-- 5 --}}
-                                        <div class="d-none">
+                                        <div class="d-none mt-4">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     {{-- start f_bukti_pembayaran --}}
@@ -536,7 +536,7 @@
                                     </div>
                                     <div class="d-absoluet button-0 mt-2">
                                         <div class="d-flex justify-content-end gap-3">
-                                            <span id="back" class="btn btn-outline-primary w-100">Kembali</span>
+                                            <span id="back" class="btn btn-gray w-100">Kembali</span>
                                             <span id="next" class="btn btn-primary w-100"></span>
                                         </div>
                                         <p class="mt-3 fs-3">
