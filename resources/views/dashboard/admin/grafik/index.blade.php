@@ -81,7 +81,17 @@
             </div>
         </div>
     </div>
-    <div class="row">
+
+    <!-- Start Basic Bar Chart -->
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Basic Bar Chart</h4>
+            <div id="chart-bar-basic"></div>
+        </div>
+    </div>
+    <!-- End Basic Bar Chart -->
+
+    {{-- <div class="row">
         <div class="col d-flex align-items-stretch">
             <div class="card w-100">
                 <div class="card-body">
@@ -95,7 +105,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="row">
         <div class="col-lg-4 bg-white">
@@ -163,73 +173,56 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
 
-        const keahlian = @json($grafikKeahlian);
 
-        console.log(keahlian)
+        // Basic Bar Chart -------> BAR CHART
+
+        const keahlian = @json($grafikKeahlian);
 
         const keahlianJumlah = keahlian.map(item => item.jumlah);
         const keahlianNama = keahlian.map(item => item.k_nama);
 
-        var keahlianChart = {
+        var options_basic = {
             series: [{
-                name: "Total anggota",
                 data: keahlianJumlah,
             }, ],
-
             chart: {
+                fontFamily: "inherit",
+                type: "bar",
+                height: 350,
                 toolbar: {
                     show: false,
                 },
-                height: 260,
-                type: "bar",
-                fontFamily: "inherit",
-                foreColor: "#adb0bb",
             },
-            colors: [
-                "var(--bs-primary)",
-            ],
+            grid: {
+                borderColor: "transparent",
+            },
+            colors: ["var(--bs-primary)"],
             plotOptions: {
                 bar: {
-                    borderRadius: 4,
-                    columnWidth: "45%",
-                    distributed: true,
-                    endingShape: "rounded",
+                    horizontal: true,
                 },
             },
-
             dataLabels: {
                 enabled: false,
             },
-            legend: {
-                show: false,
-            },
-            grid: {
-                yaxis: {
-                    lines: {
-                        show: false,
-                    },
-                },
-                xaxis: {
-                    lines: {
-                        show: false,
-                    },
-                },
-            },
             xaxis: {
                 categories: keahlianNama,
-                axisBorder: {
-                    show: false,
-                },
-                axisTicks: {
-                    show: false,
+                labels: {
+                    formatter(value) {
+                            return value.toFixed(0);
+                    },
+                    style: {
+                        colors: [
+                        ],
+                    },
                 },
             },
             yaxis: {
                 labels: {
-                    formatter(value) {
-                        return value.toFixed(0);
+                    style: {
+                        colors: [
+                        ],
                     },
-                    show: true,
                 },
             },
             tooltip: {
@@ -237,7 +230,12 @@
             },
         };
 
-        new ApexCharts(document.querySelector("#statistik-keahlian"), keahlianChart).render();
+        var chart_bar_basic = new ApexCharts(
+            document.querySelector("#chart-bar-basic"),
+            options_basic
+        );
+
+        chart_bar_basic.render();
 
         // start jabatan
 
@@ -269,7 +267,7 @@
             },
 
             stroke: {
-                show: false,
+                show: true,
             },
 
             plotOptions: {
@@ -330,7 +328,7 @@
             },
 
             stroke: {
-                show: false,
+                show: true,
             },
 
             plotOptions: {
@@ -390,7 +388,7 @@
             },
 
             stroke: {
-                show: false,
+                show: true,
             },
 
             plotOptions: {
