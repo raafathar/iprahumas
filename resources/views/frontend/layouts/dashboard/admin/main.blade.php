@@ -13,7 +13,7 @@
     <!-- Core Css -->
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
 
-    <title>Modernize Bootstrap Admin</title>
+    <title>Dashboard - Ikatan Pranata Humas Indonesia</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{{ asset('assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}" />
