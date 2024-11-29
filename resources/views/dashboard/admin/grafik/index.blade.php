@@ -82,15 +82,6 @@
         </div>
     </div>
 
-    <!-- Start Basic Bar Chart -->
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Basic Bar Chart</h4>
-            <div id="chart-bar-basic"></div>
-        </div>
-    </div>
-    <!-- End Basic Bar Chart -->
-
     {{-- <div class="row">
         <div class="col d-flex align-items-stretch">
             <div class="card w-100">
@@ -143,6 +134,15 @@
         </div>
     </div>
 
+    <!-- Start Keahlian Chart -->
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Grafik Keahlian</h4>
+            <div id="chart-bar-basic"></div>
+        </div>
+    </div>
+    <!-- End Keahlian Chart -->
+
     {{-- start statistik --}}
     <div class="row mb-3">
         <div class="col-12">
@@ -188,9 +188,9 @@
             chart: {
                 fontFamily: "inherit",
                 type: "bar",
-                height: 350,
+                height: 400,
                 toolbar: {
-                    show: false,
+                    show: true,
                 },
             },
             grid: {
@@ -203,7 +203,7 @@
                 },
             },
             dataLabels: {
-                enabled: false,
+                enabled: true,
             },
             xaxis: {
                 categories: keahlianNama,
